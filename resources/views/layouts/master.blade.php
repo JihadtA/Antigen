@@ -1,10 +1,3 @@
-<!--
-*
-*  INSPINIA - Responsive Admin Theme
-*  version 2.8
-*
--->
-
 <!DOCTYPE html>
 <html>
 
@@ -32,25 +25,6 @@
 
     <link href="{{ asset('/inspinia/css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('/inspinia/css/style.css') }}" rel="stylesheet">
-
-    {{-- <style>
-        body{
-            font-family: "open sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
-            background-color: #275783;
-            font-size: 13px;
-            color: #676a6c;
-            overflow-x: hidden
-        }
-        .nav-header{
-            padding:33px 25px;
-            background-color: #275783;
-            background-image: none;
-        }
-        .nav > li.active{
-            border-left:4px solid #0d8f94;
-            background: #293864;
-        }
-    </style> --}}
     <style>
         ul.pagination{
         display: inline-flex;
@@ -76,12 +50,6 @@
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
         </div>
             <ul class="nav navbar-top-links navbar-right">
-                {{-- <li>
-                    <a href="#">
-                        <i class="fa fa-sign-out"></i> Log out
-                    </a>
-                </li> --}}
-                <!-- Authentication Links -->
                 @guest
                 @if (Route::has('login'))
                     <li class="nav-item">
