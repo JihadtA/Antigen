@@ -10,8 +10,6 @@
 
 <h2><p>RULES</p></h2>
 
-<hr>
-
 <p>Git Clone (Download File)</p>
 <p>- Git clone untuk mendownload project, # git clone <link></p><br>
 
