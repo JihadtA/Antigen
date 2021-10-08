@@ -29,14 +29,14 @@
                     ANTI
                 </div>
             </li>
-            <li class="{{  request()->routeIs('manage.beranda') ? 'active' : '' }}">
+            <li class="{{  request()->routeIs('home.*') ? 'active' : '' }}">
                 <a href="#"><i class="fa fa-home" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Beranda</span></a>
             </li>
-            <li class="{{  request()->routeIs('jabatan.*') || request()->routeIs('bidang.*') || request()->routeIs('pegawai.*') || request()->routeIs('kk.*') || request()->routeIs('pasien.*') || request()->routeIs('poli.*') || request()->routeIs('jenisoperasi.*') || request()->routeIs('penyakit.*') || request()->routeIs('tindakan.*') || request()->routeIs('diagnosa_penyakit.*') ? 'active' : '' }}">
-                <a href="#"><i class="fa fa-database" style="font-size:16px"></i> <span class="nav-label">Master</span> <span class="fa arrow"></span></a>
+            <li class="{{  request()->routeIs('jabatan.*') || request()->routeIs('bidang.*') ? 'active' : '' }}">
+                <a href="#"><i class="fa fa-database" style="font-size:16px"></i> <span class="nav-label">Data</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li class="{{  request()->routeIs('jabatan.*') ? 'active' : '' }}"><a href="#">Data Jabatan</a></li>
-                    <li class="{{  request()->routeIs('bidang.*') ? 'active' : '' }}"><a href="#">Data Bidang</a></li>
+                    <li class="{{  request()->routeIs('jabatan.*') ? 'active' : '' }}"><a href="#">Data Tes</a></li>
+                    <li class="{{  request()->routeIs('bidang.*') ? 'active' : '' }}"><a href="#">Data Peserta</a></li>
                 </ul>
             </li>
         </ul>
