@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>ANTIGEN | @yield('title')</title>
+    <title>ANTIGEN | {{ $title }}</title>
     <link href="{{ asset('/inspinia/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('/inspinia/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/inspinia/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
@@ -76,12 +76,43 @@
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
         </div>
             <ul class="nav navbar-top-links navbar-right">
-
-                <li>
+                {{-- <li>
                     <a href="#">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
+                </li> --}}
+                <!-- Authentication Links -->
+                @guest
+                @if (Route::has('login'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                @endif
+
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    <div>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
                 </li>
+            @endguest
 
             </ul>
 
@@ -91,18 +122,8 @@
         
         <div class="row wrapper border-bottom white-bg page-heading mb-3">
 		    <div class="col-lg-10">
-		        <h2>@yield('judultabel')</h2>
-		        <ol class="breadcrumb">
-		            <li class="breadcrumb-item">
-		                <a href="#">Home</a>
-		            </li>
-		            <li class="breadcrumb-item">
-		                @yield('menu1')
-		            </li>
-		            <li class="breadcrumb-item active">
-		                <strong>@yield('menu2')</strong>
-		            </li>
-		        </ol>
+		        <h2>{{ $judultabel }}</h2>
+		        @yield('breadcrumb')
 		    </div>
 		    <div class="col-lg-2">
 
