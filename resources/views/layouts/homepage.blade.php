@@ -8,7 +8,7 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-  <title>Test Antigen</title>
+  <title>Test Antigeng</title>
 
   <link rel="stylesheet" href="{{asset('homepage')}}/assets/css/maicons.css">
 
@@ -99,7 +99,7 @@
     </nav>
   </header>
 
-  <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
+  <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('homepage')}}/assets/img/bg_image_1.jpg);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
         <span class="subhead">Let's make your life happier</span>
@@ -110,7 +110,7 @@
   </div>
 
 
-  <div class="bg-light">
+  <!-- <div class="bg-light">
     <div class="page-section py-3 mt-md-n5 custom-index">
       <div class="container">
         <div class="row justify-content-center">
@@ -140,7 +140,7 @@
           </div>
         </div>
       </div>
-    </div> <!-- .page-section -->
+    </div> .page-section -->
 
     <div class="page-section pb-0">
       <div class="container">
@@ -160,7 +160,7 @@
     </div> <!-- .bg-light -->
   </div> <!-- .bg-light -->
 
-  <div class="page-section">
+  <!-- <div class="page-section">
     <div class="container">
       <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
 
@@ -242,7 +242,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- <div class="page-section bg-light">
     <div class="container">
