@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PasienController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,8 @@ Route::get('/cek', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 
-Auth::routes();
+Route::resource('pasien', PasienController::class);
+Route::get('get-pasien', [PasienController::class, 'getPasien'])->name('get-pasien');
 
