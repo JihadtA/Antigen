@@ -1,4 +1,4 @@
-@extends('layouts.temporary')
+@extends('layouts.master')
 {{-- @section('breadcrumb')
     <div class="col-lg-10">
         <h2>@yield('judultable')</h2>

@@ -6,8 +6,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     @yield('style')
 
-    <div class="container">
+    {{-- <div class="container">
         @yield('content')
-    </div>
+    </div> --}}
     
     @yield('script')

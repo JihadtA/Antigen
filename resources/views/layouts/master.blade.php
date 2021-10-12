@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>ANTIGEN | {{ $title }}</title>
+
+    @include('layouts.temporary')
+
     <link href="{{ asset('/inspinia/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('/inspinia/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/inspinia/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
