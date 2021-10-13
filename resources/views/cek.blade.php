@@ -1,5 +1,4 @@
 @extends('layouts.master')
-@section('title', 'Cek')
 @section('judultabel', 'Data')
 @section('menu1')
     Master

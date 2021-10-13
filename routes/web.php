@@ -1,6 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PasienController;
+use App\Http\Controllers\DataTesController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DataPesertaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +24,20 @@ Route::get('/', function () {
 });
 
 Route::get('/cek', function () {
-    return view('cek');
+    return view('cek',[
+        "title" => "cek",
+        "judultabel" => "cek"
+
+    ]);
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/datates', [DataTesController::class, 'index']);
+Route::get('/datapeserta', [DataPesertaController::class, 'index']);
 
-Auth::routes();
+Route::resource('pasien', PasienController::class);
+Route::get('get-pasien', [PasienController::class, 'getPasien'])->name('get-pasien');
 

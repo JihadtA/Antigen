@@ -8,7 +8,7 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-  <title>One Health - Medical Center HTML5 Template</title>
+  <title>Test Antigeng</title>
 
   <link rel="stylesheet" href="{{asset('homepage')}}/assets/css/maicons.css">
 
@@ -52,21 +52,21 @@
       <div class="container">
         <a class="navbar-brand" href="#"><span class="text-primary">Test</span>Antigen</a>
 
-        <form action="#">
+        <!-- <form action="#">
           <div class="input-group input-navbar">
             <div class="input-group-prepend">
               <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
             </div>
             <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
           </div>
-        </form>
+        </form> -->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupport">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="index.html">Home</a>
             </li>
@@ -82,21 +82,24 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{ route('login') }}">Login</a>
             </li>
-            <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{ route('register') }}">Register</a>
-            </li>
-
-                
           </ul>
         </div> <!-- .navbar-collapse -->
+        <div class="collapse navbar-collapse" id="navbarSupport">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="btn btn-primary ml-lg-3" href="{{ route('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+               <a class="btn btn-primary ml-lg-3" href="{{ route('register') }}">Register</a>
+            </li>
+          </ul>
+      </div>
       </div> <!-- .container -->
     </nav>
   </header>
 
-  <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
+  <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('homepage')}}/assets/img/bg_image_1.jpg);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
         <span class="subhead">Let's make your life happier</span>
@@ -107,7 +110,7 @@
   </div>
 
 
-  <div class="bg-light">
+  <!-- <div class="bg-light">
     <div class="page-section py-3 mt-md-n5 custom-index">
       <div class="container">
         <div class="row justify-content-center">
@@ -137,7 +140,7 @@
           </div>
         </div>
       </div>
-    </div> <!-- .page-section -->
+    </div> .page-section -->
 
     <div class="page-section pb-0">
       <div class="container">
@@ -157,7 +160,7 @@
     </div> <!-- .bg-light -->
   </div> <!-- .bg-light -->
 
-  <div class="page-section">
+  <!-- <div class="page-section">
     <div class="container">
       <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
 
@@ -239,9 +242,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="page-section bg-light">
+  <!-- <div class="page-section bg-light">
     <div class="container">
       <h1 class="text-center wow fadeInUp">Latest News</h1>
       <div class="row mt-5">
@@ -324,7 +327,7 @@
 
       </div>
     </div>
-  </div> <!-- .page-section -->
+  </div> .page-section -->
 
   <div class="page-section">
     <div class="container">

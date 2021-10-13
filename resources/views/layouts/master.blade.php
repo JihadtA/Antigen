@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>ANTIGEN | {{ $title }}</title>
+
+    @include('layouts.temporary')
+
     <link href="{{ asset('/inspinia/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('/inspinia/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/inspinia/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
@@ -84,7 +87,7 @@
 		</div>
 
         
-        <div class="row wrapper border-bottom white-bg page-heading mb-3">
+        {{-- <div class="row wrapper border-bottom white-bg page-heading mb-3">
 		    <div class="col-lg-10">
 		        <h2>{{ $judultabel }}</h2>
 		        @yield('breadcrumb')
@@ -92,7 +95,7 @@
 		    <div class="col-lg-2">
 
 		    </div>
-		</div>
+		</div> --}}
 
         @yield('content')
 
