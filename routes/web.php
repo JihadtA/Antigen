@@ -20,16 +20,16 @@ use App\Http\Controllers\DataPesertaController;
 */
 
 Route::get('/', function () {
-    return view('welcome2');
+    return view('auth.login');
 });
 
-Route::get('/cek', function () {
-    return view('cek',[
-        "title" => "cek",
-        "judultabel" => "cek"
+// Route::get('/cek', function () {
+//     return view('cek',[
+//         "title" => "cek",
+//         "judultabel" => "cek"
 
-    ]);
-});
+//     ]);
+// });
 
 Auth::routes();
 
