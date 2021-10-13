@@ -34,9 +34,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-Route::get('/profile', [ProfileController::class, 'index']);
-Route::get('/datates', [DataTesController::class, 'index']);
-Route::get('/datapeserta', [DataPesertaController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::get('/datates', [DataTesController::class, 'index'])->name('datates.index');
+Route::get('/datapeserta', [DataPesertaController::class, 'index'])->name('datapeserta.index');
 
 Route::resource('pasien', PasienController::class);
 Route::get('get-pasien', [PasienController::class, 'getPasien'])->name('get-pasien');

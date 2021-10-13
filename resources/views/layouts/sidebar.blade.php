@@ -3,10 +3,10 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
-                    <img alt="image" class="rounded-circle" src="{{ asset('img/pp.jpg') }}" style="width: 80px; height: 80px;"/>
+                    <img alt="image" class="rounded-circle mb-2" src="{{ asset('img/pp.jpg') }}" style="width: 80px; height: 80px;"/>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="block m-t-xs font-bold">Administrator</span>
-                        <span class="text-muted text-xs block">Super Admin <b class="caret"></b></span>
+                        <span class="block m-t-xs font-bold">{{ Auth::user()->name }}</span>
+                        <span class="text-muted text-xs block">Administrator <b class="caret"></b></span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <li><a class="dropdown-item" href="/profile">Profile</a></li>
@@ -28,14 +28,18 @@
                 </div>
             </li>
             <li class="{{  request()->routeIs('home.*') ? 'active' : '' }}">
-                <a href="/home"><i class="fa fa-home" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Beranda</span></a>
+                <a href="{{ route('home.index') }}"><i class="fa fa-home" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Beranda</span></a>
             </li>
-            <li class="{{  request()->routeIs('jabatan.*') || request()->routeIs('bidang.*') ? 'active' : '' }}">
+            <li class="{{  request()->routeIs('datates.*') || request()->routeIs('datapeserta.*') || request()->routeIs('pasien.*') ? 'active' : '' }}">
                 <a href="#"><i class="fa fa-database" style="font-size:16px"></i> <span class="nav-label">Data</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li class="{{  request()->routeIs('jabatan.*') ? 'active' : '' }}"><a href="/datates">Data Tes</a></li>
-                    <li class="{{  request()->routeIs('bidang.*') ? 'active' : '' }}"><a href="/datapeserta">Data Peserta</a></li>
+                    <li class="{{  request()->routeIs('datates.*') ? 'active' : '' }}"><a href="/datates">Data Tes</a></li>
+                    <li class="{{  request()->routeIs('datapeserta.*') ? 'active' : '' }}"><a href="/datapeserta">Data Peserta</a></li>
+                    <li class="{{  request()->routeIs('pasien.*') ? 'active' : '' }}"><a href="{{ route('pasien.index') }}">Data Pasien</a></li>
                 </ul>
+            </li>
+            <li class="{{  request()->routeIs('profile.*') ? 'active' : '' }}">
+                <a href="{{ route('profile.index') }}"><i class="fa fa-user" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Profil</span></a>
             </li>
         </ul>
     </div>
