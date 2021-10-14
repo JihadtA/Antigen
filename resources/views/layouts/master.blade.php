@@ -9,7 +9,7 @@
 
     <title>ANTIGEN | {{ $title }}</title>
 
-    @include('layouts.temporary')
+    @include('data.style')
 
     <link href="{{ asset('/inspinia/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('/inspinia/css/bootstrap.min.css') }}" rel="stylesheet">
