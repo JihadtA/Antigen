@@ -1,24 +1,19 @@
 @extends('layouts.master')
 @section('breadcrumb')
-
+    <h2>{{ $title }}</h2>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{ route('home.index') }}">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            Data
+        </li>
+        <li class="breadcrumb-item active">
+            <strong>{{ $title }}</strong>
+        </li>
+    </ol>
 @endsection
 @section('content')
-<div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
-        <h2>{{ $title }}</h2>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="/home">Home</a>
-            </li>
-            <li class="breadcrumb-item active">
-                <a>Data</a>
-            </li>
-            <li class="breadcrumb-item active">
-                <strong>{{ $title }}</strong>
-            </li>
-        </ol>
-    </div>
-</div>
 
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">

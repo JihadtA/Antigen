@@ -1,22 +1,22 @@
 @extends('layouts.master')
-{{-- @section('breadcrumb')
-    <div class="col-lg-10">
-        <h2>@yield('judultable')</h2>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{{ route('home.index') }}">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-                Data
-            </li>
-            <li class="breadcrumb-item active">
-                <strong>Pasien</strong>
-            </li>
-        </ol>
-    </div> 
-@endsection --}}
+@section('breadcrumb')
+    <h2>{{ $judultabel }}</h2>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{ route('home.index') }}">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            Data
+        </li>
+        <li class="breadcrumb-item active">
+            <strong>Pasien</strong>
+        </li>
+    </ol>
+@endsection
 @section('style')
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --}}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 @endsection
@@ -28,9 +28,11 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        <button style="float: right; font-weight: 900;" class="btn btn-info btn-sm" type="button"  data-toggle="modal" data-target="#CreatePasienModal">
-                            Create Pasien
-                        </button>
+                        <div class="text-right mr-3">
+                            <button class="btn btn-primary btn-sm" type="button"  data-toggle="modal" data-target="#CreatePasienModal">
+                                <strong>Create Pasien</strong>
+                            </button>
+                        </div>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered datatable">
@@ -58,7 +60,7 @@
 
 <!-- Create Pasien Modal -->
 <div class="modal" id="CreatePasienModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
@@ -122,7 +124,7 @@
 
 <!-- Edit Pasien Modal -->
 <div class="modal" id="EditPasienModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
@@ -179,12 +181,12 @@
 @endsection
 
 @section('script')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-
-{{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> --}}
 
 <script type="text/javascript">
     $(document).ready(function() {

@@ -8,6 +8,13 @@
 </p>
  -->
 
+<h2><p>UPDATE</p></h2>
+<p>1. git pull https://github.com/FahruzHif/AntigenTest.git</p>
+<p>2. composer require yajra/laravel-datatables-oracle</p>
+<p>3. php artisan migrate</p>
+
+<br>
+
 <h2><p>RULES</p></h2>
 
 <p>Git Clone (Download File)</p>
