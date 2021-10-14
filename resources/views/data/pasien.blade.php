@@ -1,20 +1,18 @@
 @extends('layouts.master')
-{{-- @section('breadcrumb')
-    <div class="col-lg-10">
-        <h2>@yield('judultable')</h2>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{{ route('home.index') }}">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-                Data
-            </li>
-            <li class="breadcrumb-item active">
-                <strong>Pasien</strong>
-            </li>
-        </ol>
-    </div> 
-@endsection --}}
+@section('breadcrumb')
+    <h2>{{ $judultabel }}</h2>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{ route('home.index') }}">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            Data
+        </li>
+        <li class="breadcrumb-item active">
+            <strong>Pasien</strong>
+        </li>
+    </ol>
+@endsection
 @section('style')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --}}

@@ -87,18 +87,13 @@
 		</div>
 
         
-        {{-- <div class="row wrapper border-bottom white-bg page-heading mb-3">
-		    <div class="col-lg-10">
-		        <h2>{{ $judultabel }}</h2>
+        <div class="row wrapper border-bottom white-bg page-heading mb-3">
+            <div class="col-lg-10">
 		        @yield('breadcrumb')
-		    </div>
-		    <div class="col-lg-2">
-
-		    </div>
-		</div> --}}
+            </div>
+		</div>
 
         @yield('content')
-
         
         <div class="footer">
             <div>
