@@ -12,9 +12,9 @@ class ProfileController extends Controller
         return view('profile',[
             "title" => "Profile",
             "judultabel" => "Profile",
-            "name" => "Fahruz Sama",
-            "email" => "nekopoimantul@gmail.com",
-            "image" => "cz.png"
+            "name" => "Puan Maharani",
+            "email" => "puanmaharani@gmail.com",
+            "image" => "puan.jpg"
          ]);
     }
 }
