@@ -132,11 +132,17 @@ class PasienController extends Controller
                 </div>
                 <div class="form-group">
                     <label>Jenis Pemeriksaan:</label>
-                    <input type="text" class="form-control" name="jns_cek" id="editJns_cek" value="'.$data->jns_cek.'">
+                    <select class="form-control mb-1" name="jns_cek" id="editJns_cek" value="'.$data->jns_cek.'">
+                        <option value="Rapid" @if(isset('.$pasien.')) @if('.$pasien->jns_cek.' == "Rapid") selected @endif @endif>Rapid</option>
+                        <option value="Swap" @if(isset('.$pasien.')) @if('.$pasien->jns_cek.' == "Swap") selected @endif @endif>Swap</option>    
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Hasil Pemeriksaan:</label>
-                    <input type="text" class="form-control" name="hasil" id="editHasil" value="'.$data->hasil.'">
+                    <select class="form-control mb-1" name="hasil" id="editHasil" value="'.$data->hasil.'">
+                        <option value="Positif" @if(isset('.$pasien.')) @if('.$pasien->hasil.' == "Positif") selected @endif @endif>Positif</option>
+                        <option value="Negatif" @if(isset('.$pasien.')) @if('.$pasien->hasil.' == "Negatif") selected @endif @endif>Negatif</option>    
+                    </select>
                 </div>';
 
         return response()->json(['html'=>$html]);

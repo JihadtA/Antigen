@@ -110,11 +110,19 @@
                 </div>
                 <div class="form-group">
                     <label>Jenis Pemeriksaan:</label>
-                    <input type="text" class="form-control" name="jns_cek" id="jns_cek">
+                    {{-- <input type="text" class="form-control" name="jns_cek" id="jns_cek"> --}}
+                    <select class="form-control mb-1" name="jns_cek" id="jns_cek">
+                        <option value="Rapid">Rapid</option>
+                        <option value="Swap">Swap</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Hasil Pemeriksaan:</label>
-                    <input type="text" class="form-control" name="hasil" id="hasil">
+                    {{-- <input type="text" class="form-control" name="hasil" id="hasil"> --}}
+                    <select class="form-control mb-1" name="hasil" id="hasil">
+                        <option value="Positif">Positif</option>
+                        <option value="Negatif">Negatif</option>
+                    </select>
                 </div>
             </div>
             <!-- Modal footer -->
