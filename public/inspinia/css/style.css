@@ -851,7 +851,7 @@ h5 {
   font-weight: 600;
 }
 .nav > li > a {
-  color: #a7b1c2;
+  color: #ffffff;
   font-weight: 600;
   padding: 14px 20px 14px 25px;
   display: block;
@@ -873,13 +873,14 @@ h5 {
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
-  background-color: #293846;
+  /* background-color: #1ab394; */
+  background: rgba(21, 226, 209, 0.1);
   color: white;
 }
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 .nav.navbar-top-links > li > a:hover,
 .nav.navbar-top-links > li > a:focus {
@@ -893,7 +894,7 @@ h5 {
 }
 .navbar-default {
   background-color: transparent;
-  border-color: #2f4050;
+  border-color: #1ab394;
 }
 .navbar-top-links li {
   display: inline-block;
@@ -912,7 +913,7 @@ h5 {
 .dropdown-menu {
   border: medium none;
   border-radius: 3px;
-  box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+  box-shadow: 0 0 3px rgba(21, 226, 209, 0.7);
   display: none;
   float: left;
   font-size: 12px;
@@ -1000,8 +1001,8 @@ h5 {
 }
 .nav-header {
   padding: 33px 25px;
-  background-color: #2f4050;
-  background-image: url("patterns/header-profile.png");
+  background-color: #18a689;
+  background-image: url("patterns/5.png");
 }
 .caret {
   display: inline-block;
@@ -1020,11 +1021,11 @@ h5 {
   transition: all 0.4s;
 }
 ul.nav-second-level {
-  background: #293846;
+  background:#19aa8d;
 }
 .nav > li.active {
   border-left: 4px solid #19aa8d;
-  background: #293846;
+  background: rgba(3, 116, 106, 0.3);
 }
 .nav.nav-second-level > li.active {
   border: none;
@@ -1208,7 +1209,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 .navbar-fixed-top .navbar-form-custom .form-control { height: 50px}
 .navbar-fixed-top,
 .navbar-static-top {
-  background: #f3f3f4;
+  background: #f3f4f4;
 }
 .fixed-nav #wrapper {
   margin-top: 0;
@@ -4148,8 +4149,8 @@ body.tour-open .animated {
 }
 .stream .stream-badge i.bg-success {
   color: #ffffff;
-  background-color: #1c84c6;
-  border-color: #1c84c6;
+  background-color: #1ab394;
+  border-color: #1ab394;
 }
 .stream .stream-badge i.bg-primary {
   color: #ffffff;
@@ -4227,7 +4228,7 @@ samp {
 }
 .sidebar-panel {
   width: 220px;
-  background: #ebebed;
+  background: #1ab394;
   padding: 10px 20px;
   position: absolute;
   right: 0;
@@ -4373,7 +4374,7 @@ samp {
 }
 body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #2f4050;
+  background-color: #1ab394;
   font-size: 13px;
   color: #676a6c;
   overflow-x: hidden;
