@@ -26,7 +26,8 @@ class PasienController extends Controller
         $data = $pasien->getData();
         return \DataTables::of($data)
             ->addColumn('Actions', function($data) {
-                return '<button type="button" class="btn btn-success btn-sm" id="getEditPasienData" data-id="'.$data->id.'">Edit</button>
+                return '<button type="button" class="btn btn-primary btn-sm" id="getDetailPasienData" data-id="'.$data->id.'">Detail</button>
+                    <button type="button" class="btn btn-success btn-sm" id="getEditPasienData" data-id="'.$data->id.'">Edit</button>
                     <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeletePasienModal" class="btn btn-danger btn-sm" id="getDeleteId">Delete</button>';
             })
             ->rawColumns(['Actions'])
@@ -65,10 +66,42 @@ class PasienController extends Controller
         //
     }
 
+    public function detail($id)
+    {
+        $pasien = new Pasien;
+        $data = $pasien->findData($id);
+        $l = "Laki-Laki";
+        $p = "Perempuan";
+
+        $html = '<table class="table table-borderless">
+                <tbody>
+                <tr>
+                    <th scope="row">NIK</th>
+                    <td>:</td>
+                    <td>".$data->nik."</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nama</th>
+                    <td>:</td>
+                    <td>".$data->nama."</td>
+                </tr>
+                <tr>
+                    <th scope="row">Jenis Kelamin</th>
+                    <td>:</td>
+                    <td>".$data->jns_kelamin."</td>
+                </tr>
+                </tbody>
+            </table>';
+
+        return response()->json(['html'=>$html]);
+    }
+
     public function edit($id)
     {
         $pasien = new Pasien;
         $data = $pasien->findData($id);
+        $l = "Laki-Laki";
+        $p = "Perempuan";
 
         $html = '<div class="form-group">
                     <label>NIK:</label>
@@ -80,7 +113,10 @@ class PasienController extends Controller
                 </div>
                 <div class="form-group">
                     <label>Jenis Kelamin:</label>
-                    <input type="text" class="form-control" name="jns_kelamin" id="editJns_kelamin" value="'.$data->jns_kelamin.'">
+                    <select class="form-control mb-1" name="jns_kelamin" id="editJns_kelamin" value="'.$data->jns_kelamin.'">
+                        <option value="'.$l.'" @if(isset('.$pasien.')) @if('.$pasien->jns_kelamin.' == '.$l.') selected @endif @endif>'.$l.'</option>
+                        <option value="'.$p.'" @if(isset('.$pasien.')) @if('.$pasien->jns_kelamin.' == '.$p.') selected @endif @endif>'.$p.'</option>    
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Tempat Lahir:</label>
@@ -96,11 +132,17 @@ class PasienController extends Controller
                 </div>
                 <div class="form-group">
                     <label>Jenis Pemeriksaan:</label>
-                    <input type="text" class="form-control" name="jns_cek" id="editJns_cek" value="'.$data->jns_cek.'">
+                    <select class="form-control mb-1" name="jns_cek" id="editJns_cek" value="'.$data->jns_cek.'">
+                        <option value="Rapid" @if(isset('.$pasien.')) @if('.$pasien->jns_cek.' == "Rapid") selected @endif @endif>Rapid</option>
+                        <option value="Swap" @if(isset('.$pasien.')) @if('.$pasien->jns_cek.' == "Swap") selected @endif @endif>Swap</option>    
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Hasil Pemeriksaan:</label>
-                    <input type="text" class="form-control" name="hasil" id="editHasil" value="'.$data->hasil.'">
+                    <select class="form-control mb-1" name="hasil" id="editHasil" value="'.$data->hasil.'">
+                        <option value="Positif" @if(isset('.$pasien.')) @if('.$pasien->hasil.' == "Positif") selected @endif @endif>Positif</option>
+                        <option value="Negatif" @if(isset('.$pasien.')) @if('.$pasien->hasil.' == "Negatif") selected @endif @endif>Negatif</option>    
+                    </select>
                 </div>';
 
         return response()->json(['html'=>$html]);
