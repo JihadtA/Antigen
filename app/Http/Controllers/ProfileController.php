@@ -12,9 +12,9 @@ class ProfileController extends Controller
         return view('profile',[
             "title" => "Profile",
             "judultabel" => "Profile",
-            "name" => "Puan Maharani",
-            "email" => "puanmaharani@gmail.com",
-            "image" => "puan.jpg"
+            "name" => "Swab Antigen Test",
+            "email" => "Swab antigen atau dikenal dengan rapid antigen bekerja dengan cara mendeteksi protein tertentu dari virus yang memunculkan respons kekebalan tubuh. Bila kamu ingin membuat janji pemeriksaan swab antigen atau rapid antigen di rumah sakit yang dekat dari rumah",
+            "image" => "test.jpg"
          ]);
     }
 }
