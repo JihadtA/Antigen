@@ -4,8 +4,9 @@
 			<form method="POST" action="{{ route('login') }}">
 				@csrf
 
-				<img src="img/avatar.svg">
-				<h4 class="title">Selamat Datang</h4>
+				{{-- <img src="img/avatar.svg"> --}}
+				<h4 class="mb-5">Selamat Datang</h4>
+				{{-- <h4 class="title">Selamat Datang</h4> --}}
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
@@ -49,12 +50,12 @@
 					</a>
 				@endif
 
-				<hr style="margin-top: 20px; margin-bottom: 20px;">
+				{{-- <hr style="margin-top: 20px; margin-bottom: 20px;"> --}}
 
-				<button type="button" class="btn">
+				{{-- <button type="button" class="btn">
 					<a id="link" href="{{ route('register') }}">
 						{{ __('Register') }}
 					</a>
-				</button>
+				</button> --}}
             </form>
 @endsection
