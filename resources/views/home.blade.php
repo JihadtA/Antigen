@@ -3,7 +3,6 @@
     <h2>{{ $title }}</h2>
 @endsection
 @section('content')
-<p>Halaman Home</p>
 <div id="kopi-covid"></div>
 <script>
   var f = document.createElement("iframe")

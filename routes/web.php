@@ -40,4 +40,5 @@ Route::get('/datapeserta', [DataPesertaController::class, 'index'])->name('datap
 
 Route::resource('pasien', PasienController::class);
 Route::get('get-pasien', [PasienController::class, 'getPasien'])->name('get-pasien');
+Route::get('/pasien/{id?}', [PasienController::class, 'show']);
 

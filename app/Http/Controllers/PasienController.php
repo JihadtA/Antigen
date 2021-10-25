@@ -17,7 +17,7 @@ class PasienController extends Controller
     {
         return view('data.pasien',[
             "title" => "Pasien",
-            "judultabel" => "Data Pasien",
+            "judultabel" => "Data Pasien"
         ]);
     }
 
@@ -26,7 +26,8 @@ class PasienController extends Controller
         $data = $pasien->getData();
         return \DataTables::of($data)
             ->addColumn('Actions', function($data) {
-                return '<button type="button" class="btn btn-primary btn-sm" id="getDetailPasienData" data-id="'.$data->id.'">Detail</button>
+                return '
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/pasien/{"'.$data->id.'"}" class ="text-decoration-none text-white" >Detail </a></button>
                     <button type="button" class="btn btn-success btn-sm" id="getEditPasienData" data-id="'.$data->id.'">Edit</button>
                     <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeletePasienModal" class="btn btn-danger btn-sm" id="getDeleteId">Delete</button>';
             })
@@ -63,7 +64,11 @@ class PasienController extends Controller
 
     public function show(Pasien $pasien)
     {
-        //
+        return view("data.detailpasien",[
+            "title" => "Pasien",
+            "judultabel" => "Data Pasien",
+            "pasien" => $pasien
+        ]);
     }
 
     public function detail($id)
@@ -73,25 +78,38 @@ class PasienController extends Controller
         $l = "Laki-Laki";
         $p = "Perempuan";
 
-        $html = '<table class="table table-borderless">
-                <tbody>
-                <tr>
-                    <th scope="row">NIK</th>
-                    <td>:</td>
-                    <td>".$data->nik."</td>
-                </tr>
-                <tr>
-                    <th scope="row">Nama</th>
-                    <td>:</td>
-                    <td>".$data->nama."</td>
-                </tr>
-                <tr>
-                    <th scope="row">Jenis Kelamin</th>
-                    <td>:</td>
-                    <td>".$data->jns_kelamin."</td>
-                </tr>
-                </tbody>
-            </table>';
+        $html = '<div class="form-group">
+                    <label>NIK:</label>
+                    <input type="text" class="form-control" name="nik" id="detailNik" value="'.$data->nik.'" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Nama:</label>
+                    <input type="text" class="form-control" name="nama" id="detailNama" value="'.$data->nama.'" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Jenis Kelamin:</label>
+                    <input type="text" class="form-control" name="jns_kelamin" id="detailJns_kelamin" value="'.$data->jns_kelamin.'" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Tempat Lahir:</label>
+                    <input type="text" class="form-control" name="tmpt_lahir" id="detailTmpt_lahir" value="'.$data->tmpt_lahir.'" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Tanggal Lahir:</label>
+                    <input type="text" class="form-control" name="tgl_lahir" id="detailTgl_lahir" value="'.$data->tgl_lahir.'" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Alamat:</label>
+                    <input type="text" class="form-control" name="alamat" id="detailAlamat" value="'.$data->alamat.'" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Jenis Pemeriksaan:</label>
+                    <input type="text" class="form-control" name="jns_cek" id="detailJns_cel" value="'.$data->jns_cek.'" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Hasil Pemeriksaan:</label>
+                    <input type="text" class="form-control" name="hasil" id="detailHasil" value="'.$data->hasil.'" readonly>
+                </div>';
 
         return response()->json(['html'=>$html]);
     }
@@ -103,6 +121,7 @@ class PasienController extends Controller
         $l = "Laki-Laki";
         $p = "Perempuan";
 
+        
         $html = '<div class="form-group">
                     <label>NIK:</label>
                     <input type="text" class="form-control" name="nik" id="editNik" value="'.$data->nik.'">

@@ -38,13 +38,8 @@
                         <table class="table table-bordered datatable">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>NIK</th>
                                     <th>Nama</th>
-                                    <th>Jenis Kelamin</th>
-                                    <th>Tempat Lahir</th>
-                                    <th>Tanggal Lahir</th>
-                                    <th>Alamat</th>
                                     <th>Jenis Cek</th>
                                     <th>Hasil</th>
                                     <th width="150" class="text-center">Action</th>
@@ -191,26 +186,38 @@
     </div>
 
 <!-- Detail Pasien Modal -->
-<div class="modal fade" id="DeletePasienModal">
-    <div class="modal-dialog">
+<div class="modal" id="DetailPasienModal">
+    <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Pasien Delete</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Detail Pasien</h4>
+                <button type="button" class="close modelClose" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <h4>Are you sure want to delete this Pasien?</h4>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                    <strong>Success!</strong>Pasien was added successfully.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <div id="DetailPasienModalBody">
+                    
+                </div>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="SubmitDeletePasienForm">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 {{-- </div> --}}
 @endsection
 
@@ -234,13 +241,8 @@
             "order": [[ 0, "desc" ]],
             ajax: '{{ route('get-pasien') }}',
             columns: [
-                {data: 'id', name: 'id'},
                 {data: 'nik', name: 'nik'},
                 {data: 'nama', name: 'nama'},
-                {data: 'jns_kelamin', name: 'jns_kelamin'},
-                {data: 'tmpt_lahir', name: 'tmpt_lahir'},
-                {data: 'tgl_lahir', name: 'tgl_lahir'},
-                {data: 'alamat', name: 'alamat'},
                 {data: 'jns_cek', name: 'jns_cek'},
                 {data: 'hasil', name: 'hasil'},
                 {data: 'Actions', name: 'Actions',orderable:false,serachable:false,sClass:'text-center'},
@@ -289,30 +291,56 @@
             });
         });
 
-        // Detail Data Function
-        var deleteID;
-        $('body').on('click', '#getDetailPasienData', function(){
-            deleteID = $(this).data('id');
-        })
-        $('#SubmitDeletePasienForm').click(function(e) {
-            e.preventDefault();
-            var id = deleteID;
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+         // Get single Pasien in DetailModel
+         $('.modelClose').on('click', function(){
+            $('#DetailPasienModal').hide();
+        });
+        var id;
+        $('body').on('click', '#getDetailPasienData', function(e) {
+            // e.preventDefault();
+            $('.alert-danger').html('');
+            $('.alert-danger').hide();
+            id = $(this).data('id');
             $.ajax({
-                url: "pasien/"+id,
-                method: 'DELETE',
+                url: "pasien/"+id+"/detail",
+                method: 'GET',
+                // data: {
+                //     id: id,
+                // },
                 success: function(result) {
-                    setInterval(function(){ 
-                        $('.datatable').DataTable().ajax.reload();
-                        $('#DeletePasienModal').hide();
-                    }, 1000);
+                    console.log(result);
+                    $('#DetailPasienModalBody').html(result.html);
+                    $('#DetailPasienModal').show();
                 }
             });
         });
+
+
+
+        // // Detail Data Function
+        // var deleteID;
+        // $('body').on('click', '#getDetailPasienData', function(){
+        //     deleteID = $(this).data('id');
+        // })
+        // $('#SubmitDeletePasienForm').click(function(e) {
+        //     e.preventDefault();
+        //     var id = deleteID;
+        //     $.ajaxSetup({
+        //         headers: {
+        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //         }
+        //     });
+        //     $.ajax({
+        //         url: "pasien/"+id,
+        //         method: 'DELETE',
+        //         success: function(result) {
+        //             setInterval(function(){ 
+        //                 $('.datatable').DataTable().ajax.reload();
+        //                 $('#DeletePasienModal').hide();
+        //             }, 1000);
+        //         }
+        //     });
+        // });
 
         // Get single Pasien in EditModel
         $('.modelClose').on('click', function(){
