@@ -424,9 +424,11 @@
                 url: "pasien/"+id,
                 method: 'DELETE',
                 success: function(result) {
+                    $('.datatable').DataTable().ajax.reload();
                     setInterval(function(){ 
-                        $('.datatable').DataTable().ajax.reload();
+                        // $('.datatable').DataTable().ajax.reload();
                         $('#DeletePasienModal').hide();
+                        location.reload();
                     }, 1000);
                 }
             });
