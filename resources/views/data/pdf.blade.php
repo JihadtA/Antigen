@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{ $title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <h3>Data Pasien</h3>
-    <table class="table table-striped" id="example">
+    <h3>{{ $title }}</h3><br>
+    <table class="table table-borderless" id="example">
         <tbody>
             <tr>
                 <td>ID</td>
@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td>Nama</td>
-                <th>{{ $pasien->jns_kelamin }}</th>
+                <th>{{ $pasien->nama }}</th>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
