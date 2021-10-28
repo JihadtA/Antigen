@@ -2,6 +2,14 @@
 @section('breadcrumb')
     <h2>{{ $title }}</h2>
 @endsection
+@section('style')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+@endsection
+@section('script')
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+@endsection
 @section('content')
 <form action="/datapeserta/update/{{ $datapes->id }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -54,7 +62,7 @@
 
             <div class="form-group">
                 <label>Tanggal Lahir</label>
-                <input name="tgl_lahir" class="form-control" value="{{ $datapes->tgl_lahir }}">
+                <input name="tgl_lahir" class="form-control" value="{{ $datapes->tgl_lahir }}" id="datepicker">
                 <div class="text">
                     @error('tgl_lahir')
                         {{ $message }}
@@ -108,4 +116,10 @@
 </div>
 
 </form>
+
+<script>
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap4'
+    });
+</script>
 @endsection
