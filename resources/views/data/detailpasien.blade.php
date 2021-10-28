@@ -8,8 +8,11 @@
         <li class="breadcrumb-item">
             Data
         </li>
+        <li class="breadcrumb-item">
+            <a href="{{ route('pasien.index') }}">Pasien</a>
+        </li>
         <li class="breadcrumb-item active">
-            <strong>Pasien</strong>
+            <strong>Detail</strong>
         </li>
     </ol>
 @endsection
@@ -36,7 +39,7 @@
                         </div>
                     </div> --}}
                     <div class="row">
-                    <table class=" table table-striped" id="example">
+                    <table class="table table-striped" id="example">
                         <tbody>
                             <tr>
                                 <td>Nik</td>
@@ -74,7 +77,8 @@
                     </table>
                         <div class="modal-footer position-relative row mt-3" >
                             <div class="col-sm-12 col-sm-offset-2">
-                            <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich btn-xs text-white">Kembali</a>
+                            <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich text-white">Kembali</a>
+                            <a href="/pasien/printpdf" target="_blank" class="btn btn-danger">Print</a>
                             </div>
                         </div>
                     </div>
