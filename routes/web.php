@@ -36,9 +36,18 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::get('/datates', [DataTesController::class, 'index'])->name('datates.index');
-Route::get('/datapeserta', [DataPesertaController::class, 'index'])->name('datapeserta.index');
 
+//Route Pasien
 Route::resource('pasien', PasienController::class);
 Route::get('get-pasien', [PasienController::class, 'getPasien'])->name('get-pasien');
 Route::get('/pasien/{id?}', [PasienController::class, 'show']);
 
+
+//Route Data Peserta
+Route::get('/datapeserta', [DataPesertaController::class, 'index'])->name('datapeserta.index');
+Route::get('/datapeserta/detail/{id}', [DataPesertaController::class, 'detail'] );
+Route::get('/datapeserta/add', [DataPesertaController::class, 'add'] );
+Route::post('/datapeserta/insert', [DataPesertaController::class, 'insert'] );
+Route::get('/datapeserta/edit/{id}', [DataPesertaController::class, 'edit'] );
+Route::post('/datapeserta/update/{id}', [DataPesertaController::class, 'update'] );
+Route::get('/datapeserta/delete/{id}', [DataPesertaController::class, 'delete'] );
