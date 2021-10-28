@@ -11,7 +11,8 @@
 <h2><p>UPDATE</p></h2>
 <p>1. git pull https://github.com/FahruzHif/AntigenTest.git</p>
 <p>2. composer require yajra/laravel-datatables-oracle</p>
-<p>3. php artisan migrate</p>
+<p>3. composer require barryvdh/laravel-dompdf</p>
+<p>4. php artisan migrate</p>
 
 <br>
 
