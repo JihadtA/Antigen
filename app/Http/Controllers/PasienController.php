@@ -13,6 +13,16 @@ class PasienController extends Controller
         $this->middleware('auth');
     }
 
+    public function pdf($id, Pasien $pasien)
+    {
+        // $pasien = Pasien::all();
+        $pasien = new Pasien;
+        $data = $pasien->findData($id);
+
+        $pdf = \PDF::loadView('data.pdf', ['pasien'=>$pasien]);
+        return $pdf->stream('data-pasien.pdf');
+    }
+
     public function index()
     {
         return view('data.pasien',[
@@ -27,7 +37,7 @@ class PasienController extends Controller
         return \DataTables::of($data)
             ->addColumn('Actions', function($data) {
                 return '
-                    <button type="button" class="btn btn-primary btn-sm"><a href="/pasien/'.$data->id.'}" class ="text-decoration-none text-white" >Detail </a></button>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/pasien/'.$data->id.'" class ="text-decoration-none text-white" >Detail </a></button>
                     <button type="button" class="btn btn-success btn-sm" id="getEditPasienData" data-id="'.$data->id.'">Edit</button>
                     <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeletePasienModal" class="btn btn-danger btn-sm" id="getDeleteId">Delete</button>';
             })

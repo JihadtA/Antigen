@@ -51,3 +51,4 @@ Route::post('/datapeserta/insert', [DataPesertaController::class, 'insert'] );
 Route::get('/datapeserta/edit/{id}', [DataPesertaController::class, 'edit'] );
 Route::post('/datapeserta/update/{id}', [DataPesertaController::class, 'update'] );
 Route::get('/datapeserta/delete/{id}', [DataPesertaController::class, 'delete'] );
+Route::get('/pasien/{id?}/cetak', [PasienController::class, 'pdf']);

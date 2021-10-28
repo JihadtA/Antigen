@@ -78,7 +78,7 @@
                         <div class="modal-footer position-relative row mt-3" >
                             <div class="col-sm-12 col-sm-offset-2">
                             <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich text-white">Kembali</a>
-                            <a href="/pasien/printpdf" target="_blank" class="btn btn-danger">Print</a>
+                            <a href="/pasien/{{ $pasien->id }}/cetak" target="_blank" class="btn btn-danger">Print</a>
                             </div>
                         </div>
                     </div>
