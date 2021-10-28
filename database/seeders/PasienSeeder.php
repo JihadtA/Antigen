@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class DataPesertaSeeder extends Seeder
+class PasienSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,7 @@ class DataPesertaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('data_pesertas')->insert([
+        DB::table('pasien')->insert([
             'nik' => '198273',
             'nama' => 'fahruz',
             'jns_kelamin' => 'Laki-Laki',
@@ -26,7 +26,7 @@ class DataPesertaSeeder extends Seeder
         ]
     );
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '738201',
         'nama' => 'Nia',
         'jns_kelamin' => 'Perempuan',
@@ -40,7 +40,7 @@ class DataPesertaSeeder extends Seeder
     );
 
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '3456321',
         'nama' => 'Hanung',
         'jns_kelamin' => 'Laki-Laki',
@@ -53,7 +53,7 @@ class DataPesertaSeeder extends Seeder
           ]
     );
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '771823',
         'nama' => 'Rezha',
         'jns_kelamin' => 'Laki-Laki',
@@ -66,7 +66,7 @@ class DataPesertaSeeder extends Seeder
           ]
     );
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '998212',
         'nama' => 'Sari',
         'jns_kelamin' => 'Perempuan',
@@ -79,7 +79,7 @@ class DataPesertaSeeder extends Seeder
         ]
     );
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '872613',
         'nama' => 'Daniel',
         'jns_kelamin' => 'Laki-Laki',
@@ -92,7 +92,7 @@ class DataPesertaSeeder extends Seeder
           ]
     );
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '112321',
         'nama' => 'Lena',
         'jns_kelamin' => 'Perempuan',
@@ -105,7 +105,7 @@ class DataPesertaSeeder extends Seeder
           ]
     );
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '665212',
         'nama' => 'Keny',
         'jns_kelamin' => 'Laki-Laki',
@@ -118,7 +118,7 @@ class DataPesertaSeeder extends Seeder
           ]
     );
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '998212',
         'nama' => 'Lailatul',
         'jns_kelamin' => 'Perempuan',
@@ -131,7 +131,7 @@ class DataPesertaSeeder extends Seeder
           ]
     );
 
-    DB::table('data_pesertas')->insert([
+    DB::table('pasien')->insert([
         'nik' => '55412',
         'nama' => 'Intan',
         'jns_kelamin' => 'Perempuan',
@@ -142,6 +142,6 @@ class DataPesertaSeeder extends Seeder
         'hasil' => 'Positif'
 
           ]
-    );  
+    );
     }
 }
