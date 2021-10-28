@@ -19,7 +19,7 @@ class PasienController extends Controller
         $pasien = new Pasien;
         $data = $pasien->findData($id);
 
-        $pdf = \PDF::loadView('data.pdf', ['pasien'=>$pasien]);
+        $pdf = \PDF::loadView('data.pdf', ["pasien"=>$data, "title"=>"Data Pasien"]);
         return $pdf->stream('data-pasien.pdf');
     }
 
