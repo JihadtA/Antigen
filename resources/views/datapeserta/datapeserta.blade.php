@@ -3,7 +3,9 @@
 <h2>{{ $title }}</h2>
 @endsection
 @section('content')
-<a href="/datapeserta/add" class="btn btn-primary btn-sm">Tambah</a>
+<div class="text-right mr-3">
+  <a href="/datapeserta/add" class="btn btn-primary btn-sm">Tambah</a>
+</div>
 <p></p>   
    @if (session('pesan'))
    <div class="alert alert-success alert-dismissible">
@@ -41,7 +43,7 @@
               <td>
                 <a href="/datapeserta/detail/{{$data->id}}" class="btn btn-sm btn-success">Detail</a>
                 <a href="/datapeserta/edit/{{ $data->id }}" class="btn btn-sm btn-warning">Edit</a>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ $data->id }}">Delete</button>
+                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete{{ $data->id }}">Delete</button>
               </td>
             </tr>
             @endforeach
