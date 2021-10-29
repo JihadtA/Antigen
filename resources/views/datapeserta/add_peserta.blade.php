@@ -104,11 +104,13 @@
                         {{ $message }}
                     @enderror
                 </div>
+                <div class="mb-5">
             </div>
 
             <div class="form-group">
                 <button class="btn btn-primary ">Simpan</button>
                 <a href="/datapeserta" class="btn btn-success">Kembali</a>
+                <div class="mb-5">
             </div>
 
         </div>
