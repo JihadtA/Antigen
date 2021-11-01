@@ -49,5 +49,8 @@
             </tr>
         </tbody>
     </table>
+    
+    <img src="data:image/png;base64, {!! $qrcode !!}">
+
 </body>
 </html>

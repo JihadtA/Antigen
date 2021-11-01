@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Pasien;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PasienController extends Controller
 {
@@ -19,7 +21,10 @@ class PasienController extends Controller
         $pasien = new Pasien;
         $data = $pasien->findData($id);
 
-        $pdf = \PDF::loadView('data.pdf', ["pasien"=>$data, "title"=>"Data Pasien"]);
+        // QR Code
+        $qrcode = base64_encode(QrCode::format('svg')->size(200)->errorCorrection('H')->generate(Request::url()));
+
+        $pdf = \PDF::loadView('data.pdf', ["pasien"=>$data, "title"=>"Data Pasien", "qrcode"=>$qrcode]);
         return $pdf->stream('data-pasien.pdf');
     }
 
