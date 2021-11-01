@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use SimpleSoftwareIO\QrCode\Generator;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DataTesController;

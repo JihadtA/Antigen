@@ -75,6 +75,11 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="visible-print text-center">
+                        {!! QrCode::size(100)->generate(Request::url()); !!}
+                    </div> <br>
+                    
                         <div class="modal-footer position-relative row mt-3" >
                             <div class="col-sm-12 col-sm-offset-2">
                             <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich text-white">Kembali</a>
