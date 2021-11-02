@@ -10,6 +10,12 @@
         .center{
             text-align: center;
         }
+        .right{
+            text-align: right;
+        }
+        .left{
+            text-align: left;
+        }
         .full{
             width: 100%;
         }
@@ -32,8 +38,9 @@
     </style>
 </head>
 <body>
-    <div class="center full">
-        <h3>Data Pasien Test Antigen</h3><br>
+    <div class="wrapper">
+        <img style="height:60px width: 140px; float:right;" src="img/logo.png">
+        <h3 class="left">Data Pasien Test Antigen</h3><br>
     </div>
 
     <div class="wrapper">
@@ -84,5 +91,11 @@
         <div class="mt-5">
         <img style="max width: 50px;" src="data:image/png;base64, {!! $qrcode !!}">
     </div>
+    <br/>
+    <br/>
+    <hr/>
+    <footer>
+        <p>&copy; <a href="https://www.halodoc.com/artikel/swab-antigen-dan-rapid-test-antigen-beda-atau-sama">www.antigentest.com</p>
+    </footer>
 </body>
 </html>
