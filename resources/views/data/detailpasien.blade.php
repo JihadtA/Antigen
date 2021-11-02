@@ -32,15 +32,10 @@
                     <h5>Detail Pasien</h5>  
                 </div>
                 <div class="ibox-content">
-                    {{-- <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Nama</label>
-                        <div class="col-sm-10">
-                            <span>{{isset($mobil)? $mobil->name : ''}}</span>
-                        </div>
-                    </div> --}}
                     <div class="row">
                     <table class="table table-striped" id="example">
                         <tbody>
+                        
                             <tr>
                                 <td>Nik</td>
                                 <th>{{ isset($pasien)? $pasien->nik : '' }}</th>
@@ -76,14 +71,15 @@
                         </tbody>
                     </table>
 
-                    <div class="visible-print text-center">
-                        {!! QrCode::size(100)->generate(Request::url()); !!}
-                    </div> <br>
+                    <div class="col-md-6">
+                        {{-- {!! QrCode::size(100)->generate(Request::url()); !!} --}}
+                    </div> 
                     
-                        <div class="modal-footer position-relative row mt-3" >
-                            <div class="col-sm-12 col-sm-offset-2">
-                            <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich text-white">Kembali</a>
-                            <a href="/pasien/{{ $pasien->id }}/cetak" target="_blank" class="btn btn-danger">Print</a>
+                    
+                        <div class="modal-footer position-relative mt-3 " >
+                            <div class="col-sm-12 col-sm-offset-2 ">
+                                <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich text-white">Kembali</a>
+                                <a href="/pasien/{{ $pasien->id }}/cetak" target="_blank" class="btn btn-danger">Print</a>
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,6 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use SimpleSoftwareIO\QrCode\Generator;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PasienController;
-use App\Http\Controllers\DataTesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DataPesertaController;
 
@@ -37,7 +36,6 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-Route::get('/datates', [DataTesController::class, 'index'])->name('datates.index');
 
 //Route Pasien
 Route::resource('pasien', PasienController::class);
