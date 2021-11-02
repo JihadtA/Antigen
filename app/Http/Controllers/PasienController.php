@@ -38,13 +38,13 @@ class PasienController extends Controller
 
     public function getPasien(Request $request, Pasien $pasien)
     {
-        $data = $pasien->getData();
+        $data = $pasien->latest();
         return \DataTables::of($data)
             ->addColumn('Actions', function($data) {
                 return '
-                    <button type="button" class="btn btn-primary btn-sm"><a href="/pasien/'.$data->id.'" class ="text-decoration-none text-white" >Detail </a></button>
-                    <button type="button" class="btn btn-success btn-sm" id="getEditPasienData" data-id="'.$data->id.'">Edit</button>
-                    <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeletePasienModal" class="btn btn-danger btn-sm" id="getDeleteId">Delete</button>';
+                    <button type="button" class="btn btn-primary btn-sm "><a href="/pasien/'.$data->id.'" class ="text-decoration-none text-white fa fa-eye" ></a></button>
+                    <button type="button" class="btn btn-success btn-md fa fa-pencil" id="getEditPasienData" data-id="'.$data->id.'"></button>
+                    <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeletePasienModal" class="btn btn-danger btn-md fa fa-times" id="getDeleteId"></button>';
             })
             ->rawColumns(['Actions'])
             ->make(true);
