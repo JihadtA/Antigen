@@ -1,56 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+        .center{
+            text-align: center;
+        }
+        .full{
+            width: 100%;
+        }
+        .wrapper{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+        .bt-1{
+            border-top: 1px solid black;
+        }
+        .bb-1{
+            border-bottom: 1px solid black;
+        }
+        table tr th,table tr td{
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <h3>{{ $title }}</h3><br>
-    <table class="table table-borderless" id="example">
-        <tbody>
-            <tr>
-                <td>ID</td>
-                <th>{{ $pasien->id }}</th>
-            </tr>
-            <tr>
-                <td>NIK</td>
-                <th>{{ $pasien->nik }}</th>
-            </tr>
-            <tr>
-                <td>Nama</td>
-                <th>{{ $pasien->nama }}</th>
-            </tr>
-            <tr>
-                <td>Jenis Kelamin</td>
-                <th>{{ $pasien->jns_kelamin }}</th>
-            </tr>
-            <tr>
-                <td>Tempat Lahir</td>
-                <th>{{ $pasien->tmpt_lahir }}</th>
-            </tr>
-            <tr>
-                <td>Tanggal Lahir</td>
-                <th>{{ $pasien->tgl_lahir }}</th>
-            </tr>
-            <tr>
-                <td>Alamat</td>
-                <th>{{ $pasien->alamat }}</th>
-            </tr>
-            <tr>
-                <td>Jenis Cek</td>
-                <th>{{ $pasien->jns_cek }}</th>
-            </tr>
-            <tr>
-                <td>Hasil</td>
-                <th>{{ $pasien->hasil }}</th>
-            </tr>
-        </tbody>
-    </table>
-    
-    <img src="data:image/png;base64, {!! $qrcode !!}">
+    <div class="center full">
+        <h3>Data Pasien Test Antigen</h3><br>
+    </div>
 
+    <div class="wrapper">
+        <div class="bt-1 bb-1">
+            <table class="table table-borderless" id="example">
+                <tr>
+                    <th>ID</th>
+                    <td>{{ $pasien->id }}</td>
+                </tr>
+                <tr>
+                    <th>NIK</th>
+                    <td>{{ $pasien->nik }}</td>
+                </tr>
+                <tr>
+                    <th>Nama</th>
+                    <td>{{ $pasien->nama }}</td>
+                </tr>
+                <tr>
+                    <th>Jenis Kelamin</th>
+                    <td>{{ $pasien->jns_kelamin }}</td>
+                </tr>
+                <tr>
+                    <th>Tempat Lahir</th>
+                    <td>{{ $pasien->tmpt_lahir }}</td>
+                </tr>
+                <tr>
+                    <th>Tanggal Lahir</th>
+                    <td>{{ $pasien->tgl_lahir }}</td>
+                </tr>
+                <tr>
+                    <th>Alamat</th>
+                    <td>{{ $pasien->alamat }}</td>
+                </tr>
+                <tr>
+                    <th>Jenis Cek</th>
+                    <td>{{ $pasien->jns_cek }}</td>
+                </tr>
+                <tr>
+                    <th>Hasil</th>
+                    <td>{{ $pasien->hasil }}</td>
+                </tr>   
+            </table>
+        </div>
+    </div>
+    <div class="center full">
+        <div class="mt-5">
+        <h3>Scan Me!</h3>
+        <div class="mt-5">
+        <img style="max width: 50px;" src="data:image/png;base64, {!! $qrcode !!}">
+    </div>
 </body>
 </html>
