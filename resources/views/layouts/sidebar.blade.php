@@ -5,7 +5,7 @@
                 <div class="dropdown profile-element">
                     <img alt="image" class="rounded-circle mb-2" src="{{ asset('img/pp.png') }}" style="width: 80px; height: 80px;"/>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="block m-t-xs font-bold">Admin</span>
+                        <!-- <span class="block m-t-xs font-bold">Admin</span> -->
                         <span class="text-muted text-xs block">Administrator <b class="caret"></b></span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
