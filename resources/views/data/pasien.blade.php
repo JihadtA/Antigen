@@ -38,9 +38,9 @@
                         <table class="table table-bordered datatable">
                             <thead>
                                 <tr>
-                                    <th>No Rekam Medis</th>
-                                    <th>Nama</th>
-                                    <th>Tanggal Tes</th>
+                                    <th width="180">No Rekam Medis</th>
+                                    <th >Nama</th>
+                                    <th width="180">Tanggal Tes</th>
                                     <th>Hasil</th>
                                     <th width="150" class="text-center">Action</th>
                                 </tr>

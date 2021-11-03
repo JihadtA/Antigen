@@ -47,24 +47,28 @@
         <div class="bt-1 bb-1">
             <table class="table table-borderless" id="example">
                 <tr>
-                    <th>ID</th>
-                    <td>{{ $pasien->id }}</td>
+                    <th>No Laboratory</th>
+                    <td>{{ $pasien->no_lab }}</td>
                 </tr>
                 <tr>
-                    <th>NIK</th>
-                    <td>{{ $pasien->nik }}</td>
+                    <th>No Rekam Medis</th>
+                    <td>{{ $pasien->no_rm }}</td>
                 </tr>
                 <tr>
                     <th>Nama</th>
                     <td>{{ $pasien->nama }}</td>
                 </tr>
                 <tr>
+                    <th>Nama Dokter</th>
+                    <td>{{ $pasien->nama_dok }}</td>
+                </tr>
+                <tr>
                     <th>Jenis Kelamin</th>
                     <td>{{ $pasien->jns_kelamin }}</td>
                 </tr>
                 <tr>
-                    <th>Tempat Lahir</th>
-                    <td>{{ $pasien->tmpt_lahir }}</td>
+                    <th>Umur</th>
+                    <td>{{ $pasien->umur }}</td>
                 </tr>
                 <tr>
                     <th>Tanggal Lahir</th>
@@ -75,13 +79,37 @@
                     <td>{{ $pasien->alamat }}</td>
                 </tr>
                 <tr>
-                    <th>Jenis Cek</th>
-                    <td>{{ $pasien->jns_cek }}</td>
+                    <th>No HP</th>
+                    <td>{{ $pasien->no_hp }}</td>
                 </tr>
                 <tr>
-                    <th>Hasil</th>
+                    <th>Lokasi</th>
+                    <td>{{ $pasien->lokasi }}</td>
+                </tr>
+                <tr>
+                    <th>Tanggal Tes</th>
+                    <td>{{ $pasien->tgl_tes }}</td>
+                </tr>
+                <tr>
+                    <th>Bahan Tes</th>
+                    <td>{{ $pasien->bahan }}</td>
+                </tr>
+                <tr>
+                    <th>Hasil Tes</th>
                     <td>{{ $pasien->hasil }}</td>
-                </tr>   
+                </tr>
+                <tr>
+                    <th>Nilai Rujukan</th>
+                    <td>{{ $pasien->nilai_rujukan }}</td>
+                </tr>
+                <tr>
+                    <th>Satuan</th>
+                    <td>{{ $pasien->satuan }}</td>
+                </tr>
+                <tr>
+                    <th>Metode</th>
+                    <td>{{ $pasien->metode }}</td>
+                </tr>
             </table>
         </div>
     </div>

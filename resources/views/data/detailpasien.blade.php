@@ -37,8 +37,12 @@
                         <tbody>
                         
                             <tr>
-                                <td>Nik</td>
-                                <th>{{ isset($pasien)? $pasien->nik : '' }}</th>
+                                <td>No Lab</td>
+                                <th>{{ isset($pasien)? $pasien->no_lab : '' }}</th>
+                            </tr>
+                            <tr>
+                                <td>No Rekam Medis</td>
+                                <th>{{ isset($pasien)? $pasien->no_rm : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Nama</td>
@@ -49,8 +53,8 @@
                                 <th>{{ isset($pasien)? $pasien->jns_kelamin : '' }}</th>
                             </tr>
                             <tr>
-                                <td>Tempat Lahir</td>
-                                <th>{{ isset($pasien)? $pasien->tmpt_lahir : '' }}</th>
+                                <td>Umur</td>
+                                <th>{{ isset($pasien)? $pasien->umur : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Tanggal Lahir</td>
@@ -61,12 +65,36 @@
                                 <th>{{ isset($pasien)? $pasien->alamat : '' }}</th>
                             </tr>
                             <tr>
-                                <td>Jenis Cek</td>
-                                <th>{{ isset($pasien)? $pasien->jns_cek : '' }}</th>
+                                <td>No Hp</td>
+                                <th>{{ isset($pasien)? $pasien->no_hp : '' }}</th>
+                            </tr>
+                            <tr>
+                                <td>Lokasi</td>
+                                <th>{{ isset($pasien)? $pasien->lokasi : '' }}</th>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Tes</td>
+                                <th>{{ isset($pasien)? $pasien->tgl_tes : '' }}</th>
+                            </tr>
+                            <tr>
+                                <td>Bahan</td>
+                                <th>{{ isset($pasien)? $pasien->bahan : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Hasil</td>
                                 <th>{{ isset($pasien)? $pasien->hasil : '' }}</th>
+                            </tr>
+                            <tr>
+                                <td>Nilai Rujukan</td>
+                                <th>{{ isset($pasien)? $pasien->nilai_rujukan : '' }}</th>
+                            </tr>
+                            <tr>
+                                <td>Satuan</td>
+                                <th>{{ isset($pasien)? $pasien->satuan : '' }}</th>
+                            </tr>
+                            <tr>
+                                <td>Metode</td>
+                                <th>{{ isset($pasien)? $pasien->metode : '' }}</th>
                             </tr>
                         </tbody>
                     </table>
