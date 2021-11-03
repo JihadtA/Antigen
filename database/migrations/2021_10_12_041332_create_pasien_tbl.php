@@ -15,14 +15,22 @@ class CreatePasienTbl extends Migration
     {
         Schema::create('pasien', function (Blueprint $table) {
             $table->id();
-            $table->string('nik');
+            $table->string('no_lab');
+            $table->string('no_rm');
             $table->string('nama');
+            $table->string('nama_dok');
             $table->string('jns_kelamin');
-            $table->string('tmpt_lahir');
+            $table->string('umur');
             $table->string('tgl_lahir');
             $table->text('alamat');
-            $table->string('jns_cek');
+            $table->string('no_hp');
+            $table->string('lokasi');
+            $table->string('tgl_tes');
+            $table->string('bahan');
             $table->string('hasil');
+            $table->string('nilai_rujukan');
+            $table->string('satuan');
+            $table->string('metode');
             $table->timestamps();
         });
     }
