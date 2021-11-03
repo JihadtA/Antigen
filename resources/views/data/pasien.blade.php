@@ -16,9 +16,9 @@
 @section('style')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --}}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" >
 @endsection
 
 @section('content')
@@ -106,7 +106,7 @@
                 </div>
                 <div class="form-group">
                     <label>Tanggal Lahir:</label>
-                    <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir">
+                    <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir" data-provide="datepicker">
                 </div>
                 <div class="form-group">
                     <label>Alamat:</label>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="form-group">
                     <label>Tanggal Tes:</label>
-                    <input type="text" class="form-control" name="tgl_tes" id="tgl_tes">
+                    <input type="text" class="form-control" name="tgl_tes" id="tgl_tes" data-provide="datepicker">
                 </div>
                 <div class="form-group">
                     <label>Bahan:</label>
@@ -267,7 +267,13 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
 <script type="text/javascript">
+    $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+	});
+
     $(document).ready(function() {
         // init datatable.
         var dataTable = $('.datatable').DataTable({

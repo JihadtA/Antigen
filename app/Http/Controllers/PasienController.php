@@ -133,7 +133,7 @@ class PasienController extends Controller
                 </div>
                 <div class="form-group">
                     <label>Tanggal Lahir :</label>
-                    <input type="text" class="form-control" name="tgl_lahir" id="editTgl_lahir" value="'.$data->tgl_lahir.'">
+                    <input type="text" class="form-control" name="tgl_lahir" id="editTgl_lahir" data-provide="datepicker" value="'.$data->tgl_lahir.'">
                 </div>
                 <div class="form-group">
                     <label>Alamat :</label>
@@ -149,7 +149,7 @@ class PasienController extends Controller
                 </div>
                 <div class="form-group">
                     <label>Tanggal Tes :</label>
-                    <input type="text" class="form-control" name="tgl_tes" id="editTgl_tes" value="'.$data->tgl_tes.'">
+                    <input type="text" class="form-control" name="tgl_tes" id="editTgl_tes" data-provide="datepicker" value="'.$data->tgl_tes.'">
                 </div>
                 <div class="form-group">
                     <label>Bahan :</label>
