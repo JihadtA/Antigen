@@ -38,9 +38,9 @@
                         <table class="table table-bordered datatable">
                             <thead>
                                 <tr>
-                                    <th>NIK</th>
+                                    <th>No Rekam Medis</th>
                                     <th>Nama</th>
-                                    <th>Jenis Cek</th>
+                                    <th>Tanggal Tes</th>
                                     <th>Hasil</th>
                                     <th width="150" class="text-center">Action</th>
                                 </tr>
@@ -76,12 +76,21 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <label>NIK:</label>
-                    <input type="text" class="form-control" name="nik" id="nik">
+                    <label>No Lab:</label>
+                    <input type="text" class="form-control" name="no_lab" id="no_lab">
                 </div>
+                <div class="form-group">
+                    <label>No Rekam Medis:</label>
+                    <input type="text" class="form-control" name="no_rm" id="no_rm">
+                </div>
+               
                 <div class="form-group">
                     <label>Nama:</label>
                     <input type="text" class="form-control" name="nama" id="nama">
+                </div>
+                <div class="form-group">
+                    <label>Nama Dokter:</label>
+                    <input type="text" class="form-control" name="nama_dok" id="nama_dok">
                 </div>
                 <div class="form-group">
                     <label>Jenis Kelamin:</label>
@@ -92,8 +101,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Tempat Lahir:</label>
-                    <input type="text" class="form-control" name="tmpt_lahir" id="tmpt_lahir">
+                    <label>Umur:</label>
+                    <input type="text" class="form-control" name="umur" id="umur">
                 </div>
                 <div class="form-group">
                     <label>Tanggal Lahir:</label>
@@ -104,19 +113,48 @@
                     <textarea class="form-control" name="alamat" id="alamat"></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Jenis Pemeriksaan:</label>
-                    {{-- <input type="text" class="form-control" name="jns_cek" id="jns_cek"> --}}
-                    <select class="form-control mb-1" name="jns_cek" id="jns_cek">
-                        <option value="Rapid">Rapid</option>
-                        <option value="Swap">Swap</option>
-                    </select>
+                    <label>No Hp:</label>
+                    <input type="text" class="form-control" name="no_hp" id="no_hp">
+                </div>
+                <div class="form-group">
+                    <label>Lokasi:</label>
+                    <input type="text" class="form-control" name="lokasi" id="lokasi">
+                </div>
+                <div class="form-group">
+                    <label>Tanggal Tes:</label>
+                    <input type="text" class="form-control" name="tgl_tes" id="tgl_tes">
+                </div>
+                <div class="form-group">
+                    <label>Bahan:</label>
+                    <input type="text" class="form-control" name="bahan" id="bahan">
                 </div>
                 <div class="form-group">
                     <label>Hasil Pemeriksaan:</label>
-                    {{-- <input type="text" class="form-control" name="hasil" id="hasil"> --}}
                     <select class="form-control mb-1" name="hasil" id="hasil">
                         <option value="Positif">Positif</option>
                         <option value="Negatif">Negatif</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Nilai Rujukan:</label>
+                    <select class="form-control mb-1" name="nilai_rujukan" id="nilai_rujukan">
+                        <option value="Positif">Positif</option>
+                        <option value="Negatif">Negatif</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Satuan:</label>
+                    <select class="form-control mb-1" name="satuan" id="satuan">
+                        <option value="Positif">Positif</option>
+                        <option value="Negatif">Negatif</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Metode:</label>
+                    <select class="form-control mb-1" name="metode" id="metode">
+                        <option value="Swab">Swab</option>
+                        <option value="Rapid">Rapid</option>
+                        <option value="PCR">PCR</option>
                     </select>
                 </div>
             </div>
@@ -241,9 +279,9 @@
             "order": [[ 0, "desc" ]],
             ajax: '{{ route('get-pasien') }}',
             columns: [
-                {data: 'nik', name: 'nik'},
+                {data: 'no_rm', name: 'no_rm'},
                 {data: 'nama', name: 'nama'},
-                {data: 'jns_cek', name: 'jns_cek'},
+                {data: 'tgl_tes', name: 'tgl_tes'},
                 {data: 'hasil', name: 'hasil'},
                 {data: 'Actions', name: 'Actions',orderable:false,serachable:false,sClass:'text-center'},
             ]
@@ -261,14 +299,22 @@
                 url: "{{ route('pasien.store') }}",
                 method: 'post',
                 data: {
-                    nik: $('#nik').val(),
+                    no_lab: $('#no_lab').val(),
+                    no_rm: $('#no_rm').val(),
                     nama: $('#nama').val(),
+                    nama_dok: $('#nama_dok').val(),
                     jns_kelamin: $('#jns_kelamin').val(),
-                    tmpt_lahir: $('#tmpt_lahir').val(),
+                    umur: $('#umur').val(),
                     tgl_lahir: $('#tgl_lahir').val(),
                     alamat: $('#alamat').val(),
-                    jns_cek: $('#jns_cek').val(),
+                    no_hp: $('#no_hp').val(),
+                    lokasi: $('#lokasi').val(),
+                    tgl_tes: $('#tgl_tes').val(),
+                    bahan: $('#bahan').val(),
                     hasil: $('#hasil').val(),
+                    nilai_rujukan: $('#nilai_rujukan').val(),
+                    satuan: $('#satuan').val(),
+                    metode: $('#metode').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
@@ -316,32 +362,6 @@
         });
 
 
-
-        // // Detail Data Function
-        // var deleteID;
-        // $('body').on('click', '#getDetailPasienData', function(){
-        //     deleteID = $(this).data('id');
-        // })
-        // $('#SubmitDeletePasienForm').click(function(e) {
-        //     e.preventDefault();
-        //     var id = deleteID;
-        //     $.ajaxSetup({
-        //         headers: {
-        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //         }
-        //     });
-        //     $.ajax({
-        //         url: "pasien/"+id,
-        //         method: 'DELETE',
-        //         success: function(result) {
-        //             setInterval(function(){ 
-        //                 $('.datatable').DataTable().ajax.reload();
-        //                 $('#DeletePasienModal').hide();
-        //             }, 1000);
-        //         }
-        //     });
-        // });
-
         // Get single Pasien in EditModel
         $('.modelClose').on('click', function(){
             $('#EditPasienModal').hide();
@@ -378,14 +398,22 @@
                 url: "pasien/"+id,
                 method: 'PUT',
                 data: {
-                    nik: $('#editNik').val(),
+                    no_lab: $('#editNo_lab').val(),
+                    no_rm: $('#editNo_rm').val(),
                     nama: $('#editNama').val(),
+                    nama_dok: $('#editNama_dok').val(),
                     jns_kelamin: $('#editJns_kelamin').val(),
-                    tmpt_lahir: $('#editTmpt_lahir').val(),
+                    umur: $('#editUmur').val(),
                     tgl_lahir: $('#editTgl_lahir').val(),
                     alamat: $('#editAlamat').val(),
-                    jns_cek: $('#editJns_cek').val(),
+                    no_hp: $('#editNo_hp').val(),
+                    lokasi: $('#editLokasi').val(),
+                    tgl_tes: $('#editTgl_tes').val(),
+                    bahan: $('#editBahan').val(),
                     hasil: $('#editHasil').val(),
+                    nilai_rujukan: $('#editNilai_rujukan').val(),
+                    satuan: $('#editSatuan').val(),
+                    metode: $('#editMetode').val(),
                 },
                 success: function(result) {
                     if(result.errors) {

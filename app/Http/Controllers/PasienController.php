@@ -10,10 +10,10 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PasienController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function pdf($id, Pasien $pasien)
     {
@@ -59,14 +59,22 @@ class PasienController extends Controller
     {
         
         $validator = \Validator::make($request->all(), [
-            'nik' => 'required',
-            'nama' => 'required',
-            'jns_kelamin' => 'required',
-            'tmpt_lahir' => 'required',
-            'tgl_lahir' => 'required',
-            'alamat' => 'required',
-            'jns_cek' => 'required',
-            'hasil' => 'required',
+            'no_lab'        => 'required',
+            'no_rm'         => 'required',
+            'nama'          => 'required',
+            'nama_dok'      => 'required',
+            'jns_kelamin'   => 'required',
+            'umur'          => 'required',
+            'tgl_lahir'     => 'required',
+            'alamat'        => 'required',
+            'no_hp'         => 'required',
+            'lokasi'        => 'required',
+            'tgl_tes'       => 'required',
+            'bahan'         => 'required',
+            'hasil'         => 'required',
+            'nilai_rujukan' => 'required',
+            'satuan'        => 'required',
+            'metode'        => 'required',
         ]);
         
         if ($validator->fails()) {
@@ -97,44 +105,82 @@ class PasienController extends Controller
 
         
         $html = '<div class="form-group">
-                    <label>NIK:</label>
-                    <input type="text" class="form-control" name="nik" id="editNik" value="'.$data->nik.'">
+                    <label>No Laboratory :</label>
+                    <input type="text" class="form-control" name="no_lab" id="editNo_lab" value="'.$data->no_lab.'">
                 </div>
                 <div class="form-group">
-                    <label>Nama:</label>
+                    <label>No Rekam Medis :</label>
+                    <input type="text" class="form-control" name="no_rm" id="editNo_rm" value="'.$data->no_rm.'">
+                </div>
+                <div class="form-group">
+                    <label>Nama :</label>
                     <input type="text" class="form-control" name="nama" id="editNama" value="'.$data->nama.'">
                 </div>
                 <div class="form-group">
-                    <label>Jenis Kelamin:</label>
+                    <label>Nama Dokter :</label>
+                    <input type="text" class="form-control" name="nama_dok" id="editNama_dok" value="'.$data->nama_dok.'">
+                </div>
+                <div class="form-group">
+                    <label>Jenis Kelamin :</label>
                     <select class="form-control mb-1" name="jns_kelamin" id="editJns_kelamin" value="'.$data->jns_kelamin.'">
                         <option value="'.$l.'" @if(isset('.$pasien.')) @if('.$pasien->jns_kelamin.' == '.$l.') selected @endif @endif>'.$l.'</option>
                         <option value="'.$p.'" @if(isset('.$pasien.')) @if('.$pasien->jns_kelamin.' == '.$p.') selected @endif @endif>'.$p.'</option>    
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Tempat Lahir:</label>
-                    <input type="text" class="form-control" name="tmpt_lahir" id="editTmpt_lahir" value="'.$data->tmpt_lahir.'">
+                    <label>Umur :</label>
+                    <input type="text" class="form-control" name="umur" id="editUmur" value="'.$data->umur.'">
                 </div>
                 <div class="form-group">
-                    <label>Tanggal Lahir:</label>
+                    <label>Tanggal Lahir :</label>
                     <input type="text" class="form-control" name="tgl_lahir" id="editTgl_lahir" value="'.$data->tgl_lahir.'">
                 </div>
                 <div class="form-group">
-                    <label>Alamat:</label>
+                    <label>Alamat :</label>
                     <textarea class="form-control" name="alamat" id="editAlamat">'.$data->alamat.'</textarea>
                 </div>
                 <div class="form-group">
-                    <label>Jenis Pemeriksaan:</label>
-                    <select class="form-control mb-1" name="jns_cek" id="editJns_cek" value="'.$data->jns_cek.'">
-                        <option value="Rapid" @if(isset('.$pasien.')) @if('.$pasien->jns_cek.' == "Rapid") selected @endif @endif>Rapid</option>
-                        <option value="Swap" @if(isset('.$pasien.')) @if('.$pasien->jns_cek.' == "Swap") selected @endif @endif>Swap</option>    
-                    </select>
+                    <label>No HP :</label>
+                    <input type="text" class="form-control" name="no_hp" id="editNo_hp" value="'.$data->no_hp.'">
                 </div>
                 <div class="form-group">
-                    <label>Hasil Pemeriksaan:</label>
+                    <label>Lokasi :</label>
+                    <input type="text" class="form-control" name="lokasi" id="editLokasi" value="'.$data->lokasi.'">
+                </div>
+                <div class="form-group">
+                    <label>Tanggal Tes :</label>
+                    <input type="text" class="form-control" name="tgl_tes" id="editTgl_tes" value="'.$data->tgl_tes.'">
+                </div>
+                <div class="form-group">
+                    <label>Bahan :</label>
+                    <input type="text" class="form-control" name="bahan" id="editBahan" value="'.$data->bahan.'">
+                </div>
+                <div class="form-group">
+                    <label>Hasil :</label>
                     <select class="form-control mb-1" name="hasil" id="editHasil" value="'.$data->hasil.'">
                         <option value="Positif" @if(isset('.$pasien.')) @if('.$pasien->hasil.' == "Positif") selected @endif @endif>Positif</option>
                         <option value="Negatif" @if(isset('.$pasien.')) @if('.$pasien->hasil.' == "Negatif") selected @endif @endif>Negatif</option>    
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Nilai Rujukan :</label>
+                    <select class="form-control mb-1" name="nilai_rujukan" id="editNilai_rujukan" value="'.$data->nilai_rujukan.'">
+                        <option value="Positif" @if(isset('.$pasien.')) @if('.$pasien->nilai_rujukan.' == "Positif") selected @endif @endif>Positif</option>
+                        <option value="Negatif" @if(isset('.$pasien.')) @if('.$pasien->nilai_rujukan.' == "Negatif") selected @endif @endif>Negatif</option>    
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Satuan :</label>
+                    <select class="form-control mb-1" name="satuan" id="editSatuan" value="'.$data->satuan.'">
+                        <option value="Positif" @if(isset('.$pasien.')) @if('.$pasien->satuan.' == "Positif") selected @endif @endif>Positif</option>
+                        <option value="Negatif" @if(isset('.$pasien.')) @if('.$pasien->satuan.' == "Negatif") selected @endif @endif>Negatif</option>    
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Metode :</label>
+                    <select class="form-control mb-1" name="metode" id="editMetode" value="'.$data->metode.'">
+                        <option value="Swab" @if(isset('.$pasien.')) @if('.$pasien->metode.' == "Swab") selected @endif @endif>Swab</option>
+                        <option value="Rapid" @if(isset('.$pasien.')) @if('.$pasien->metode.' == "Rapid") selected @endif @endif>Rapid</option>
                     </select>
                 </div>';
 
@@ -144,14 +190,22 @@ class PasienController extends Controller
     public function update(Request $request, $id)
     {
         $validator = \Validator::make($request->all(), [
-            'nik' => 'required',
-            'nama' => 'required',
-            'jns_kelamin' => 'required',
-            'tmpt_lahir' => 'required',
-            'tgl_lahir' => 'required',
-            'alamat' => 'required',
-            'jns_cek' => 'required',
-            'hasil' => 'required',
+            'no_lab'        => 'required',
+            'no_rm'         => 'required',
+            'nama'          => 'required',
+            'nama_dok'      => 'required',
+            'jns_kelamin'   => 'required',
+            'umur'          => 'required',
+            'tgl_lahir'     => 'required',
+            'alamat'        => 'required',
+            'no_hp'         => 'required',
+            'lokasi'        => 'required',
+            'tgl_tes'       => 'required',
+            'bahan'         => 'required',
+            'hasil'         => 'required',
+            'nilai_rujukan' => 'required',
+            'satuan'        => 'required',
+            'metode'        => 'required',
         ]);
         
         if ($validator->fails()) {
