@@ -30,7 +30,7 @@
                     <div class="card-title">
                         <div class="text-right mr-3">
                             <button class="btn btn-primary btn-sm" type="button"  data-toggle="modal" data-target="#CreatePasienModal">
-                                <strong>Create Pasien</strong>
+                                <strong>Tambah Pasien</strong>
                             </button>
                         </div>
                     </div>
