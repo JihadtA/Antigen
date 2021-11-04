@@ -12,7 +12,7 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Email</h5>
+           		   		<h5>Username</h5>
 						<input id="email" type="email" class="form-control input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 						
 						@error('email')
