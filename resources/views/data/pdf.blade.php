@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div class="wrapper">
+    <div class="wrapper mt-2">
         <div class="bt-1 bb-1">
             <div class="mt-1">
                 <table class="mid table table-borderless mt-1 mb-1">
@@ -117,16 +117,45 @@
                         <tr>
                             <th scope="col">PEMERIKSAAN</th>
                             <th scope="col">HASIL</th>
-                            <th scope="col">NILAI RUJUKAN</th>
-                            <th scope="col">SATUAN</th>
-                            <th scope="col">METODE</th>
+                            <th scope="col" style="text-align:center;">NILAI RUJUKAN</th>
+                            <th scope="col" style="text-align:center;">SATUAN</th>
+                            <th scope="col" style="text-align:center;">METODE</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <tr>
+                            <td style="border-top:solid"><i><b>IMUNOLOGI</b></i></td>
+                            <td style="border-top:solid"></td>
+                            <td style="border-top:solid"></td>
+                            <td style="border-top:solid"></td>
+                            <td style="border-top:solid"></td>
+                        <tr>
+                            <td><b>PCR SARS-Cov-2</b></td>
+                            <td>{{ $pasien->hasil }}</td>
+                            <td style="text-align:center;">{{ $pasien->nilai_rujukan }}</td>
+                            <td style="text-align:center;">{{ $pasien->satuan }}</td>
+                            <td style="text-align:center;">{{ $pasien->metode }}</td>
+                        <tr>
+                            <td><b>Tanggal Tes</b></td>
+                            <td>{{ $pasien->tgl_tes }}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        <tr>
+                            <td><b>Bahan Tes</b></td>
+                            <td>{{ $pasien->bahan }}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <tbody>
+
                 </table>
             </div>
         </div>
     </div>
-    <div class="wrapper">
+    <!-- <div class="wrapper">
         <div class="bb-1">
             <div class="mt-1">
                 <table class="half table table-borderless mt-1 mb-1">            
@@ -150,7 +179,7 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="center mid">
         <div class="mt-5">
         <h3>Scan Me!</h3>
