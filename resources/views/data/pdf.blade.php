@@ -13,10 +13,13 @@
             text-align: left;
         }
         .full{
-            width: 100%;
+            width: 110%;
         }
         .half{
             width : 85%;
+        }
+        .mid{
+            width : 100%;
         }
         .wrapper{
             padding-left: 30px;
@@ -68,76 +71,87 @@
 
     <div class="wrapper">
         <div class="bt-1 bb-1">
-            <table class="full left-container table table-borderless mt-1 mb-1">
-                <tbody>
-                <tr>
-                    <th>No. Lab</th>
-                    <td>{{ $pasien->no_lab }}</td>
-                <tr>
-                    <th>No. Rekam Medis</th>
-                    <td>{{ $pasien->no_rm }}</td>
-                <tr>
-                    <th>Nama</th>
-                    <td>{{ $pasien->nama }}</td>
-                    <th>Nama Dokter</th>
-                    <td>{{ $pasien->nama_dok }}</td
-                <tr>
-                    <th>Tanggal Lahir</th>
-                    <td>{{ $pasien->tgl_lahir }}</td>
-                    <th>Lokasi</th>
-                    <td>{{ $pasien->lokasi }}</td>
-                <tr>
-                    <th>Umur</th>
-                    <td>{{ $pasien->umur }}</td>
-                    <th>No HP</th>
-                    <td>{{ $pasien->no_hp }}</td>
-                <tr>
-                    <th>Alamat</th>
-                    <td>{{ $pasien->alamat }}</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="mt-1">
+                <table class="full left-container table table-borderless mt-1 mb-1">
+                    <tbody>
+                    <tr>
+                        <th>No. Lab</th>
+                        <td>{{ $pasien->no_lab }}</td>
+                    </tr>
+                    <tr>
+                        <th>No. Rekam Medis</th>
+                        <td>{{ $pasien->no_rm }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nama</th>
+                        <td>{{ $pasien->nama }}</td>
+                        <th>Nama Dokter</th>
+                        <td>{{ $pasien->nama_dok }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tanggal Lahir</th>
+                        <td>{{ $pasien->tgl_lahir }}</td>
+                        <th>Lokasi</th>
+                        <td>{{ $pasien->lokasi }}</td>
+                    </tr>
+                    <tr>
+                        <th>Umur</th>
+                        <td>{{ $pasien->umur }}</td>
+                        <th>No HP</th>
+                        <td>{{ $pasien->no_hp }}</td>
+                    </tr>
+                    <tr>
+                        <th>Alamat</th>
+                        <td>{{ $pasien->alamat }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="wrapper">
         <div class="bt-1 bb-1">
-            <table class="full table table-borderless mt-1 mb-1">
-                <thead>
-                    <tr>
-                        <th scope="col">PEMERIKSAAN</th>
-                        <th scope="col">HASIL</th>
-                        <th scope="col">NILAI RUJUKAN</th>
-                        <th scope="col">SATUAN</th>
-                        <th scope="col">METODE</th>
-                    </tr>
-                </thead>
-            </table>
+            <div class="mt-1">
+                <table class="mid table table-borderless mt-1 mb-1">
+                    <thead>
+                        <tr>
+                            <th scope="col">PEMERIKSAAN</th>
+                            <th scope="col">HASIL</th>
+                            <th scope="col">NILAI RUJUKAN</th>
+                            <th scope="col">SATUAN</th>
+                            <th scope="col">METODE</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </div>
     <div class="wrapper">
         <div class="bb-1">
-            <table class="half table table-borderless mt-1 mb-1">            
-                <tbody>
-                    <tr>
-                        <th><i>IMUNOLOGI</i></th>
-                    <tr>
-                        <th>PCR SARS-Cov-2</th>
-                        <td>{{ $pasien->hasil }}</td>
-                        <td>{{ $pasien->nilai_rujukan }}</td>
-                        <td>{{ $pasien->satuan }}</td>
-                        <td>{{ $pasien->metode }}</td>
-                    <tr>
-                        <th>Tanggal Tes</th>
-                        <td>{{ $pasien->tgl_tes }}</td>
-                    <tr>
-                        <th>Bahan Tes</th>
-                        <td>{{ $pasien->bahan }}</td>
-                    </tr>
-                <tbody>
-            </table>
+            <div class="mt-1">
+                <table class="half table table-borderless mt-1 mb-1">            
+                    <tbody>
+                        <tr>
+                            <th><i>IMUNOLOGI</i></th>
+                        <tr>
+                            <th>PCR SARS-Cov-2</th>
+                            <td>{{ $pasien->hasil }}</td>
+                            <td>{{ $pasien->nilai_rujukan }}</td>
+                            <td>{{ $pasien->satuan }}</td>
+                            <td>{{ $pasien->metode }}</td>
+                        <tr>
+                            <th>Tanggal Tes</th>
+                            <td>{{ $pasien->tgl_tes }}</td>
+                        <tr>
+                            <th>Bahan Tes</th>
+                            <td>{{ $pasien->bahan }}</td>
+                        </tr>
+                    <tbody>
+                </table>
+            </div>
         </div>
     </div>
-    <div class="center full">
+    <div class="center mid">
         <div class="mt-5">
         <h3>Scan Me!</h3>
         <div class="mt-5">
