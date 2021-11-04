@@ -14,6 +14,7 @@
 <p>3. composer require barryvdh/laravel-dompdf</p>
 <p>4. composer require simplesoftwareio/simple-qrcode "~4" --ignore-platform-reqs </p>
 <p>5. php artisan migrate</p>
+<p>6. php artisan migrate:refresh --seed</p>
 
 <br>
 
@@ -39,3 +40,8 @@
 
 <br>
 <p>Note : Nama template inspinia, ada di folder public/inspinia</p>
+
+<br>
+<p>Database Seeder (untuk login admin)</p>
+<p>Email : antigen@gmail.com</p>
+<p>Password : rahasia123</p>
