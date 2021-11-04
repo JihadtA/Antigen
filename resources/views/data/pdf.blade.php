@@ -94,8 +94,6 @@
                 <tr>
                     <th>Alamat</th>
                     <td>{{ $pasien->alamat }}</td>
-                    <th>Lokasi</th>
-                    <td>{{ $pasien->lokasi }}</td>
                 </tr>
                 </tbody>
             </table>
