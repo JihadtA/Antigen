@@ -91,26 +91,14 @@
                         {{ $message }}
                     @enderror
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label>Hasil</label>
-                <select class="form-control mb-1" name="hasil" id="edithasil" value="{{ $datapes->hasil }}">
-                    <option value="Positif">Positif</option>
-                    <option value="Negatif">Negatif</option>    
-                </select>
-                <div class="text">
-                    @error('hasil')
-                        {{ $message }}
-                    @enderror
-                </div>
+                <div class="mb-5">
             </div>
 
             <div class="form-group">
                 <button class="btn btn-primary ">Simpan</button>
                 <a href="/datapeserta" class="btn btn-success">Kembali</a>
             </div>
-
+            <div class="mb-5">
         </div>
     </div>
 </div>

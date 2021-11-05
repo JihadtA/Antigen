@@ -1,10 +1,22 @@
 @extends('layouts.master')
 @section('breadcrumb')
-<h2>{{ $title }}</h2>
+  <h2>{{ $title }}</h2>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="{{ route('home.index') }}">Home</a>
+    </li>
+    <li class="breadcrumb-item">
+        Data
+    </li>
+    <li class="breadcrumb-item active">
+        <strong>Peserta</strong>
+    </li>
+</ol>
+
 @endsection
 @section('content')
 <div class="text-right mr-3">
-  <a href="/datapeserta/add" class="btn btn-primary btn-sm">Tambah</a>
+  <a href="/datapeserta/add" class="btn btn-primary btn-sm">Tambah Peserta</a>
 </div>
 <p></p>   
    @if (session('pesan'))
@@ -22,14 +34,15 @@
     <div class="card-body">
       <table id="example1" class="table table-bordered table-striped">
         <thead>
-        <tr>
-          <th>No</th>
-          <th>NIK</th>
-          <th>Nama</th>
-          <th>Jenis Cek</th>
-          <th>Hasil</th>
-          <th>Action</th>
-        </tr>
+          <div class="table text-center">
+            <tr>
+              <th>No</th>
+              <th>NIK</th>
+              <th>Nama</th>
+              <th>Jenis Cek</th>
+              <th>Action</th>
+            </div>
+          </tr>
         </thead>
         <tbody>
             <?php $no=1; ?>
@@ -39,7 +52,6 @@
               <td>{{$data->nik}}</td>
               <td>{{$data->nama}}</td>
               <td>{{$data->jns_cek}}</td>
-              <td>{{$data->hasil}}</td>
               <td>
                 <a href="/datapeserta/detail/{{$data->id}}" class="btn btn-sm btn-success">Detail</a>
                 <a href="/datapeserta/edit/{{ $data->id }}" class="btn btn-sm btn-warning">Edit</a>

@@ -81,26 +81,23 @@
             </div>
 
             <div class="form-group">
-                <label>Jenis Cek</label>
-                <select class="form-control mb-1" name="jns_cek" id="editJns_cek" value="{{ old('jns_cek') }}">
-                    <option value="Rapid">Rapid</option>
-                    <option value="Swap">Swap</option>    
-                </select>
+                <label>Nomor HP</label>
+                <input name="no_hp" class="form-control" value="{{ old('no_hp') }}">
                 <div class="text">
-                    @error('jns_cek')
+                    @error('no_hp')
                         {{ $message }}
                     @enderror
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Hasil</label>
-                <select class="form-control mb-1" name="hasil" id="edithasil" value="{{ old('hasil') }}">
-                    <option value="Positif">Positif</option>
-                    <option value="Negatif">Negatif</option>    
+                <label>Jenis Tes</label>
+                <select class="form-control mb-1" name="jns_cek" id="editJns_cek" value="{{ old('jns_cek') }}">
+                    <option value="Rapid Test">Rapid Test</option>
+                    <option value="Swab Test">Swab Test</option>    
                 </select>
                 <div class="text">
-                    @error('hasil')
+                    @error('jns_cek')
                         {{ $message }}
                     @enderror
                 </div>
