@@ -22,7 +22,7 @@ class CreateDataPesertasTable extends Migration
             $table->string('tgl_lahir');
             $table->text('alamat');
             $table->string('jns_cek');
-            $table->string('hasil');
+            $table->string('no_hp');
             $table->timestamps();
         });
     }
