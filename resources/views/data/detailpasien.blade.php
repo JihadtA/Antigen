@@ -1,5 +1,14 @@
 @extends('layouts.master')
 @section('breadcrumb')
+    <style type="text/css">
+    .ml-1{
+            margin-top: 20px;
+        }
+    .mid{
+            width : 75%;
+        }
+    </style>
+
     <h2>{{ $judultabel }}</h2>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -32,8 +41,8 @@
                     <h5>Detail Pasien</h5>  
                 </div>
                 <div class="ibox-content">
-                    <div class="row">
-                    <table class="table table-striped" id="example">
+                    <div class="ml-1 mid row">
+                    <table class="table table-bordered">
                         <tbody>
                         
                             <tr>
@@ -107,7 +116,7 @@
                         <div class="modal-footer position-relative mt-3 " >
                             <div class="col-sm-12 col-sm-offset-2 ">
                                 <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich text-white">Kembali</a>
-                                <a href="/pasien/{{ $pasien->id }}/cetak" target="_blank" class="btn btn-danger">Print</a>
+                                <a href="/pasien/{{ $pasien->id }}/cetak" target="_blank" class="btn btn-primary">Print</a>
                             </div>
                         </div>
                     </div>
