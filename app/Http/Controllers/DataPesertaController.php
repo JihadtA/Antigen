@@ -55,8 +55,8 @@ class DataPesertaController extends Controller
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
             'alamat' => 'required',
+            'no_hp' => 'required',
             'jns_cek' => 'required',
-            'hasil' => 'required',
         ] , [
             'nik.required' => 'wajib diisi !!',
             'nama.required' => 'wajib diisi !!',
@@ -64,8 +64,8 @@ class DataPesertaController extends Controller
             'tmpt_lahir.required' => 'wajib diisi !!',
             'tgl_lahir.required' => 'wajib diisi !!',
             'alamat.required' => 'wajib diisi !!',
+            'no_hp' => 'wajib diisi !!',
             'jns_cek.required' => 'wajib diisi !!',
-            'hasil.required' => 'wajib diisi !!',
         ]);
 
         $data = [
@@ -75,8 +75,8 @@ class DataPesertaController extends Controller
             'tmpt_lahir' => Request()->tmpt_lahir,
             'tgl_lahir' => Request()->tgl_lahir,
             'alamat' => Request()->alamat,
+            'no_hp' => Request()->no_hp,
             'jns_cek' => Request()->jns_cek,
-            'hasil' => Request()->hasil,
         ];
       
         $this->DataPeserta->addData($data);
@@ -108,8 +108,8 @@ class DataPesertaController extends Controller
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
             'alamat' => 'required',
+            'no_hp' => 'required',
             'jns_cek' => 'required',
-            'hasil' => 'required',
         ] , [
             'nik.required' => 'wajib diisi !!',
             'nama.required' => 'wajib diisi !!',
@@ -117,8 +117,8 @@ class DataPesertaController extends Controller
             'tmpt_lahir.required' => 'wajib diisi !!',
             'tgl_lahir.required' => 'wajib diisi !!',
             'alamat.required' => 'wajib diisi !!',
+            'no_hp' => 'wajib diisi !!',
             'jns_cek.required' => 'wajib diisi !!',
-            'hasil.required' => 'wajib diisi !!',
         ]);
 
 
@@ -129,8 +129,8 @@ class DataPesertaController extends Controller
             'tmpt_lahir' => Request()->tmpt_lahir,
             'tgl_lahir' => Request()->tgl_lahir,
             'alamat' => Request()->alamat,
+            'no_hp' => Request()->no_hp,
             'jns_cek' => Request()->jns_cek,
-            'hasil' => Request()->hasil,
         ];
         
         $this->DataPeserta->editData($id, $data);
