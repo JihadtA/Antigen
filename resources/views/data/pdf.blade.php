@@ -91,18 +91,26 @@
                     <tr>
                         <th>Tanggal Lahir</th>
                         <td>{{ $pasien->tgl_lahir }}</td>
-                        <th>Lokasi</th>
-                        <td>{{ $pasien->lokasi }}</td>
-                    </tr>
-                    <tr>
-                        <th>Umur</th>
-                        <td>{{ $pasien->umur }}</td>
                         <th>No HP</th>
                         <td>{{ $pasien->no_hp }}</td>
                     </tr>
                     <tr>
+                        <th>Umur</th>
+                        <td>{{ $pasien->umur }}</td>
+                        <th>Tanggal Transaksi</th>
+                        <td>{{ $pasien->updated_at }}</td>
+                    </tr>
+                    <tr>
                         <th>Alamat</th>
                         <td>{{ $pasien->alamat }}</td>
+                        <th>Hasil Selesai</th>
+                        <td>{{ $pasien->updated_at }}</td>
+                    </tr>
+                    <tr>
+                        <th>Lokasi</th>
+                        <td>{{ $pasien->lokasi }}</td>
+                        <th>Tanggal Cetak</th>
+                        <td><?php date_default_timezone_set('Asia/Jakarta'); echo date("d-m-Y  H:i:s");?></td> 
                     </tr>
                     </tbody>
                 </table>
