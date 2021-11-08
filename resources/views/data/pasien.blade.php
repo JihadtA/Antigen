@@ -431,7 +431,7 @@
                     } else {
                         $('.alert-danger').hide();
                         $('.alert-success').show();
-                        $('.datatable').DataTable().ajax.reload();
+                        location.reload();
                         setInterval(function(){ 
                             $('.alert-success').hide();
                             $('#EditPasienModal').hide();
