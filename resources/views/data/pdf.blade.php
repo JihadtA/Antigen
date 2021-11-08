@@ -110,7 +110,7 @@
                         <th>Lokasi</th>
                         <td>{{ $pasien->lokasi }}</td>
                         <th>Tanggal Cetak</th>
-                        <td><?php date_default_timezone_set('Asia/Jakarta'); echo date("d-m-Y  H:i:s");?></td> 
+                        <td><?php date_default_timezone_set('Asia/Jakarta'); echo date("Y-m-d  H:i:s");?></td> 
                     </tr>
                     </tbody>
                 </table>
