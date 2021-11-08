@@ -33,7 +33,7 @@
             <li class="{{  request()->routeIs('datates.*') || request()->routeIs('datapeserta.*') || request()->routeIs('pasien.*') ? 'active' : '' }}">
                 <a href="#"><i class="fa fa-database" style="font-size:16px"></i> <span class="nav-label">Data</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li class="{{  request()->routeIs('datapeserta.*') ? 'active' : '' }}"><a href="/datapeserta">Data Peserta</a></li>
+                    {{-- <li class="{{  request()->routeIs('datapeserta.*') ? 'active' : '' }}"><a href="/datapeserta">Data Peserta</a></li> --}}
                     <li class="{{  request()->routeIs('pasien.*') ? 'active' : '' }}"><a href="{{ route('pasien.index') }}">Data Pasien</a></li>
                 </ul>
             </li>
