@@ -98,7 +98,7 @@
         
         <div class="footer">
             <div>
-				<strong>2021</strong>© ANTIGEN Support By <a href="#" style="color: red">Our</a>
+				<strong>2021</strong>© ANTIGEN Support By <a href="#" style="color: red">Rapier</a>
        		</div>
 		</div>
     </div>
