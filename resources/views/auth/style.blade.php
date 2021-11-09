@@ -18,7 +18,7 @@
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="img/dctr.svg">
+			<img src="img/doctor.svg">
 		</div>
 		<div class="login-content">
 			@yield('content')
