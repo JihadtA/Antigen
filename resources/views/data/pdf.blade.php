@@ -123,8 +123,8 @@
                 <table class="mid table table-borderless mt-1 mb-1">
                     <thead>
                         <tr>
-                            <th scope="col">PEMERIKSAAN</th>
-                            <th scope="col">HASIL</th>
+                            <th scope="col" style="text-align:center;">PEMERIKSAAN</th>
+                            <th scope="col" style="text-align:center;">HASIL</th>
                             <th scope="col" style="text-align:center;">Ig M</th>
                             <th scope="col" style="text-align:center;">Ig G</th>
                             <th scope="col" style="text-align:center;">METODE</th>
@@ -158,7 +158,6 @@
                             <td></td>
                         </tr>
                     <tbody>
-
                 </table>
             </div>
         </div>
