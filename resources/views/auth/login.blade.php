@@ -1,11 +1,15 @@
 @extends('auth.style')
-
+<style>
+	.mb-1{
+		margin-bottom: 30px;
+	}
+</style>
 @section('content')
 			<form method="POST" action="{{ route('login') }}">
 				@csrf
 
 				{{-- <img src="img/avatar.svg"> --}}
-				<h4 class="mb-5">Selamat Datang</h4>
+				<h4 class="mb-1">Selamat Datang</h4>
 				{{-- <h4 class="title">Selamat Datang</h4> --}}
            		
 				<!-- <div class="input-div one">
