@@ -38,11 +38,11 @@
                         <table class="table table-bordered datatable">
                             <thead>
                                 <tr>
-                                    <th width="180">No Rekam Medis</th>
-                                    <th >Nama</th>
-                                    <th width="180">Tanggal Tes</th>
-                                    <th>Hasil</th>
-                                    <th width="150" class="text-center">Action</th>
+                                    <th width="110">No Rekam Medis</th>
+                                    <th width="170">Nama</th>
+                                    <th width="110">Tanggal Tes</th>
+                                    <th width="110">Hasil</th>
+                                    <th width="200" class="text-center">Action</th>
                                 </tr>
                             </thead>
                         </table>

@@ -42,9 +42,9 @@ class PasienController extends Controller
         return \DataTables::of($data)
             ->addColumn('Actions', function($data) {
                 return '
-                    <button type="button" class="btn btn-primary btn-sm "><a href="/pasien/'.$data->id.'" class ="text-decoration-none text-white fa fa-eye" ></a></button>
-                    <button type="button" class="btn btn-success btn-md fa fa-pencil" id="getEditPasienData" data-id="'.$data->id.'"></button>
-                    <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeletePasienModal" class="btn btn-danger btn-md fa fa-times" id="getDeleteId"></button>';
+                    <a href="/pasien/'.$data->id.'" class ="btn btn-primary btn-md text-decoration-none text-white fa fa-eye" > Detail</a>
+                    <button type="button" class="btn btn-success btn-md fa fa-pencil" id="getEditPasienData" data-id="'.$data->id.'"> Ubah</button>
+                    <button type="button" class="btn btn-danger btn-md fa fa-times" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeletePasienModal" id="getDeleteId"> Hapus</button>';
             })
             ->rawColumns(['Actions'])
             ->make(true);
