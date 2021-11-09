@@ -19,6 +19,6 @@ class PdfController extends Controller
         $qrcode = base64_encode(QrCode::format('svg')->size(200)->errorCorrection('H')->generate(\Request::url()));
 
         $pdf = \PDF::loadView('data.pdf', ["pasien"=>$data, "title"=>"Data Pasien", "qrcode"=>$qrcode]);
-        return $pdf->download('data-pasien.pdf');
+        return $pdf->stream('data-pasien.pdf');
     }
 }
