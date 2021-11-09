@@ -1,21 +1,25 @@
 @extends('auth.style')
+<style type="text/css">
+	.mb-1{
+		margin-bottom: 30px;
+	}
+</style>
 
 @section('content')
 			<form method="POST" action="{{ route('login') }}">
 				@csrf
 
-				{{-- <img src="img/avatar.svg"> --}}
-				<h4 class="mb-5">Selamat Datang</h4>
-				{{-- <h4 class="title">Selamat Datang</h4> --}}
+			<h4 class="mb-1">Selamat Datang</h4>
+
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-						<input id="email" type="email" class="form-control input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+						<input id="username" type="username" class="form-control input @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
 						
-						@error('email')
+						@error('username')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
 							</span>
