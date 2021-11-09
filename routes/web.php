@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DataPesertaController;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,7 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index
 Route::resource('pasien', PasienController::class);
 Route::get('get-pasien', [PasienController::class, 'getPasien'])->name('get-pasien');
 Route::get('/pasien/{id?}', [PasienController::class, 'show']);
-
+// Route::get('/pasien/{id?}/cetak', [PasienController::class, 'pdf']);
 
 //Route Data Peserta
 Route::get('/datapeserta', [DataPesertaController::class, 'index'])->name('datapeserta.index');
@@ -51,4 +52,6 @@ Route::post('/datapeserta/insert', [DataPesertaController::class, 'insert'] );
 Route::get('/datapeserta/edit/{id}', [DataPesertaController::class, 'edit'] );
 Route::post('/datapeserta/update/{id}', [DataPesertaController::class, 'update'] );
 Route::get('/datapeserta/delete/{id}', [DataPesertaController::class, 'delete'] );
-Route::get('/pasien/{id?}/cetak', [PasienController::class, 'pdf']);
+
+// Cetak Peserta
+Route::get('/pasien/{id?}/cetak', [PdfController::class, 'pdf']);
