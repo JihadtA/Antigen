@@ -28,8 +28,8 @@ class PasienSeeder extends Seeder
             'tgl_tes'       =>  '09/11/2021',
             'bahan'         =>  'Rapid',
             'hasil'         =>  'Negatif',
-            'nilai_rujukan' =>  'Negatif',
-            'satuan'        =>  'Negatif',
+            'igm'           =>  'Negatif',
+            'igg'           =>  'Negatif',
             'metode'        =>  'Rapid',
 
         ]
@@ -49,8 +49,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '11/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Negatif',
-        'nilai_rujukan'     =>  'Negatif',
-        'satuan'            =>  'Negatif',
+        'igm'               =>  'Negatif',
+        'igg'               =>  'Negatif',
         'metode'            =>  'PCR',
 
         ]
@@ -71,8 +71,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '10/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Negatif',
-        'nilai_rujukan'     =>  'Negatif',
-        'satuan'            =>  'Negatif',
+        'igm'               =>  'Negatif',
+        'igg'               =>  'Negatif',
         'metode'            =>  'PCR',
 
           ]
@@ -92,8 +92,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '08/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Negatif',
-        'nilai_rujukan'     =>  'Negatif',
-        'satuan'            =>  'Negatif',
+        'igm'               =>  'Negatif',
+        'igg'               =>  'Negatif',
         'metode'            =>  'Rapid',
 
           ]
@@ -113,8 +113,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '08/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Negatif',
-        'nilai_rujukan'     =>  'Negatif',
-        'satuan'            =>  'Negatif',
+        'igm'               =>  'Negatif',
+        'igg'               =>  'Negatif',
         'metode'            =>  'Rapid'
 
         ]
@@ -134,8 +134,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '08/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Positif',
-        'nilai_rujukan'     =>  'Positif',
-        'satuan'            =>  'Positif',
+        'igm'               =>  'Positif',
+        'igg'               =>  'Positif',
         'metode'            =>  'Swab'
 
           ]
@@ -155,8 +155,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '09/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Positif',
-        'nilai_rujukan'     =>  'Positif',
-        'satuan'            =>  'Positif',
+        'igm'               =>  'Positif',
+        'igg'               =>  'Positif',
         'metode'            =>  'Rapid'
 
           ]
@@ -176,8 +176,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '09/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Negatif',
-        'nilai_rujukan'     =>  'Negatif',
-        'satuan'            =>  'Negatif',
+        'igm'               =>  'Negatif',
+        'igg'               =>  'Negatif',
         'metode'            =>  'PCR'
 
           ]
@@ -197,8 +197,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '11/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Positif',
-        'nilai_rujukan'     =>  'Positif',
-        'satuan'            =>  'Positif',
+        'igm'               =>  'Positif',
+        'igg'               =>  'Positif',
         'metode'            =>  'PCR'
 
           ]
@@ -218,8 +218,8 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '10/11/2021',
         'bahan'             =>  'Antigen',
         'hasil'             =>  'Positif',
-        'nilai_rujukan'     =>  'Positif',
-        'satuan'            =>  'Positif',
+        'igm'               =>  'Positif',
+        'igg'               =>  'Positif',
         'metode'            =>  'Swab'
 
           ]

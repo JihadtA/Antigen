@@ -72,8 +72,8 @@ class PasienController extends Controller
             'tgl_tes'       => 'required',
             'bahan'         => 'required',
             'hasil'         => 'required',
-            'nilai_rujukan' => 'required',
-            'satuan'        => 'required',
+            'igm'           => 'required',
+            'igg'           => 'required',
             'metode'        => 'required',
         ]);
         
@@ -102,7 +102,57 @@ class PasienController extends Controller
         $data = $pasien->findData($id);
         $l = "Laki-Laki";
         $p = "Perempuan";
+        
+        $sjns_kelamin = $data->jns_kelamin;
+        if ($sjns_kelamin == $l) {
+            $jns_satu = $l;
+            $jns_dua = $p;
+        } else {
+            $jns_satu = $p;
+            $jns_dua = $l;
+        }
 
+        $shasil = $data->hasil;
+        if ($shasil == "Positif") {
+            $hasil_satu = "Positif";
+            $hasil_dua = "Negatif";
+        } else {
+            $hasil_satu = "Negatif";
+            $hasil_dua = "Positif";
+        }
+
+        $sigm = $data->igm;
+        if ($sigm == "Positif") {
+            $igm_satu = "Positif";
+            $igm_dua = "Negatif";
+        } else {
+            $igm_satu = "Negatif";
+            $igm_dua = "Positif";
+        }
+
+        $sigg = $data->igg;
+        if ($sigg == "Positif") {
+            $igg_satu = "Positif";
+            $igg_dua = "Negatif";
+        } else {
+            $igg_satu = "Negatif";
+            $igg_dua = "Positif";
+        }
+
+        $smetode = $data->metode;
+        if ($smetode == "Swab") {
+            $metode_satu = "Swab";
+            $metode_dua = "Rapid";
+            $metode_tiga = "PCR";
+        } elseif ($smetode == "Rapid") {
+            $metode_satu = "Rapid";
+            $metode_dua = "Swab";
+            $metode_tiga = "PCR";
+        } else {
+            $metode_satu = "PCR";
+            $metode_dua = "Swab";
+            $metode_tiga = "Rapid";
+        }
         
         $html = '<div class="form-group">
                     <label>No Laboratory :</label>
@@ -122,9 +172,9 @@ class PasienController extends Controller
                 </div>
                 <div class="form-group">
                     <label>Jenis Kelamin :</label>
-                    <select class="form-control mb-1" name="jns_kelamin" id="editJns_kelamin" value="'.$data->jns_kelamin.'">
-                        <option value="'.$l.'" @if(isset('.$pasien.')) @if('.$pasien->jns_kelamin.' == '.$l.') selected @endif @endif>'.$l.'</option>
-                        <option value="'.$p.'" @if(isset('.$pasien.')) @if('.$pasien->jns_kelamin.' == '.$p.') selected @endif @endif>'.$p.'</option>    
+                    <select class="form-control mb-1" name="jns_kelamin" id="editJns_kelamin">
+                        <option value="'.$jns_satu.'" >'.$jns_satu.'</option>
+                        <option value="'.$jns_dua.'" >'.$jns_dua.'</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -157,30 +207,31 @@ class PasienController extends Controller
                 </div>
                 <div class="form-group">
                     <label>Hasil :</label>
-                    <select class="form-control mb-1" name="hasil" id="editHasil" value="'.$data->hasil.'">
-                        <option value="Positif" @if(isset('.$pasien.')) @if('.$pasien->hasil.' == "Positif") selected @endif @endif>Positif</option>
-                        <option value="Negatif" @if(isset('.$pasien.')) @if('.$pasien->hasil.' == "Negatif") selected @endif @endif>Negatif</option>    
+                    <select class="form-control mb-1" name="hasil" id="editHasil">
+                        <option value="'.$hasil_satu.'" >'.$hasil_satu.'</option>
+                        <option value="'.$hasil_dua.'" >'.$hasil_dua.'</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Nilai Rujukan :</label>
-                    <select class="form-control mb-1" name="nilai_rujukan" id="editNilai_rujukan" value="'.$data->nilai_rujukan.'">
-                        <option value="Positif" @if(isset('.$pasien.')) @if('.$pasien->nilai_rujukan.' == "Positif") selected @endif @endif>Positif</option>
-                        <option value="Negatif" @if(isset('.$pasien.')) @if('.$pasien->nilai_rujukan.' == "Negatif") selected @endif @endif>Negatif</option>    
+                    <label>IgM :</label>
+                    <select class="form-control mb-1" name="igm" id="editIgm">
+                        <option value="'.$igm_satu.'" >'.$igm_satu.'</option>
+                        <option value="'.$igm_dua.'" >'.$igm_dua.'</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Satuan :</label>
-                    <select class="form-control mb-1" name="satuan" id="editSatuan" value="'.$data->satuan.'">
-                        <option value="Positif" @if(isset('.$pasien.')) @if('.$pasien->satuan.' == "Positif") selected @endif @endif>Positif</option>
-                        <option value="Negatif" @if(isset('.$pasien.')) @if('.$pasien->satuan.' == "Negatif") selected @endif @endif>Negatif</option>    
+                    <label>IgG :</label>
+                    <select class="form-control mb-1" name="igg" id="editIgg">
+                        <option value="'.$igg_satu.'" >'.$igg_satu.'</option>
+                        <option value="'.$igg_dua.'" >'.$igg_dua.'</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Metode :</label>
-                    <select class="form-control mb-1" name="metode" id="editMetode" value="'.$data->metode.'">
-                        <option value="Swab" @if(isset('.$pasien.')) @if('.$pasien->metode.' == "Swab") selected @endif @endif>Swab</option>
-                        <option value="Rapid" @if(isset('.$pasien.')) @if('.$pasien->metode.' == "Rapid") selected @endif @endif>Rapid</option>
+                    <select class="form-control mb-1" name="metode" id="editMetode">
+                        <option value="'.$metode_satu.'" >'.$metode_satu.'</option>
+                        <option value="'.$metode_dua.'" >'.$metode_dua.'</option>
+                        <option value="'.$metode_tiga.'" >'.$metode_tiga.'</option>
                     </select>
                 </div>';
 
@@ -203,8 +254,8 @@ class PasienController extends Controller
             'tgl_tes'       => 'required',
             'bahan'         => 'required',
             'hasil'         => 'required',
-            'nilai_rujukan' => 'required',
-            'satuan'        => 'required',
+            'igm'           => 'required',
+            'igg'           => 'required',
             'metode'        => 'required',
         ]);
         

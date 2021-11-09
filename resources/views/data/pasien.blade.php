@@ -136,15 +136,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Nilai Rujukan:</label>
-                    <select class="form-control mb-1" name="nilai_rujukan" id="nilai_rujukan">
+                    <label>IgM:</label>
+                    <select class="form-control mb-1" name="igm" id="igm">
                         <option value="Positif">Positif</option>
                         <option value="Negatif">Negatif</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Satuan:</label>
-                    <select class="form-control mb-1" name="satuan" id="satuan">
+                    <label>IgG:</label>
+                    <select class="form-control mb-1" name="igg" id="igg">
                         <option value="Positif">Positif</option>
                         <option value="Negatif">Negatif</option>
                     </select>
@@ -318,8 +318,8 @@
                     tgl_tes: $('#tgl_tes').val(),
                     bahan: $('#bahan').val(),
                     hasil: $('#hasil').val(),
-                    nilai_rujukan: $('#nilai_rujukan').val(),
-                    satuan: $('#satuan').val(),
+                    igm: $('#igm').val(),
+                    igg: $('#igg').val(),
                     metode: $('#metode').val(),
                 },
                 success: function(result) {
@@ -417,8 +417,8 @@
                     tgl_tes: $('#editTgl_tes').val(),
                     bahan: $('#editBahan').val(),
                     hasil: $('#editHasil').val(),
-                    nilai_rujukan: $('#editNilai_rujukan').val(),
-                    satuan: $('#editSatuan').val(),
+                    igm: $('#editIgm').val(),
+                    igg: $('#editIgg').val(),
                     metode: $('#editMetode').val(),
                 },
                 success: function(result) {

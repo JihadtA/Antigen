@@ -28,8 +28,8 @@ class CreatePasienTbl extends Migration
             $table->string('tgl_tes');
             $table->string('bahan');
             $table->string('hasil');
-            $table->string('nilai_rujukan');
-            $table->string('satuan');
+            $table->string('igm');
+            $table->string('igg');
             $table->string('metode');
             $table->timestamps();
         });
