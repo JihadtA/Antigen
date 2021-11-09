@@ -125,8 +125,8 @@
                         <tr>
                             <th scope="col">PEMERIKSAAN</th>
                             <th scope="col">HASIL</th>
-                            <th scope="col" style="text-align:center;">NILAI RUJUKAN</th>
-                            <th scope="col" style="text-align:center;">SATUAN</th>
+                            <th scope="col" style="text-align:center;">IGM</th>
+                            <th scope="col" style="text-align:center;">IGG</th>
                             <th scope="col" style="text-align:center;">METODE</th>
                         </tr>
                     </thead>
@@ -141,8 +141,8 @@
                         <tr>
                             <td><b>PCR SARS-Cov-2</b></td>
                             <td>{{ $pasien->hasil }}</td>
-                            <td style="text-align:center;">{{ $pasien->nilai_rujukan }}</td>
-                            <td style="text-align:center;">{{ $pasien->satuan }}</td>
+                            <td style="text-align:center;">{{ $pasien->igm }}</td>
+                            <td style="text-align:center;">{{ $pasien->igg }}</td>
                             <td style="text-align:center;">{{ $pasien->metode }}</td>
                         <tr>
                             <td><b>Tanggal Tes</b></td>
@@ -173,8 +173,8 @@
                         <tr>
                             <th>PCR SARS-Cov-2</th>
                             <td>{{ $pasien->hasil }}</td>
-                            <td>{{ $pasien->nilai_rujukan }}</td>
-                            <td>{{ $pasien->satuan }}</td>
+                            <td>{{ $pasien->igm }}</td>
+                            <td>{{ $pasien->igg }}</td>
                             <td>{{ $pasien->metode }}</td>
                         <tr>
                             <th>Tanggal Tes</th>
@@ -304,12 +304,12 @@
                     <td>{{ $pasien->hasil }}</td>
                 </tr>
                 <tr>
-                    <th>Nilai Rujukan</th>
-                    <td>{{ $pasien->nilai_rujukan }}</td>
+                    <th>IgM</th>
+                    <td>{{ $pasien->igm }}</td>
                 </tr>
                 <tr>
-                    <th>Satuan</th>
-                    <td>{{ $pasien->satuan }}</td>
+                    <th>IgG</th>
+                    <td>{{ $pasien->igg }}</td>
                 </tr>
                 <tr>
                     <th>Metode</th>

@@ -94,12 +94,12 @@
                                 <th>{{ isset($pasien)? $pasien->hasil : '' }}</th>
                             </tr>
                             <tr>
-                                <td>Nilai Rujukan</td>
-                                <th>{{ isset($pasien)? $pasien->nilai_rujukan : '' }}</th>
+                                <td>IgM</td>
+                                <th>{{ isset($pasien)? $pasien->igm : '' }}</th>
                             </tr>
                             <tr>
-                                <td>Satuan</td>
-                                <th>{{ isset($pasien)? $pasien->satuan : '' }}</th>
+                                <td>IgG</td>
+                                <th>{{ isset($pasien)? $pasien->igg : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Metode</td>
