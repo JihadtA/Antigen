@@ -86,10 +86,6 @@
                                 <th>{{ isset($pasien)? $pasien->tgl_tes : '' }}</th>
                             </tr>
                             <tr>
-                                <td>Bahan</td>
-                                <th>{{ isset($pasien)? $pasien->bahan : '' }}</th>
-                            </tr>
-                            <tr>
                                 <td>Hasil</td>
                                 <th>{{ isset($pasien)? $pasien->hasil : '' }}</th>
                             </tr>

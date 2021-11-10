@@ -49,7 +49,7 @@ class PasienSeeder extends Seeder
         'hasil'             =>  'Negatif',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
-        'metode'            =>  'PCR',
+        'metode'            =>  'Rapid',
 
         ]
     );
@@ -70,7 +70,7 @@ class PasienSeeder extends Seeder
         'hasil'             =>  'Negatif',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
-        'metode'            =>  'PCR',
+        'metode'            =>  'Swab',
 
           ]
     );
@@ -170,7 +170,7 @@ class PasienSeeder extends Seeder
         'hasil'             =>  'Negatif',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
-        'metode'            =>  'PCR'
+        'metode'            =>  'Swab'
 
           ]
     );
@@ -190,7 +190,7 @@ class PasienSeeder extends Seeder
         'hasil'             =>  'Positif',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
-        'metode'            =>  'PCR'
+        'metode'            =>  'Rapid'
 
           ]
     );

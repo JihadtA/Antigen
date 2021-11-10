@@ -70,7 +70,6 @@ class PasienController extends Controller
             'no_hp'         => 'required',
             'lokasi'        => 'required',
             'tgl_tes'       => 'required',
-            'bahan'         => 'required',
             'hasil'         => 'required',
             'igm'           => 'required',
             'igg'           => 'required',
@@ -143,15 +142,9 @@ class PasienController extends Controller
         if ($smetode == "Swab") {
             $metode_satu = "Swab";
             $metode_dua = "Rapid";
-            $metode_tiga = "PCR";
         } elseif ($smetode == "Rapid") {
             $metode_satu = "Rapid";
             $metode_dua = "Swab";
-            $metode_tiga = "PCR";
-        } else {
-            $metode_satu = "PCR";
-            $metode_dua = "Swab";
-            $metode_tiga = "Rapid";
         }
         
         $html = '<div class="form-group">
@@ -202,10 +195,6 @@ class PasienController extends Controller
                     <input type="text" class="form-control" name="tgl_tes" id="editTgl_tes" data-provide="datepicker" value="'.$data->tgl_tes.'">
                 </div>
                 <div class="form-group">
-                    <label>Bahan :</label>
-                    <input type="text" class="form-control" name="bahan" id="editBahan" value="'.$data->bahan.'">
-                </div>
-                <div class="form-group">
                     <label>Hasil :</label>
                     <select class="form-control mb-1" name="hasil" id="editHasil">
                         <option value="'.$hasil_satu.'" >'.$hasil_satu.'</option>
@@ -231,7 +220,6 @@ class PasienController extends Controller
                     <select class="form-control mb-1" name="metode" id="editMetode">
                         <option value="'.$metode_satu.'" >'.$metode_satu.'</option>
                         <option value="'.$metode_dua.'" >'.$metode_dua.'</option>
-                        <option value="'.$metode_tiga.'" >'.$metode_tiga.'</option>
                     </select>
                 </div>';
 
@@ -252,7 +240,6 @@ class PasienController extends Controller
             'no_hp'         => 'required',
             'lokasi'        => 'required',
             'tgl_tes'       => 'required',
-            'bahan'         => 'required',
             'hasil'         => 'required',
             'igm'           => 'required',
             'igg'           => 'required',

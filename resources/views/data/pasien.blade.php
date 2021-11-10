@@ -125,10 +125,6 @@
                     <input type="text" class="form-control" name="tgl_tes" id="tgl_tes" data-provide="datepicker">
                 </div>
                 <div class="form-group">
-                    <label>Bahan:</label>
-                    <input type="text" class="form-control" name="bahan" id="bahan">
-                </div>
-                <div class="form-group">
                     <label>Hasil Pemeriksaan:</label>
                     <select class="form-control mb-1" name="hasil" id="hasil">
                         <option value="Positif">Positif</option>
@@ -154,7 +150,6 @@
                     <select class="form-control mb-1" name="metode" id="metode">
                         <option value="Swab">Swab</option>
                         <option value="Rapid">Rapid</option>
-                        <option value="PCR">PCR</option>
                     </select>
                 </div>
             </div>
@@ -316,7 +311,6 @@
                     no_hp: $('#no_hp').val(),
                     lokasi: $('#lokasi').val(),
                     tgl_tes: $('#tgl_tes').val(),
-                    bahan: $('#bahan').val(),
                     hasil: $('#hasil').val(),
                     igm: $('#igm').val(),
                     igg: $('#igg').val(),
@@ -415,7 +409,6 @@
                     no_hp: $('#editNo_hp').val(),
                     lokasi: $('#editLokasi').val(),
                     tgl_tes: $('#editTgl_tes').val(),
-                    bahan: $('#editBahan').val(),
                     hasil: $('#editHasil').val(),
                     igm: $('#editIgm').val(),
                     igg: $('#editIgg').val(),
