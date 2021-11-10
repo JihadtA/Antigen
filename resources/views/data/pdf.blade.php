@@ -141,7 +141,17 @@
                     <td>{{ $pasien->metode }}</td>
                     <td style="text-align:center;">{{ $pasien->igm }}</td>
                     <td style="text-align:center;">{{ $pasien->igg }}</td>
-                    <td style="text-align:center;">{{ $pasien->hasil }}</td>
+                    <td style="text-align:center;">
+                        @if ($pasien->igm == "Positif" && $pasien->igg == "Positif")
+                            Positif
+                        @elseif ($pasien->igm == "Positif" && $pasien->igg == "Negatif")
+                            Positif
+                        @elseif ($pasien->igm == "Negatif" && $pasien->igg == "Positif")
+                            Negatif
+                        @elseif ($pasien->igm == "Negatif" && $pasien->igg == "Negatif")
+                            Positif
+                        @endif
+                    </td>
                 <tr>
                     <td><b>Tanggal Tes</b></td>
                     <td>{{ $pasien->tgl_tes }}</td>
