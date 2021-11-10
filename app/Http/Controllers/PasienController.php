@@ -70,7 +70,6 @@ class PasienController extends Controller
             'no_hp'         => 'required',
             'lokasi'        => 'required',
             'tgl_tes'       => 'required',
-            'hasil'         => 'required',
             'igm'           => 'required',
             'igg'           => 'required',
             'metode'        => 'required',
@@ -109,15 +108,6 @@ class PasienController extends Controller
         } else {
             $jns_satu = $p;
             $jns_dua = $l;
-        }
-
-        $shasil = $data->hasil;
-        if ($shasil == "Positif") {
-            $hasil_satu = "Positif";
-            $hasil_dua = "Negatif";
-        } else {
-            $hasil_satu = "Negatif";
-            $hasil_dua = "Positif";
         }
 
         $sigm = $data->igm;
@@ -195,11 +185,11 @@ class PasienController extends Controller
                     <input type="text" class="form-control" name="tgl_tes" id="editTgl_tes" data-provide="datepicker" value="'.$data->tgl_tes.'">
                 </div>
                 <div class="form-group">
-                    <label>Hasil :</label>
-                    <select class="form-control mb-1" name="hasil" id="editHasil">
-                        <option value="'.$hasil_satu.'" >'.$hasil_satu.'</option>
-                        <option value="'.$hasil_dua.'" >'.$hasil_dua.'</option>
-                    </select>
+                <label>Metode :</label>
+                <select class="form-control mb-1" name="metode" id="editMetode">
+                    <option value="'.$metode_satu.'" >'.$metode_satu.'</option>
+                    <option value="'.$metode_dua.'" >'.$metode_dua.'</option>
+                </select>
                 </div>
                 <div class="form-group">
                     <label>IgM :</label>
@@ -213,13 +203,6 @@ class PasienController extends Controller
                     <select class="form-control mb-1" name="igg" id="editIgg">
                         <option value="'.$igg_satu.'" >'.$igg_satu.'</option>
                         <option value="'.$igg_dua.'" >'.$igg_dua.'</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Metode :</label>
-                    <select class="form-control mb-1" name="metode" id="editMetode">
-                        <option value="'.$metode_satu.'" >'.$metode_satu.'</option>
-                        <option value="'.$metode_dua.'" >'.$metode_dua.'</option>
                     </select>
                 </div>';
 
@@ -240,7 +223,6 @@ class PasienController extends Controller
             'no_hp'         => 'required',
             'lokasi'        => 'required',
             'tgl_tes'       => 'required',
-            'hasil'         => 'required',
             'igm'           => 'required',
             'igg'           => 'required',
             'metode'        => 'required',

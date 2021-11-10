@@ -26,7 +26,6 @@ class PasienSeeder extends Seeder
             'no_hp'         =>  '089121738213',
             'lokasi'        =>  'laboratorium',
             'tgl_tes'       =>  '09/11/2021',
-            'hasil'         =>  'Negatif',
             'igm'           =>  'Negatif',
             'igg'           =>  'Negatif',
             'metode'        =>  'Rapid',
@@ -46,7 +45,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '0982132123',
         'lokasi'            =>  'laboratorium',
         'tgl_tes'           =>  '11/11/2021',
-        'hasil'             =>  'Negatif',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
         'metode'            =>  'Rapid',
@@ -67,7 +65,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '0812313214',
         'lokasi'            =>  'Laboratorium',
         'tgl_tes'           =>  '10/11/2021',
-        'hasil'             =>  'Negatif',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
         'metode'            =>  'Swab',
@@ -87,7 +84,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '0818762131',
         'lokasi'            =>  'Laboratorium',
         'tgl_tes'           =>  '08/11/2021',
-        'hasil'             =>  'Negatif',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
         'metode'            =>  'Rapid',
@@ -107,7 +103,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '0818803219',
         'lokasi'            =>  'Laboratorium',
         'tgl_tes'           =>  '08/11/2021',
-        'hasil'             =>  'Negatif',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
         'metode'            =>  'Rapid'
@@ -127,7 +122,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '0819321321',
         'lokasi'            =>  'Laboratorium',
         'tgl_tes'           =>  '08/11/2021',
-        'hasil'             =>  'Positif',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
         'metode'            =>  'Swab'
@@ -147,7 +141,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '0834567728',
         'lokasi'            =>  'Laboratorium',
         'tgl_tes'           =>  '09/11/2021',
-        'hasil'             =>  'Positif',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
         'metode'            =>  'Rapid'
@@ -167,7 +160,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '0836738217',
         'lokasi'            =>  'Laboratorium',
         'tgl_tes'           =>  '09/11/2021',
-        'hasil'             =>  'Negatif',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
         'metode'            =>  'Swab'
@@ -187,7 +179,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '087831721',
         'lokasi'            =>  'Laboratorium',
         'tgl_tes'           =>  '11/11/2021',
-        'hasil'             =>  'Positif',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
         'metode'            =>  'Rapid'
@@ -207,7 +198,6 @@ class PasienSeeder extends Seeder
         'no_hp'             =>  '087831721',
         'lokasi'            =>  'Laboratorium',
         'tgl_tes'           =>  '10/11/2021',
-        'hasil'             =>  'Positif',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
         'metode'            =>  'Swab'

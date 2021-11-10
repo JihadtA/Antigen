@@ -86,8 +86,8 @@
                                 <th>{{ isset($pasien)? $pasien->tgl_tes : '' }}</th>
                             </tr>
                             <tr>
-                                <td>Hasil</td>
-                                <th>{{ isset($pasien)? $pasien->hasil : '' }}</th>
+                                <td>Metode</td>
+                                <th>{{ isset($pasien)? $pasien->metode : '' }}</th>
                             </tr>
                             <tr>
                                 <td>IgM</td>
@@ -98,8 +98,16 @@
                                 <th>{{ isset($pasien)? $pasien->igg : '' }}</th>
                             </tr>
                             <tr>
-                                <td>Metode</td>
-                                <th>{{ isset($pasien)? $pasien->metode : '' }}</th>
+                                <td>Hasil</td>
+                                @if ($pasien->igm == "Positif" && $pasien->igg == "Positif")
+                                    <th> Positif</th>
+                                @elseif ($pasien->igm == "Positif" && $pasien->igg == "Negatif")
+                                    <th> Positif</th>
+                                @elseif ($pasien->igm == "Negatif" && $pasien->igg == "Positif")
+                                    <th> Negatif</th>
+                                @elseif ($pasien->igm == "Negatif" && $pasien->igg == "Negatif")
+                                    <th> Positif</th>
+                                @endif
                             </tr>
                         </tbody>
                     </table>

@@ -41,7 +41,6 @@
                                     <th width="110">No Rekam Medis</th>
                                     <th width="170">Nama</th>
                                     <th width="110">Tanggal Tes</th>
-                                    <th width="110">Hasil</th>
                                     <th width="200" class="text-center">Action</th>
                                 </tr>
                             </thead>
@@ -125,10 +124,10 @@
                     <input type="text" class="form-control" name="tgl_tes" id="tgl_tes" data-provide="datepicker">
                 </div>
                 <div class="form-group">
-                    <label>Hasil Pemeriksaan:</label>
-                    <select class="form-control mb-1" name="hasil" id="hasil">
-                        <option value="Positif">Positif</option>
-                        <option value="Negatif">Negatif</option>
+                    <label>Metode:</label>
+                    <select class="form-control mb-1" name="metode" id="metode">
+                        <option value="Swab">Swab</option>
+                        <option value="Rapid">Rapid</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -145,13 +144,7 @@
                         <option value="Negatif">Negatif</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Metode:</label>
-                    <select class="form-control mb-1" name="metode" id="metode">
-                        <option value="Swab">Swab</option>
-                        <option value="Rapid">Rapid</option>
-                    </select>
-                </div>
+
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -283,7 +276,6 @@
                 {data: 'no_rm', name: 'no_rm'},
                 {data: 'nama', name: 'nama'},
                 {data: 'tgl_tes', name: 'tgl_tes'},
-                {data: 'hasil', name: 'hasil'},
                 {data: 'Actions', name: 'Actions',orderable:false,serachable:false,sClass:'text-center'},
             ]
         });
@@ -311,7 +303,6 @@
                     no_hp: $('#no_hp').val(),
                     lokasi: $('#lokasi').val(),
                     tgl_tes: $('#tgl_tes').val(),
-                    hasil: $('#hasil').val(),
                     igm: $('#igm').val(),
                     igg: $('#igg').val(),
                     metode: $('#metode').val(),
@@ -409,7 +400,6 @@
                     no_hp: $('#editNo_hp').val(),
                     lokasi: $('#editLokasi').val(),
                     tgl_tes: $('#editTgl_tes').val(),
-                    hasil: $('#editHasil').val(),
                     igm: $('#editIgm').val(),
                     igg: $('#editIgg').val(),
                     metode: $('#editMetode').val(),
