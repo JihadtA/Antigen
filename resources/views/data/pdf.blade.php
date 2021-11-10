@@ -52,6 +52,9 @@
         .mb-1{
             margin-top: 5px;
         }
+        .pdl{
+            padding-left: 35px;
+        }
         table tr th,table tr td{
             text-align: left;
         }
@@ -117,47 +120,69 @@
             </div>
         </div>
     </div>
-    <div class="wrapper mt-2">
-        <div class="bt-1 bb-1">
-            <div class="mt-1">
-                <table class="mid table table-borderless mt-1 mb-1">
-                    <thead>
-                        <tr>
-                            <th scope="col" style="text-align:center;">PEMERIKSAAN</th>
-                            <th scope="col" style="text-align:center;">HASIL</th>
-                            <th scope="col" style="text-align:center;">Ig M</th>
-                            <th scope="col" style="text-align:center;">Ig G</th>
-                            <th scope="col" style="text-align:center;">METODE</th>
-                        </tr>
-                    </thead>
 
+    <div class="wrapper mt-2">
+        <table class="mid table table-borderless mt-1 mb-1">
+            <thead class="bb-1">
+                <tr>
+                    <th scope="col">PEMERIKSAAN</th>
+                    <th scope="col">METODE</th>
+                    <th scope="col" style="text-align:center;">Ig M</th>
+                    <th scope="col" style="text-align:center;">Ig G</th>
+                    <th scope="col" style="text-align:center;">HASIL</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><i><b>IMUNOLOGI</b></i></td>
+                <tr>
+                    <td><b>PCR SARS-Cov-2</b></td>
+                    <td>{{ $pasien->metode }}</td>
+                    <td style="text-align:center;">{{ $pasien->igm }}</td>
+                    <td style="text-align:center;">{{ $pasien->igg }}</td>
+                    <td style="text-align:center;">{{ $pasien->hasil }}</td>
+                <tr>
+                    <td><b>Tanggal Tes</b></td>
+                    <td>{{ $pasien->tgl_tes }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            <tbody>
+        </table>
+    </div>
+
+    <div class="wrapper mt-2">
+        <div class = "bb-1">
+            <div class="mt-1">
+                <table class="mid table table-borderless mt-1 mb-1" style="margin-bottom: 10px">
                     <tbody>
                         <tr>
-                            <td style="border-top:solid"><i><b>IMUNOLOGI</b></i></td>
-                            <td style="border-top:solid"></td>
-                            <td style="border-top:solid"></td>
-                            <td style="border-top:solid"></td>
-                            <td style="border-top:solid"></td>
-                        <tr>
-                            <td><b>PCR SARS-Cov-2</b></td>
-                            <td>{{ $pasien->hasil }}</td>
-                            <td style="text-align:center;">{{ $pasien->igm }}</td>
-                            <td style="text-align:center;">{{ $pasien->igg }}</td>
-                            <td style="text-align:center;">{{ $pasien->metode }}</td>
-                        <tr>
-                            <td><b>Tanggal Tes</b></td>
-                            <td>{{ $pasien->tgl_tes }}</td>
+                            <td><i><b>INTERPRETASI</b></i></td>
                             <td></td>
                             <td></td>
                             <td></td>
                         <tr>
-                            <td><b>Bahan Tes</b></td>
-                            <td>{{ $pasien->bahan }}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <div class="pdl">
+                                @if ($pasien -> igm == "Negatif" && $pasien -> igg == "Negatif")
+                                    <li> Infeksi baru dimulai </li>
+                                    <li> Infeksi biasanya hari ke 1-7 </li>
+                                @elseif ($pasien -> igm == "Positif" && $pasien -> igg == "Negatif")
+                                    <li> Menuju puncak infeksi di hari ke 7-14 </li>
+                                @elseif ($pasien -> igm == "Positif" && $pasien -> igg == "Positif")
+                                    <li> Infeksi di puncak </li>
+                                    <li> Mulai menurun dan menuju sembuh </li>
+                                    <li> Biasanya hari ke 14-21 </li>
+                                    <li> Perlu isolasi selama 2 minggu </li>
+                                @elseif ($pasien -> igm == "Negatif" && $pasien -> igg == "Positif")
+                                    <li> Tidak Terkena infeksi atau berada pada masa inkubasi penyakit </li>
+                                    <li> Antibodi belum berkembang </li>
+                                @else
+                                @endif
+                            </div>
                         </tr>
-                    <tbody>
+                    </tbody>
                 </table>
             </div>
         </div>
