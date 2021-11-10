@@ -26,7 +26,6 @@ class PasienSeeder extends Seeder
             'no_hp'         =>  '089121738213',
             'lokasi'        =>  'laboratorium',
             'tgl_tes'       =>  '09/11/2021',
-            'bahan'         =>  'Rapid',
             'hasil'         =>  'Negatif',
             'igm'           =>  'Negatif',
             'igg'           =>  'Negatif',
