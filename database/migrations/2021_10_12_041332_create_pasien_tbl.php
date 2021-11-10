@@ -26,7 +26,6 @@ class CreatePasienTbl extends Migration
             $table->string('no_hp');
             $table->string('lokasi');
             $table->string('tgl_tes');
-            $table->string('bahan');
             $table->string('hasil');
             $table->string('igm');
             $table->string('igg');
