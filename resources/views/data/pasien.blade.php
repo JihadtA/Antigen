@@ -97,8 +97,8 @@
                     <label>Jenis Kelamin:</label>
                     {{-- <input type="text" class="form-control" name="jns_kelamin" id="jns_kelamin"> --}}
                     <select class="form-control mb-1" name="jns_kelamin" id="jns_kelamin">
-                        <option value="Laki-Laki" @if (isset($pasien)) @if ($pasien->jns_kelamin == "Laki-Laki") selected @endif @endif>Laki-Laki</option>
-                        <option value="Perempuan" @if (isset($pasien)) @if ($pasien->jns_kelamin == "Perempuan") selected @endif @endif>Perempuan</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
                     </select>
                 </div>
                 <div class="form-group">
