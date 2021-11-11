@@ -62,6 +62,8 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
+            <form id="submitData">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="modal-body">
                 <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -69,7 +71,7 @@
                     </button>
                 </div>
                 <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                    <strong>Success!</strong>Pasien was added successfully.
+                    <strong>Success!</strong> Pasien was added successfully.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -144,7 +146,17 @@
                         <option value="Negatif">Negatif</option>
                     </select>
                 </div>
-
+                <!-- <div class="form-group">
+                    <label>Gejala:</label><br>
+                    <input class="form-check-input hidden" type="checkbox" value="" id="gejala" name="gejala">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="Batuk" id="gejala" name="gejala[]"> Batuk
+                    </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="Flu" id="gejala" name="gejala[]"> Flu
+                    </label>
+                </div> -->
+                </form>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -172,7 +184,7 @@
                     </button>
                 </div>
                 <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                    <strong>Success!</strong>Pasien was added successfully.
+                    <strong>Success!</strong> Pasien was added successfully.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -201,7 +213,7 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <h4>Are you sure want to delete this Pasien?</h4>
+                <h4>Apakah kamu yakin ingin menghapus Pasien ini?</h4>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -228,7 +240,7 @@
                     </button>
                 </div>
                 <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                    <strong>Success!</strong>Pasien was added successfully.
+                    <strong>Success!</strong> Pasien was added successfully.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
