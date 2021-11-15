@@ -204,7 +204,45 @@ class PasienController extends Controller
                         <option value="'.$igg_satu.'" >'.$igg_satu.'</option>
                         <option value="'.$igg_dua.'" >'.$igg_dua.'</option>
                     </select>
-                </div>';
+                </div>
+                                
+            <div class="form-check">
+            <label>Apakah anda memiliki keluhan Demam ?</label> <br>
+            <input type="radio" id="k_satu1" name="editK_satu" value="1" >Yes</label>
+            <input type="radio" id="k_satu2" name="editK_satu" value="0" >No</label><br>
+        </div>
+
+        <div class="form-check">
+            <br>
+            <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
+            <input type="radio"  id="k_dua1" name="editK_dua" value="1"  >Yes</label>
+            <input type="radio" id="k_dua2" name="editK_dua" value="0" >No</label><br>
+        </div>
+
+        <div class="form-check">
+            <br>
+            <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
+            <input type="radio"  id="k_tiga1" name="editK_tiga" value="1" >Yes</label>
+            <input type="radio" id="k_tiga2" name="editK_tiga" value="0" >No</label><br>
+        </div>
+
+        <div class="form-check">
+            <br>
+            <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
+            <input type="radio"  id="k_empat1" name="editK_empat" value="1" >Yes</label>
+            <input type="radio" id="k_empat2" name="editK_empat" value="0" >No</label><br>
+        </div>
+
+        <div class="form-check">
+        <br>
+        <label>Apakah anda Pernah :</label> <br>
+        <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
+        <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
+        <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
+        <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
+            <input type="radio"  id="screnning1" name="editScrenning" value="1" >Yes</label>
+            <input type="radio" id="screnning2" name="editScrenning" value="0" >No</label><br>
+        </div>';
 
         return response()->json(['html'=>$html]);
     }
