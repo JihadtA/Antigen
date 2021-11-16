@@ -216,16 +216,16 @@
     {{-- </div> --}}
     
     <div class="mt-2">
-        <table class="full table table-borderless">
+        <table class="full table table-borderless" style="margin-top: 25px">
             <thead>
             <tr>
-                <th scope="col" style="padding-left: 35px"> Scan Me!</th>
+                <th scope="col" style="padding-left: 2cm;"> Scan Me!</th>
                 <th scope="col" style="text-align: right; padding-right: 3cm;">Dokter Penanggung Jawab</th>
             </tr>
             </thead>
             <tbody>
                 <tr>
-                <th scope="row"><img style="width: 3cm height: 3cm; margin-left: 10px" src="data:image/png;base64, {!! $qrcode !!}"></th>
+                <th scope="row"><img style="width: 3cm height: 3cm; margin-left: 52px; margin-top:8px;" src="data:image/png;base64, {!! $qrcode !!}"></th>
                 <th></th>
             </tr>
             <tbody>
