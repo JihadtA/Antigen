@@ -100,7 +100,9 @@ class PasienController extends Controller
         $data = $pasien->findData($id);
         $l = "Laki-Laki";
         $p = "Perempuan";
+        $rcheck = "checked";
         
+        // Select Jns_Kelamin
         $sjns_kelamin = $data->jns_kelamin;
         if ($sjns_kelamin == $l) {
             $jns_satu = $l;
@@ -110,6 +112,7 @@ class PasienController extends Controller
             $jns_dua = $l;
         }
 
+        // Select Igm
         $sigm = $data->igm;
         if ($sigm == "Positif") {
             $igm_satu = "Positif";
@@ -119,6 +122,7 @@ class PasienController extends Controller
             $igm_dua = "Positif";
         }
 
+        // Select Igg
         $sigg = $data->igg;
         if ($sigg == "Positif") {
             $igg_satu = "Positif";
@@ -128,6 +132,7 @@ class PasienController extends Controller
             $igg_dua = "Positif";
         }
 
+        // Select Metode
         $smetode = $data->metode;
         if ($smetode == "Swab") {
             $metode_satu = "Swab";
@@ -135,6 +140,76 @@ class PasienController extends Controller
         } elseif ($smetode == "Rapid") {
             $metode_satu = "Rapid";
             $metode_dua = "Swab";
+        }
+
+        // Radio Gejala Satu
+        $rk_satu = $data->k_satu;
+        if ($rk_satu == "1") {
+            $k_satu_a = "Ya";
+            $k_satu_b = "Tidak";
+            $k_satu_c = "1";
+            $k_satu_d = "0";
+        } elseif ($rk_satu == "0") {
+            $k_satu_a = "Tidak";
+            $k_satu_b = "Ya";
+            $k_satu_c = "0";
+            $k_satu_d = "1";
+        }
+
+        // Radio Gejala Dua
+        $rk_dua = $data->k_dua;
+        if ($rk_dua == "1") {
+            $k_dua_a = "Ya";
+            $k_dua_b = "Tidak";
+            $k_dua_c = "1";
+            $k_dua_d = "0";
+        } elseif ($rk_dua == "0") {
+            $k_dua_a = "Tidak";
+            $k_dua_b = "Ya";
+            $k_dua_c = "0";
+            $k_dua_d = "1";
+        }
+
+        // Radio Gejala Tiga
+        $rk_tiga = $data->k_tiga;
+        if ($rk_tiga == "1") {
+            $k_tiga_a = "Ya";
+            $k_tiga_b = "Tidak";
+            $k_tiga_c = "1";
+            $k_tiga_d = "0";
+        } elseif ($rk_tiga == "0") {
+            $k_tiga_a = "Tidak";
+            $k_tiga_b = "Ya";
+            $k_tiga_c = "0";
+            $k_tiga_d = "1";
+        }
+
+        // Radio Gejala Empat
+        $rk_empat = $data->k_empat;
+        if ($rk_empat == "1") {
+            $k_empat_a = "Ya";
+            $k_empat_b = "Tidak";
+            $k_empat_c = "1";
+            $k_empat_d = "0";
+        } elseif ($rk_empat == "0") {
+            $k_empat_a = "Tidak";
+            $k_empat_b = "Ya";
+            $k_empat_c = "0";
+            $k_empat_d = "1";
+        }
+
+        // Radio Screening
+        $rscrenning = $data->screnning;
+        if ($rscrenning == "1") {
+            $screnning_a = "Ya";
+            $screnning_b = "Tidak";
+            $screnning_c = "1";
+            $screnning_d = "0";
+        } elseif ($rscrenning == "0") {
+            $screnning_a = "Tidak";
+            $screnning_b = "Ya";
+            $screnning_c = "0";
+            $screnning_d = "1";
         }
         
         $html = '<div class="form-group">
@@ -206,31 +281,31 @@ class PasienController extends Controller
                     </select>
                 </div>
                                 
-            <div class="form-check">
+        <div class="form-check">
             <label>Apakah anda memiliki keluhan Demam ?</label> <br>
-            <input type="radio" id="k_satu1" name="editK_satu" value="1" >Yes</label>
-            <input type="radio" id="k_satu2" name="editK_satu" value="0" >No</label><br>
+            <input type="radio" id="k_satu1" name="editK_satu" value="'.$k_satu_c.'" '.$rcheck.'> '.$k_satu_a.'</label>
+            <input type="radio" id="k_satu2" name="editK_satu" value="'.$k_satu_d.'" > '.$k_satu_b.'</label><br>
         </div>
 
         <div class="form-check">
             <br>
             <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
-            <input type="radio"  id="k_dua1" name="editK_dua" value="1"  >Yes</label>
-            <input type="radio" id="k_dua2" name="editK_dua" value="0" >No</label><br>
+            <input type="radio"  id="k_dua1" name="editK_dua" value="'.$k_dua_c.'" '.$rcheck.'> '.$k_dua_a.'</label>
+            <input type="radio" id="k_dua2" name="editK_dua" value="'.$k_dua_d.'" > '.$k_dua_b.'</label><br>
         </div>
 
         <div class="form-check">
             <br>
             <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
-            <input type="radio"  id="k_tiga1" name="editK_tiga" value="1" >Yes</label>
-            <input type="radio" id="k_tiga2" name="editK_tiga" value="0" >No</label><br>
+            <input type="radio"  id="k_tiga1" name="editK_tiga" value="'.$k_tiga_c.'" '.$rcheck.'> '.$k_tiga_a.'</label>
+            <input type="radio" id="k_tiga2" name="editK_tiga" value="'.$k_tiga_d.'" > '.$k_tiga_b.'</label><br>
         </div>
 
         <div class="form-check">
             <br>
             <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
-            <input type="radio"  id="k_empat1" name="editK_empat" value="1" >Yes</label>
-            <input type="radio" id="k_empat2" name="editK_empat" value="0" >No</label><br>
+            <input type="radio"  id="k_empat1" name="editK_empat" value="'.$k_empat_c.'" '.$rcheck.'> '.$k_empat_a.'</label>
+            <input type="radio" id="k_empat2" name="editK_empat" value="'.$k_empat_d.'" > '.$k_empat_b.'</label><br>
         </div>
 
         <div class="form-check">
@@ -240,8 +315,8 @@ class PasienController extends Controller
         <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
         <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
         <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
-            <input type="radio"  id="screnning1" name="editScrenning" value="1" >Yes</label>
-            <input type="radio" id="screnning2" name="editScrenning" value="0" >No</label><br>
+            <input type="radio"  id="screnning" name="editScrenning" value="'.$screnning_c.'" '.$rcheck.'> '.$screnning_a.'</label>
+            <input type="radio" id="screnning" name="editScrenning" value="'.$screnning_d.'" > '.$screnning_b.'</label><br>
         </div>';
 
         return response()->json(['html'=>$html]);

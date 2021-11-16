@@ -42,63 +42,127 @@
                 </div>
                 <div class="ibox-content">
                     <div class="ml-1 mid row">
-                    <table class="table table-bordered">
+                    <table class="table table-hover" style="border: none;">
                         <tbody>
-                        
                             <tr>
                                 <td>No Lab</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->no_lab : '' }}</th>
                             </tr>
                             <tr>
                                 <td>No Rekam Medis</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->no_rm : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Nama</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->nama : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Jenis Kelamin</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->jns_kelamin : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Umur</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->umur : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Tanggal Lahir</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->tgl_lahir : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Alamat</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->alamat : '' }}</th>
                             </tr>
                             <tr>
                                 <td>No Hp</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->no_hp : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Lokasi</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->lokasi : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Tanggal Tes</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->tgl_tes : '' }}</th>
                             </tr>
                             <tr>
                                 <td>Metode</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->metode : '' }}</th>
                             </tr>
                             <tr>
                                 <td>IgM</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->igm : '' }}</th>
                             </tr>
                             <tr>
                                 <td>IgG</td>
+                                <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->igg : '' }}</th>
                             </tr>
                             <tr>
+                                <td>Apakah anda memiliki keluhan Demam?</td>
+                                <th>:</th>
+                                @if ($pasien->k_satu == "1")
+                                    <th> Ya</th>
+                                @elseif ($pasien->k_satu == "0")
+                                    <th> Tidak</th>
+                                @endif
+                            </tr>
+                            <tr>
+                                <td>Apakah anda memiliki keluhan Nyeri telan?</td>
+                                <th>:</th>
+                                @if ($pasien->k_dua == "1")
+                                    <th> Ya</th>
+                                @elseif ($pasien->k_dua == "0")
+                                    <th> Tidak</th>
+                                @endif
+                            </tr>
+                            <tr>
+                                <td>Apakah anda memiliki keluhan Batuk?</td>
+                                <th>:</th>
+                                @if ($pasien->k_tiga == "1")
+                                    <th> Ya</th>
+                                @elseif ($pasien->k_tiga == "0")
+                                    <th> Tidak</th>
+                                @endif
+                            </tr>
+                            <tr>
+                                <td>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat?</td>
+                                <th>:</th>
+                                @if ($pasien->k_empat == "1")
+                                    <th> Ya</th>
+                                @elseif ($pasien->k_empat == "0")
+                                    <th> Tidak</th>
+                                @endif
+                            </tr>
+                            <tr>
+                                <td>
+                                    Apakah anda Pernah :
+                                    <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
+                                    <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
+                                    <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
+                                    <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li>
+                                </td>
+                                <th class="align-middle">:</th>
+                                @if ($pasien->screnning == "1")
+                                    <th class="align-middle"> Ya</th>
+                                @elseif ($pasien->screnning == "0")
+                                    <th class="align-middle"> Tidak</th>
+                                @endif
+                            </tr>
+                            <tr>
                                 <td>Hasil</td>
+                                <th>:</th>
                                 @if ($pasien->igm == "Positif" && $pasien->igg == "Positif")
                                     <th> Positif</th>
                                 @elseif ($pasien->igm == "Positif" && $pasien->igg == "Negatif")
@@ -111,17 +175,12 @@
                             </tr>
                         </tbody>
                     </table>
-
-                    <div class="col-md-6">
-                        {{-- {!! QrCode::size(100)->generate(Request::url()); !!} --}}
-                    </div> 
-                    
-                    
-                        <div class="modal-footer position-relative mt-3 " >
-                            <div class="col-sm-12 col-sm-offset-2 ">
-                                <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich text-white">Kembali</a>
-                                <a href="/pasien/{{ $pasien->id }}/cetak" target="_blank" class="btn btn-primary">Print</a>
-                            </div>
+                        <div class="col-md-6">
+                            
+                        </div> <br>
+                        <div class="text-center">
+                            <a href="{{ route('pasien.index') }}" class="btn btn-success btn-hemisperich text-white">Kembali</a>
+                            <a href="/pasien/{{ $pasien->id }}/cetak" target="_blank" class="btn btn-primary">Print</a>
                         </div>
                     </div>
                 </div>
