@@ -21,6 +21,9 @@
         .small{
             width : 50%;
         }
+        .middle{
+            width : 78%;
+        }
         .mid{
             width : 100%;
         }
@@ -69,9 +72,6 @@
         }
         .pdl{
             padding-left: 35px;
-        }
-        .pdl1{
-            padding-left: 77px;
         }
         table tr th,table tr td{
             text-align: left;
@@ -127,13 +127,13 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="full wrapper1 table table-borderless mb-1">
-                <tbody>
+            <table class="middle table table-borderless mb-1">
+                <thead>
                     <tr>
-                        <th>Alamat</th>
-                        <td class="pdl1">{{ $pasien->alamat }}</td>
+                        <th scope="col">Alamat</th>
+                        <td scope="col" style="padding-left: 72px;">{{ $pasien->alamat }}</td>
                     </tr>
-                </tbody>
+                </thead>
             </table>
         </div>
     </div>
