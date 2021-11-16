@@ -215,13 +215,27 @@
         </div>
     {{-- </div> --}}
     
-    <div class="left mid">
-        <div class="mt-5">
-        <h3 style="margin-left: 28px">Scan Me!</h3>
-        <h4 class="right" style="margin-right: 35px">Doktor Penanggung Jawab</h4>
-        <img style="width: 3cm height: 3cm; margin-left: 10px" src="data:image/png;base64, {!! $qrcode !!}">
-        <h4 class="right" style="margin-right: 80px">{{ $pasien->nama_dok }}</h4>
+    <div class="mt-2">
+        <table class="full table table-borderless">
+            <thead>
+            <tr>
+                <th scope="col" style="padding-left: 35px"> Scan Me!</th>
+                <th scope="col" style="text-align: right; padding-right: 3cm;">Dokter Penanggung Jawab</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row"><img style="width: 3cm height: 3cm; margin-left: 10px" src="data:image/png;base64, {!! $qrcode !!}"></th>
+                <th></th>
+            </tr>
+            <tbody>
+                <th></th>
+                <tr><h4 class="right" style="text-align: right; padding-right: 95px;">{{ $pasien->nama_dok }}</h4></tr>
+            </tbody>
+            </tbody>
+        </table>
     </div>
+
     <br/>
     <br/>
     <hr/>
