@@ -29,7 +29,11 @@ class PasienSeeder extends Seeder
             'igm'           =>  'Negatif',
             'igg'           =>  'Negatif',
             'metode'        =>  'Rapid',
-
+            'k_satu'        =>  '1',
+            'k_dua'         =>  '1',
+            'k_tiga'        =>  '1',
+            'k_empat'       =>  '1',
+            'screnning'     =>  '1',
         ]
     );
 
@@ -48,7 +52,11 @@ class PasienSeeder extends Seeder
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
         'metode'            =>  'Rapid',
-
+        'k_satu'            =>  '1',
+        'k_dua'             =>  '1',
+        'k_tiga'            =>  '0',
+        'k_empat'           =>  '0',
+        'screnning'         =>  '1',
         ]
     );
 
@@ -68,8 +76,12 @@ class PasienSeeder extends Seeder
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
         'metode'            =>  'Swab',
-
-          ]
+        'k_satu'            =>  '1',
+        'k_dua'             =>  '1',
+        'k_tiga'            =>  '1',
+        'k_empat'           =>  '0',
+        'screnning'         =>  '0',
+        ]
     );
 
     DB::table('pasien')->insert([
@@ -87,8 +99,12 @@ class PasienSeeder extends Seeder
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
         'metode'            =>  'Rapid',
-
-          ]
+        'k_satu'            =>  '1',
+        'k_dua'             =>  '1',
+        'k_tiga'            =>  '0',
+        'k_empat'           =>  '1',
+        'screnning'         =>  '1',
+        ]
     );
 
     DB::table('pasien')->insert([
@@ -105,8 +121,12 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '08/11/2021',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
-        'metode'            =>  'Rapid'
-
+        'metode'            =>  'Rapid',
+        'k_satu'            =>  '1',
+        'k_dua'             =>  '1',
+        'k_tiga'            =>  '1',
+        'k_empat'           =>  '1',
+        'screnning'         =>  '1',
         ]
     );
 
@@ -124,9 +144,13 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '08/11/2021',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
-        'metode'            =>  'Swab'
-
-          ]
+        'metode'            =>  'Swab',
+        'k_satu'            =>  '1',
+        'k_dua'             =>  '1',
+        'k_tiga'            =>  '1',
+        'k_empat'           =>  '1',
+        'screnning'         =>  '0',
+        ]
     );
 
     DB::table('pasien')->insert([
@@ -143,9 +167,13 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '09/11/2021',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
-        'metode'            =>  'Rapid'
-
-          ]
+        'metode'            =>  'Rapid',
+        'k_satu'            =>  '1',
+        'k_dua'             =>  '0',
+        'k_tiga'            =>  '1',
+        'k_empat'           =>  '1',
+        'screnning'         =>  '1',
+        ]
     );
 
     DB::table('pasien')->insert([
@@ -162,9 +190,13 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '09/11/2021',
         'igm'               =>  'Negatif',
         'igg'               =>  'Negatif',
-        'metode'            =>  'Swab'
-
-          ]
+        'metode'            =>  'Swab',
+        'k_satu'            =>  '0',
+        'k_dua'             =>  '1',
+        'k_tiga'            =>  '1',
+        'k_empat'           =>  '1',
+        'screnning'         =>  '1',
+        ]
     );
 
     DB::table('pasien')->insert([
@@ -181,9 +213,13 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '11/11/2021',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
-        'metode'            =>  'Rapid'
-
-          ]
+        'metode'            =>  'Rapid',
+        'k_satu'            =>  '1',
+        'k_dua'             =>  '1',
+        'k_tiga'            =>  '0',
+        'k_empat'           =>  '1',
+        'screnning'         =>  '1',
+        ]
     );
 
     DB::table('pasien')->insert([
@@ -200,9 +236,13 @@ class PasienSeeder extends Seeder
         'tgl_tes'           =>  '10/11/2021',
         'igm'               =>  'Positif',
         'igg'               =>  'Positif',
-        'metode'            =>  'Swab'
-
-          ]
+        'metode'            =>  'Swab',
+        'k_satu'            =>  '0',
+        'k_dua'             =>  '1',
+        'k_tiga'            =>  '1',
+        'k_empat'           =>  '1',
+        'screnning'         =>  '1',
+        ]
     );
     }
 }
