@@ -18,6 +18,9 @@
         .half{
             width : 85%;
         }
+        .small{
+            width : 50%;
+        }
         .mid{
             width : 100%;
         }
@@ -188,7 +191,7 @@
                             <td></td>
                             <td></td>
                         <tr>
-                            <div class="pdl">
+                            <div class="pdl" style="margin-bottom: 15px">
                                 @if ($pasien -> igm == "Negatif" && $pasien -> igg == "Negatif")
                                     <li> Infeksi baru dimulai </li>
                                     <li> Infeksi biasanya hari ke 1-7 </li>
@@ -217,7 +220,7 @@
         <h3 style="margin-left: 28px">Scan Me!</h3>
         <h4 class="right" style="margin-right: 35px">Doktor Penanggung Jawab</h4>
         <img style="width: 3cm height: 3cm; margin-left: 10px" src="data:image/png;base64, {!! $qrcode !!}">
-        <h4 class="right" style="margin-right: 74px">{{ $pasien->nama_dok }}</h4>
+        <h4 class="right" style="margin-right: 80px">{{ $pasien->nama_dok }}</h4>
     </div>
     <br/>
     <br/>
