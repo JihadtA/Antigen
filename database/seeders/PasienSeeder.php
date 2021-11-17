@@ -33,7 +33,7 @@ class PasienSeeder extends Seeder
             'k_dua'         =>  '1',
             'k_tiga'        =>  '1',
             'k_empat'       =>  '1',
-            'screnning'     =>  '1',
+            'screening'     =>  '1',
         ]
     );
 
@@ -56,7 +56,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '1',
         'k_tiga'            =>  '0',
         'k_empat'           =>  '0',
-        'screnning'         =>  '1',
+        'screening'         =>  '1',
         ]
     );
 
@@ -80,7 +80,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '1',
         'k_tiga'            =>  '1',
         'k_empat'           =>  '0',
-        'screnning'         =>  '0',
+        'screening'         =>  '0',
         ]
     );
 
@@ -103,7 +103,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '1',
         'k_tiga'            =>  '0',
         'k_empat'           =>  '1',
-        'screnning'         =>  '1',
+        'screening'         =>  '1',
         ]
     );
 
@@ -126,7 +126,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '1',
         'k_tiga'            =>  '1',
         'k_empat'           =>  '1',
-        'screnning'         =>  '1',
+        'screening'         =>  '1',
         ]
     );
 
@@ -149,7 +149,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '1',
         'k_tiga'            =>  '1',
         'k_empat'           =>  '1',
-        'screnning'         =>  '0',
+        'screening'         =>  '0',
         ]
     );
 
@@ -172,7 +172,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '0',
         'k_tiga'            =>  '1',
         'k_empat'           =>  '1',
-        'screnning'         =>  '1',
+        'screening'         =>  '1',
         ]
     );
 
@@ -195,7 +195,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '1',
         'k_tiga'            =>  '1',
         'k_empat'           =>  '1',
-        'screnning'         =>  '1',
+        'screening'         =>  '1',
         ]
     );
 
@@ -218,7 +218,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '1',
         'k_tiga'            =>  '0',
         'k_empat'           =>  '1',
-        'screnning'         =>  '1',
+        'screening'         =>  '1',
         ]
     );
 
@@ -241,7 +241,7 @@ class PasienSeeder extends Seeder
         'k_dua'             =>  '1',
         'k_tiga'            =>  '1',
         'k_empat'           =>  '1',
-        'screnning'         =>  '1',
+        'screening'         =>  '1',
         ]
     );
     }

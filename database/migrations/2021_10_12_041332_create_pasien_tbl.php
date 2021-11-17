@@ -33,7 +33,7 @@ class CreatePasienTbl extends Migration
             $table->string('k_dua');
             $table->string('k_tiga');
             $table->string('k_empat');
-            $table->string('screnning');
+            $table->string('screening');
             $table->timestamps();
         });
     }

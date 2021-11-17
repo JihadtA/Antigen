@@ -199,17 +199,17 @@ class PasienController extends Controller
         }
 
         // Radio Screening
-        $rscrenning = $data->screnning;
-        if ($rscrenning == "1") {
-            $screnning_a = "Ya";
-            $screnning_b = "Tidak";
-            $screnning_c = "1";
-            $screnning_d = "0";
-        } elseif ($rscrenning == "0") {
-            $screnning_a = "Tidak";
-            $screnning_b = "Ya";
-            $screnning_c = "0";
-            $screnning_d = "1";
+        $rscreening = $data->screening;
+        if ($rscreening == "1") {
+            $screening_a = "Ya";
+            $screening_b = "Tidak";
+            $screening_c = "1";
+            $screening_d = "0";
+        } elseif ($rscreening == "0") {
+            $screening_a = "Tidak";
+            $screening_b = "Ya";
+            $screening_c = "0";
+            $screening_d = "1";
         }
         
         $html = '<div class="form-group">
@@ -315,8 +315,8 @@ class PasienController extends Controller
         <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
         <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
         <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
-            <input type="radio"  id="screnning" name="editScrenning" value="'.$screnning_c.'" '.$rcheck.'> '.$screnning_a.'</label>
-            <input type="radio" id="screnning" name="editScrenning" value="'.$screnning_d.'" > '.$screnning_b.'</label><br>
+            <input type="radio"  id="screening" name="editScreening" value="'.$screening_c.'" '.$rcheck.'> '.$screening_a.'</label>
+            <input type="radio" id="screening" name="editScreening" value="'.$screening_d.'" > '.$screening_b.'</label><br>
         </div>';
 
         return response()->json(['html'=>$html]);

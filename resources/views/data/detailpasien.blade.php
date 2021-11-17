@@ -109,7 +109,156 @@
                                 <th>:</th>
                                 <th>{{ isset($pasien)? $pasien->igg : '' }}</th>
                             </tr>
+
+                            @if ($pasien->k_satu == "1")
                             <tr>
+                                <td>Keluhan yang diderita </td>
+                                <th>:</th>
+                                <th>
+                                @if ($pasien->k_dua == "1" && $pasien->k_tiga == "1" && $pasien->k_empat == "1")
+                                    <li>Demam</li>
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_dua == "0" && $pasien->k_tiga == "1" && $pasien->k_empat == "1")
+                                    <li>Demam</li>
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_dua == "1" && $pasien->k_tiga == "0" && $pasien->k_empat == "1")
+                                    <li>Demam</li>    
+                                    <li>Nyeri Telan</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_dua == "1" && $pasien->k_tiga == "1" && $pasien->k_empat == "0")
+                                    <li>Demam</li>    
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                @elseif($pasien->k_dua == "1" && $pasien->k_tiga == "0" && $pasien->k_empat == "0")
+                                    <li>Demam</li>    
+                                    <li>Nyeri Telan</li>
+                                @elseif($pasien->k_dua == "0" && $pasien->k_tiga == "1" && $pasien->k_empat == "0")
+                                    <li>Demam</li>    
+                                    <li>Batuk</li>
+                                @elseif($pasien->k_dua == "0" && $pasien->k_tiga == "0" && $pasien->k_empat == "1")
+                                    <li>Demam</li>    
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @endif
+                                </th>
+                            </tr>
+                            @elseif ($pasien->k_dua == "1")
+                            <tr>
+                                <td>Keluhan yang diderita </td>
+                                <th>:</th>
+                                <th>
+                                @if ($pasien->k_satu == "1" && $pasien->k_tiga == "1" && $pasien->k_empat == "1")
+                                    <li>Demam</li>
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_tiga == "1" && $pasien->k_empat == "1")
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_tiga == "0" && $pasien->k_empat == "1")
+                                    <li>Demam</li>    
+                                    <li>Nyeri Telan</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_tiga == "1" && $pasien->k_empat == "0")
+                                    <li>Demam</li>    
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_tiga == "0" && $pasien->k_empat == "0")
+                                    <li>Demam</li>    
+                                    <li>Nyeri Telan</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_tiga == "1" && $pasien->k_empat == "0")
+                                    <li>Nyeri Telan</li>    
+                                    <li>Batuk</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_tiga == "0" && $pasien->k_empat == "1")
+                                    <li>Nyeri Telan</li>    
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @endif
+                                </th>
+                            </tr>
+                            @elseif ($pasien->k_tiga == "1")
+                            <tr>
+                                <td>Keluhan yang diderita </td>
+                                <th>:</th>
+                                <th>
+                                @if ($pasien->k_satu == "1" && $pasien->k_dua == "1" && $pasien->k_empat == "1")
+                                    <li>Demam</li>
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_dua == "1" && $pasien->k_empat == "1")
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_dua == "0" && $pasien->k_empat == "1")
+                                    <li>Demam</li>    
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_dua == "1" && $pasien->k_empat == "0")
+                                    <li>Demam</li>    
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_dua == "0" && $pasien->k_empat == "0")
+                                    <li>Demam</li>    
+                                    <li>Batuk</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_dua == "1" && $pasien->k_empat == "0")
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_dua == "0" && $pasien->k_empat == "1")
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @endif
+                                </th>
+                            </tr>
+                            @elseif ($pasien->k_empat == "1")
+                            <tr>
+                                <td>Keluhan yang diderita </td>
+                                <th>:</th>
+                                <th>
+                                @if ($pasien->k_satu == "1" && $pasien->k_dua == "1" && $pasien->k_tiga == "1")
+                                    <li>Demam</li>
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_dua == "1" && $pasien->k_tiga == "1")
+                                    <li>Nyeri Telan</li>
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_dua == "0" && $pasien->k_tiga == "1")
+                                    <li>Demam</li>    
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_dua == "1" && $pasien->k_tiga == "0")
+                                    <li>Demam</li>    
+                                    <li>Nyeri Telan</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "1" && $pasien->k_dua == "0" && $pasien->k_tiga == "0")
+                                    <li>Demam</li>   
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_dua == "1" && $pasien->k_tiga == "0")
+                                    <li>Nyeri Telan</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @elseif($pasien->k_satu == "0" && $pasien->k_dua == "0" && $pasien->k_tiga == "1")
+                                    <li>Batuk</li>
+                                    <li>Nafas pendek / Sesak nafas / Nafas terasa berat</li>
+                                @endif
+                                </th>
+                            </tr>
+                            @endif
+                            
+                            <tr>
+                                <td>Screening</td>
+                                <th class="align-middle">:</th>
+                                @if ($pasien->screening == "1")
+                                    <th class="align-middle"> Ya</th>
+                                @elseif ($pasien->screening == "0")
+                                    <th class="align-middle"> Tidak</th>
+                                @endif
+                            </tr>
+
+                            {{-- <tr>
                                 <td>Apakah anda memiliki keluhan Demam?</td>
                                 <th>:</th>
                                 @if ($pasien->k_satu == "1")
@@ -154,12 +303,12 @@
                                     <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li>
                                 </td>
                                 <th class="align-middle">:</th>
-                                @if ($pasien->screnning == "1")
+                                @if ($pasien->screening == "1")
                                     <th class="align-middle"> Ya</th>
-                                @elseif ($pasien->screnning == "0")
+                                @elseif ($pasien->screening == "0")
                                     <th class="align-middle"> Tidak</th>
                                 @endif
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td>Hasil</td>
                                 <th>:</th>
