@@ -18,6 +18,12 @@
         .half{
             width : 85%;
         }
+        .small{
+            width : 50%;
+        }
+        .middle{
+            width : 78%;
+        }
         .mid{
             width : 100%;
         }
@@ -66,9 +72,6 @@
         }
         .pdl{
             padding-left: 35px;
-        }
-        .pdl1{
-            padding-left: 77px;
         }
         table tr th,table tr td{
             text-align: left;
@@ -124,13 +127,13 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="full wrapper1 table table-borderless mb-1">
-                <tbody>
+            <table class="middle table table-borderless mb-1">
+                <thead>
                     <tr>
-                        <th>Alamat</th>
-                        <td class="pdl1">{{ $pasien->alamat }}</td>
+                        <th scope="col">Alamat</th>
+                        <td scope="col" style="padding-left: 72px;">{{ $pasien->alamat }}</td>
                     </tr>
-                </tbody>
+                </thead>
             </table>
         </div>
     </div>
@@ -188,7 +191,7 @@
                             <td></td>
                             <td></td>
                         <tr>
-                            <div class="pdl">
+                            <div class="pdl" style="margin-bottom: 15px">
                                 @if ($pasien -> igm == "Negatif" && $pasien -> igg == "Negatif")
                                     <li> Infeksi baru dimulai </li>
                                     <li> Infeksi biasanya hari ke 1-7 </li>
@@ -212,13 +215,27 @@
         </div>
     {{-- </div> --}}
     
-    <div class="left mid">
-        <div class="mt-5">
-        <h3 style="margin-left: 28px">Scan Me!</h3>
-        <h4 class="right" style="margin-right: 35px">Doktor Penanggung Jawab</h4>
-        <img style="width: 3cm height: 3cm; margin-left: 10px" src="data:image/png;base64, {!! $qrcode !!}">
-        <h4 class="right" style="margin-right: 74px">{{ $pasien->nama_dok }}</h4>
+    <div class="mt-2">
+        <table class="full table table-borderless" style="margin-top: 25px">
+            <thead>
+            <tr>
+                <th scope="col" style="padding-left: 2cm;"> Scan Me!</th>
+                <th scope="col" style="text-align: right; padding-right: 3cm;">Dokter Penanggung Jawab</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row"><img style="width: 3cm height: 3cm; margin-left: 52px; margin-top:8px;" src="data:image/png;base64, {!! $qrcode !!}"></th>
+                <th></th>
+            </tr>
+            <tbody>
+                <th></th>
+                <tr><h4 class="right" style="text-align: right; padding-right: 95px;">{{ $pasien->nama_dok }}</h4></tr>
+            </tbody>
+            </tbody>
+        </table>
     </div>
+
     <br/>
     <br/>
     <hr/>

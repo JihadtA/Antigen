@@ -29,7 +29,11 @@ class CreatePasienTbl extends Migration
             $table->string('igm');
             $table->string('igg');
             $table->string('metode');
-            $table->string('gejala')->nullable();
+            $table->string('k_satu');
+            $table->string('k_dua');
+            $table->string('k_tiga');
+            $table->string('k_empat');
+            $table->string('screening');
             $table->timestamps();
         });
     }

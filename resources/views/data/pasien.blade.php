@@ -54,7 +54,7 @@
 
 <!-- Create Pasien Modal -->
 <div class="modal fade" id="CreatePasienModal">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
@@ -97,8 +97,8 @@
                     <label>Jenis Kelamin:</label>
                     {{-- <input type="text" class="form-control" name="jns_kelamin" id="jns_kelamin"> --}}
                     <select class="form-control mb-1" name="jns_kelamin" id="jns_kelamin">
-                        <option value="Laki-Laki" @if (isset($pasien)) @if ($pasien->jns_kelamin == "Laki-Laki") selected @endif @endif>Laki-Laki</option>
-                        <option value="Perempuan" @if (isset($pasien)) @if ($pasien->jns_kelamin == "Perempuan") selected @endif @endif>Perempuan</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -146,16 +146,35 @@
                         <option value="Negatif">Negatif</option>
                     </select>
                 </div>
-                <!-- <div class="form-group">
-                    <label>Gejala:</label><br>
-                    <input class="form-check-input hidden" type="checkbox" value="" id="gejala" name="gejala">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="Batuk" id="gejala" name="gejala[]"> Batuk
-                    </label>
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="Flu" id="gejala" name="gejala[]"> Flu
-                    </label>
-                </div> -->
+                <div class="form-group">
+                    <label>Apakah anda memiliki keluhan Demam ?</label> <br>
+                    <input type="radio"  id="k_satu1" name="k_satu" value="1"> Ya</label>
+                    <input type="radio" id="k_satu2" name="k_satu" value="0"> Tidak</label> <br>
+                </div>
+                <div class="form-group">
+                    <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
+                    <input type="radio"  id="k_dua1" name="k_dua" value="1"> Ya</label>
+                    <input type="radio" id="k_dua2" name="k_dua" value="0"> Tidak</label> <br>
+                </div>
+                <div class="form-group">
+                    <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
+                    <input type="radio"  id="k_tiga1" name="k_tiga" value="1"> Ya</label>
+                    <input type="radio" id="k_tiga2" name="k_tiga" value="0"> Tidak</label> <br>
+                </div>
+                <div class="form-group">
+                    <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
+                    <input type="radio"  id="k_empat1" name="k_empat" value="1"> Ya</label>
+                    <input type="radio" id="k_empat2" name="k_empat" value="0"> Tidak</label><br>
+                </div>
+                <div class="form-group">
+                    <label>Apakah anda Pernah :</label> <br>
+                    <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
+                    <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
+                    <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
+                    <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
+                    <input type="radio"  id="screening1" name="status" value="1"> Ya</label>
+                    <input type="radio" id="screening2" name="status" value="0"> Tidak</label>
+                </div>
                 </form>
             </div>
             <!-- Modal footer -->
@@ -318,6 +337,11 @@
                     igm: $('#igm').val(),
                     igg: $('#igg').val(),
                     metode: $('#metode').val(),
+                    k_satu: $('input[name="k_satu"]:checked').val(),
+                    k_dua: $('input[name="k_dua"]:checked').val(),
+                    k_tiga: $('input[name="k_tiga"]:checked').val(),
+                    k_empat: $('input[name="k_empat"]:checked').val(),
+                    screening: $('input[name="status"]:checked').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
@@ -415,6 +439,11 @@
                     igm: $('#editIgm').val(),
                     igg: $('#editIgg').val(),
                     metode: $('#editMetode').val(),
+                    k_satu: $('input[name="editK_satu"]:checked').val(),
+                    k_dua: $('input[name="editK_dua"]:checked').val(),
+                    k_tiga: $('input[name="editK_tiga"]:checked').val(),
+                    k_empat: $('input[name="editK_empat"]:checked').val(),
+                    screening: $('input[name="editScreening"]:checked').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
