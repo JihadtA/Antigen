@@ -286,13 +286,10 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script> -->
+<script src="{{ asset('/js/date.js') }}"></script>
 
 <script type="text/javascript">
-    $('.datepicker').datepicker({
-        format: 'mm/dd/yyyy',
-	});
-
     $(document).ready(function() {
         // init datatable.
         var dataTable = $('.datatable').DataTable({
