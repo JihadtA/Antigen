@@ -149,22 +149,22 @@
                 <div class="form-group">
                     <label>Apakah anda memiliki keluhan Demam ?</label> <br>
                     <input type="radio"  id="k_satu1" name="k_satu" value="1"> Ya</label>
-                    <input type="radio" id="k_satu2" name="k_satu" value="0"> Tidak</label> <br>
+                    <input type="radio" id="k_satu2" name="k_satu" value="0" checked> Tidak</label> <br>
                 </div>
                 <div class="form-group">
                     <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
                     <input type="radio"  id="k_dua1" name="k_dua" value="1"> Ya</label>
-                    <input type="radio" id="k_dua2" name="k_dua" value="0"> Tidak</label> <br>
+                    <input type="radio" id="k_dua2" name="k_dua" value="0" checked> Tidak</label> <br>
                 </div>
                 <div class="form-group">
                     <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
                     <input type="radio"  id="k_tiga1" name="k_tiga" value="1"> Ya</label>
-                    <input type="radio" id="k_tiga2" name="k_tiga" value="0"> Tidak</label> <br>
+                    <input type="radio" id="k_tiga2" name="k_tiga" value="0" checked> Tidak</label> <br>
                 </div>
                 <div class="form-group">
                     <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
                     <input type="radio"  id="k_empat1" name="k_empat" value="1"> Ya</label>
-                    <input type="radio" id="k_empat2" name="k_empat" value="0"> Tidak</label><br>
+                    <input type="radio" id="k_empat2" name="k_empat" value="0" checked> Tidak</label><br>
                 </div>
                 <div class="form-group">
                     <label>Apakah anda Pernah :</label> <br>
@@ -173,7 +173,7 @@
                     <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
                     <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
                     <input type="radio"  id="screening1" name="status" value="1"> Ya</label>
-                    <input type="radio" id="screening2" name="status" value="0"> Tidak</label>
+                    <input type="radio" id="screening2" name="status" value="0" checked> Tidak</label>
                 </div>
                 </form>
             </div>

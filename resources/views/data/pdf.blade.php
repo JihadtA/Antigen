@@ -125,15 +125,11 @@
                         <th>No HP</th>
                         <td>{{ $pasien->no_hp }}</td>
                     </tr>
-                </tbody>
-            </table>
-            <table class="middle table table-borderless mb-1">
-                <thead>
                     <tr>
-                        <th scope="col">Alamat</th>
-                        <td scope="col" style="padding-left: 72px;">{{ $pasien->alamat }}</td>
+                        <th>Alamat</th>
+                        <td>{{ $pasien->alamat }}</td>
                     </tr>
-                </thead>
+                </tbody>
             </table>
         </div>
     </div>
