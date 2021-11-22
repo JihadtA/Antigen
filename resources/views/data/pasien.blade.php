@@ -58,7 +58,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Pasien Create</h4>
+                <h4 class="modal-title">Tambah Pasien</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
@@ -179,8 +179,8 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="SubmitCreatePasienForm">Create</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="SubmitCreatePasienForm">Tambah</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
@@ -192,7 +192,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Pasien Edit</h4>
+                <h4 class="modal-title">Ubah Pasien</h4>
                 <button type="button" class="close modelClose" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
@@ -214,8 +214,8 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="SubmitEditPasienForm">Update</button>
-                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="SubmitEditPasienForm">Ubah</button>
+                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
@@ -227,7 +227,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Pasien Delete</h4>
+                <h4 class="modal-title">Hapus Pasien</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
@@ -236,8 +236,8 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="SubmitDeletePasienForm">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger" id="SubmitDeletePasienForm">Ya</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
             </div>
         </div>
     </div>
