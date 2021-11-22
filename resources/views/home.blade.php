@@ -2,6 +2,22 @@
 @section('breadcrumb')
     <h2>{{ $title }}</h2>
 @endsection
+@section('style')
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" >
+<style>
+    .borderless td, .borderless th {
+        border: none;
+        width: 50%;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    .borderless {
+  	    width: 100%;
+    }
+</style>
+@endsection
 @section('content')
 <div id="kopi-covid"></div>
 <script>
@@ -261,12 +277,17 @@
                         setInterval(function(){ 
                             $('.alert-success').hide();
                             $('#CreatePasienModal').modal('hide');
-                            location.reload();
+                            location.href = "{{ route('pasien.index') }}";
+                            // location.reload();
                         }, 2000);
                     }
                 }
             });
         });
 </script>
+@endsection
 
+@section('script')
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ asset('/js/date.js') }}"></script>
 @endsection
