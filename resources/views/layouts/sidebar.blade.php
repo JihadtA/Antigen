@@ -41,6 +41,9 @@
             <li class="{{  request()->routeIs('pasien.*') ? 'active' : '' }}">
                 <a href="{{ route('pasien.index') }}"><i class="fa fa-database" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Data Pasien</span></a>
             </li>
+            <li class="{{  request()->routeIs('report.*') ? 'active' : '' }}">
+                <a href="/report"><i class="fa fa-database" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Report</span></a>
+            </li>
             <li class="{{  request()->routeIs('profile.*') ? 'active' : '' }}">
                 <a href="{{ route('profile.index') }}"><i class="fa fa-user" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Profil</span></a>
             </li>

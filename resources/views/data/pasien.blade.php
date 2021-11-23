@@ -19,6 +19,17 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" >
+<style>
+    .borderless td, .borderless th {
+        border: none;
+        width: 50%;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    .borderless {
+  	    width: 100%;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -54,11 +65,11 @@
 
 <!-- Create Pasien Modal -->
 <div class="modal fade" id="CreatePasienModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Pasien Create</h4>
+                <h4 class="modal-title">Tambah Pasien</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
@@ -76,111 +87,171 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="form-group">
-                    <label>No Lab:</label>
-                    <input type="text" class="form-control" name="no_lab" id="no_lab">
-                </div>
-                <div class="form-group">
-                    <label>No Rekam Medis:</label>
-                    <input type="text" class="form-control" name="no_rm" id="no_rm">
-                </div>
-               
-                <div class="form-group">
-                    <label>Nama:</label>
-                    <input type="text" class="form-control" name="nama" id="nama">
-                </div>
-                <div class="form-group">
-                    <label>Nama Dokter:</label>
-                    <input type="text" class="form-control" name="nama_dok" id="nama_dok">
-                </div>
-                <div class="form-group">
-                    <label>Jenis Kelamin:</label>
-                    {{-- <input type="text" class="form-control" name="jns_kelamin" id="jns_kelamin"> --}}
-                    <select class="form-control mb-1" name="jns_kelamin" id="jns_kelamin">
-                        <option value="Laki-Laki">Laki-Laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Umur:</label>
-                    <input type="text" class="form-control" name="umur" id="umur">
-                </div>
-                <div class="form-group">
-                    <label>Tanggal Lahir:</label>
-                    <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir" data-provide="datepicker">
-                </div>
-                <div class="form-group">
-                    <label>Alamat:</label>
-                    <textarea class="form-control" name="alamat" id="alamat"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>No Hp:</label>
-                    <input type="text" class="form-control" name="no_hp" id="no_hp">
-                </div>
-                <div class="form-group">
-                    <label>Lokasi:</label>
-                    <input type="text" class="form-control" name="lokasi" id="lokasi">
-                </div>
-                <div class="form-group">
-                    <label>Tanggal Tes:</label>
-                    <input type="text" class="form-control" name="tgl_tes" id="tgl_tes" data-provide="datepicker">
-                </div>
-                <div class="form-group">
-                    <label>Metode:</label>
-                    <select class="form-control mb-1" name="metode" id="metode">
-                        <option value="Swab">Swab</option>
-                        <option value="Rapid">Rapid</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>IgM:</label>
-                    <select class="form-control mb-1" name="igm" id="igm">
-                        <option value="Positif">Positif</option>
-                        <option value="Negatif">Negatif</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>IgG:</label>
-                    <select class="form-control mb-1" name="igg" id="igg">
-                        <option value="Positif">Positif</option>
-                        <option value="Negatif">Negatif</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Apakah anda memiliki keluhan Demam ?</label> <br>
-                    <input type="radio"  id="k_satu1" name="k_satu" value="1"> Ya</label>
-                    <input type="radio" id="k_satu2" name="k_satu" value="0"> Tidak</label> <br>
-                </div>
-                <div class="form-group">
-                    <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
-                    <input type="radio"  id="k_dua1" name="k_dua" value="1"> Ya</label>
-                    <input type="radio" id="k_dua2" name="k_dua" value="0"> Tidak</label> <br>
-                </div>
-                <div class="form-group">
-                    <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
-                    <input type="radio"  id="k_tiga1" name="k_tiga" value="1"> Ya</label>
-                    <input type="radio" id="k_tiga2" name="k_tiga" value="0"> Tidak</label> <br>
-                </div>
-                <div class="form-group">
-                    <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
-                    <input type="radio"  id="k_empat1" name="k_empat" value="1"> Ya</label>
-                    <input type="radio" id="k_empat2" name="k_empat" value="0"> Tidak</label><br>
-                </div>
-                <div class="form-group">
-                    <label>Apakah anda Pernah :</label> <br>
-                    <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
-                    <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
-                    <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
-                    <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
-                    <input type="radio"  id="screening1" name="status" value="1"> Ya</label>
-                    <input type="radio" id="screening2" name="status" value="0"> Tidak</label>
-                </div>
+
+                <table class="borderless">
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>No Lab:</label>
+                            <input type="text" class="form-control" name="no_lab" id="no_lab">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>No Rekam Medis:</label>
+                            <input type="text" class="form-control" name="no_rm" id="no_rm">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Nama:</label>
+                            <input type="text" class="form-control" name="nama" id="nama">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Nama Dokter:</label>
+                            <input type="text" class="form-control" name="nama_dok" id="nama_dok">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Jenis Kelamin:</label>
+                            <select class="form-control mb-1" name="jns_kelamin" id="jns_kelamin">
+                                <option value="Laki-Laki">Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Umur:</label>
+                            <input type="text" class="form-control" name="umur" id="umur">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Tanggal Lahir:</label>
+                            <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir" data-provide="datepicker">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Alamat:</label>
+                            <textarea class="form-control" name="alamat" id="alamat"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>No Hp:</label>
+                            <input type="text" class="form-control" name="no_hp" id="no_hp">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Lokasi:</label>
+                            <input type="text" class="form-control" name="lokasi" id="lokasi">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Tanggal Tes:</label>
+                            <input type="text" class="form-control" name="tgl_tes" id="tgl_tes" data-provide="datepicker">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Metode:</label>
+                            <select class="form-control mb-1" name="metode" id="metode">
+                                <option value="Swab">Swab</option>
+                                <option value="Rapid">Rapid</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>IgM:</label>
+                            <select class="form-control mb-1" name="igm" id="igm">
+                                <option value="Positif">Positif</option>
+                                <option value="Negatif">Negatif</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>IgG:</label>
+                            <select class="form-control mb-1" name="igg" id="igg">
+                                <option value="Positif">Positif</option>
+                                <option value="Negatif">Negatif</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Demam ?</label> <br>
+                            <input type="radio"  id="k_satu1" name="k_satu" value="1"> Ya</label>
+                            <input type="radio" id="k_satu2" name="k_satu" value="0" checked> Tidak</label> <br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
+                            <input type="radio"  id="k_dua1" name="k_dua" value="1"> Ya</label>
+                            <input type="radio" id="k_dua2" name="k_dua" value="0" checked> Tidak</label> <br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
+                            <input type="radio"  id="k_tiga1" name="k_tiga" value="1"> Ya</label>
+                            <input type="radio" id="k_tiga2" name="k_tiga" value="0" checked> Tidak</label> <br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
+                            <input type="radio"  id="k_empat1" name="k_empat" value="1"> Ya</label>
+                            <input type="radio" id="k_empat2" name="k_empat" value="0" checked> Tidak</label><br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="form-group">
+                            <label>Apakah anda Pernah :</label> <br>
+                            <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
+                            <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
+                            <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
+                            <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
+                            <input type="radio"  id="screening1" name="status" value="1"> Ya</label>
+                            <input type="radio" id="screening2" name="status" value="0" checked> Tidak</label>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+
                 </form>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="SubmitCreatePasienForm">Create</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="SubmitCreatePasienForm">Tambah</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
@@ -192,7 +263,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Pasien Edit</h4>
+                <h4 class="modal-title">Ubah Pasien</h4>
                 <button type="button" class="close modelClose" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
@@ -214,8 +285,8 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="SubmitEditPasienForm">Update</button>
-                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="SubmitEditPasienForm">Ubah</button>
+                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
@@ -227,7 +298,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Pasien Delete</h4>
+                <h4 class="modal-title">Hapus Pasien</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
@@ -236,8 +307,8 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="SubmitDeletePasienForm">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger" id="SubmitDeletePasienForm">Ya</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
             </div>
         </div>
     </div>

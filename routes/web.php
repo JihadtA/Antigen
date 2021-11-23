@@ -7,6 +7,7 @@ use SimpleSoftwareIO\QrCode\Generator;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DataPesertaController;
 use App\Http\Controllers\PdfController;
 
@@ -55,3 +56,9 @@ Route::get('/datapeserta/delete/{id}', [DataPesertaController::class, 'delete'] 
 
 // Cetak Peserta
 Route::get('/pasien/{id?}/cetak', [PdfController::class, 'pdf']);
+
+// Chart dan Report
+Route::get('/report', [ReportController::class, 'index']);
+// Route::get('/report', function () {
+//     return view('report.index');
+// });
