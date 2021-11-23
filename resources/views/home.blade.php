@@ -19,22 +19,24 @@
 </style>
 @endsection
 @section('content')
+
+<div class="text-right mr-3">
+    <button style="margin-bottom: 15px" class="btn btn-primary btn-sm" type="button"  data-toggle="modal" data-target="#CreatePasienModal">
+        <strong>Tambah Pasien</strong>
+    </button>
+</div>
 <div id="kopi-covid"></div>
 <script>
-  var f = document.createElement("iframe")
-  f.src = "https://kopi.dev/widget-covid-19/"
-  f.width = "100%"
-  f.height = 380
-  f.scrolling = "no"
-  f.frameBorder = 0
-  var rootEl = document.getElementById("kopi-covid")
-  console.log(rootEl)
-  rootEl.appendChild(f)
+var f = document.createElement("iframe")
+f.src = "https://kopi.dev/widget-covid-19/"
+f.width = "100%"
+f.height = 380
+f.scrolling = "no"
+f.frameBorder = 0
+var rootEl = document.getElementById("kopi-covid")
+console.log(rootEl)
+rootEl.appendChild(f)
 </script>
-
-<button class="btn btn-primary btn-sm" type="button"  data-toggle="modal" data-target="#CreatePasienModal">
-  <strong>Tambah Pasien</strong>
-</button>
 
 <!-- Create Pasien Modal -->
 <div class="modal fade" id="CreatePasienModal">
