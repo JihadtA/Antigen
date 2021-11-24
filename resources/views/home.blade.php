@@ -1,7 +1,9 @@
 @extends('layouts.master')
+
 @section('breadcrumb')
     <h2>{{ $title }}</h2>
 @endsection
+
 @section('style')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
@@ -18,25 +20,75 @@
     }
 </style>
 @endsection
-@section('content')
 
-<div class="text-right mr-3">
-    <button style="margin-bottom: 15px" class="btn btn-primary btn-sm" type="button"  data-toggle="modal" data-target="#CreatePasienModal">
-        <strong>Tambah Pasien</strong>
-    </button>
+@section('content')
+<div class="container-fluid" style="background-color: white; position: relative;">
+
+<div class="container-fluid">
+    <!-- <table class="borderless">
+        <tr>
+            <td class="pl-3 pt-2" style="width: 45%;">
+                <h1 class="display-4">Display 4</h1>
+                <p class="text-muted text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor quis nisl at pellentesque. 
+                    Quisque elit ligula, condimentum sed egestas ac, finibus id eros. Praesent facilisis maximus 
+                    nulla sit amet posuere. In placerat, tellus ut imperdiet tempus, ligula sem condimentum quam, 
+                    id pulvinar sem eros vitae tortor. Aliquam erat volutpat. Vestibulum nec imperdiet tellus. 
+                    Phasellus a justo id erat molestie luctus. Sed ac pulvinar ligula. Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit. Vivamus tincidunt enim id sodales euismod. Pellentesque fringilla 
+                    in lectus vitae scelerisque. Etiam erat ligula, feugiat at libero quis, bibendum volutpat sapien. 
+                </p>
+                <button type="button" class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#CreatePasienModal">Tambah Data</button>
+                <button type="button" class="btn btn-primary btn-lg">Data Pasien</button>
+            </td>
+            <td class="pt-5 text-center" style="width: 55%;">
+                <img src="img/home1.svg">
+            </td>
+        </tr>
+    </table> -->
+    <div class="row ">
+        <div class="col-5 pl-5 pt-4">
+        <h1 class="display-4">Antigen</h1>
+        <p class="text-muted text-justify">
+            Antigen adalah molekul yang mampu menstimulasi respons imun. Molekul tersebut dapat berupa protein, 
+            polisakarida, lipid, atau asam nukleat. Tiap antigen memiliki fitur permukaan yang berbeda yang dikenali 
+            oleh sistem kekebalan.
+        </p>
+        <p class="text-muted text-justify">
+            SARS-CoV-2, virus yang menyebabkan COVID-19, memiliki beberapa antigen yang diketahui, 
+            termasuk nukleokapsid fosfoprotein dan spike glikoprotein. Rapid test antigen dapat 
+            mengungkapkan bila seseorang saat ini sedang terinfeksi patogen seperti virus SARS-CoV-2. 
+        </p>
+        <button type="button" class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#CreatePasienModal">Tambah Data</button>
+        <a href="{{ route('about.index') }}" class="btn btn-outline-primary btn-lg">Tentang</a>
+        </div>
+        <div class="col-7">
+            <div class="text-center">
+                <img src="img/home1.svg" class="mt-3 pt-5">
+            </div>
+        </div>
+    </div>
 </div>
-<div id="kopi-covid"></div>
-<script>
-var f = document.createElement("iframe")
-f.src = "https://kopi.dev/widget-covid-19/"
-f.width = "100%"
-f.height = 380
-f.scrolling = "no"
-f.frameBorder = 0
-var rootEl = document.getElementById("kopi-covid")
-console.log(rootEl)
-rootEl.appendChild(f)
-</script>
+
+    <!-- <div class="text-right mr-3">
+        <button style="margin-bottom: 15px" class="btn btn-primary btn-sm" type="button"  data-toggle="modal" data-target="#CreatePasienModal">
+            <strong>Tambah Pasien</strong>
+        </button>
+    </div> -->
+    <div id="kopi-covid"></div>
+    <script>
+        var f = document.createElement("iframe")
+        f.src = "https://kopi.dev/widget-covid-19/"
+        f.width = "100%"
+        f.height = 380
+        f.scrolling = "no"
+        f.frameBorder = 0
+        var rootEl = document.getElementById("kopi-covid")
+        console.log(rootEl)
+        rootEl.appendChild(f)
+    </script>
+    <!-- <button type="button" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="modal" data-target="#CreatePasienModal">Tambah Data</button> -->
+</div>
 
 <!-- Create Pasien Modal -->
 <div class="modal fade" id="CreatePasienModal">
@@ -64,162 +116,161 @@ rootEl.appendChild(f)
                 </div>
 
                 <table class="borderless">
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label>No Lab:</label>
-                                <input type="text" class="form-control" name="no_lab" id="no_lab">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>No Rekam Medis:</label>
-                                <input type="text" class="form-control" name="no_rm" id="no_rm">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>Lokasi:</label>
-                                <input type="text" class="form-control" name="lokasi" id="lokasi">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="form-group">
-                                <label>Nama:</label>
-                                <input type="text" class="form-control" name="nama" id="nama">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>Nama Dokter:</label>
-                                <input type="text" class="form-control" name="nama_dok" id="nama_dok">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label>Umur:</label>
-                                <input type="text" class="form-control" name="umur" id="umur">
-                            </div>
-                        </td>
-                        <td colspan="2" rowspan="2">
-                            <div class="form-group">
-                                <label>Alamat:</label>
-                                <textarea class="form-control" name="alamat" id="alamat" style="margin-top: 0px; margin-bottom:0px; height:133px;" ></textarea>
-                            </div>
-                        </td>   
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label>Tanggal Lahir:</label>
-                                <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir" data-provide="datepicker">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label>No Hp:</label>
-                                <input type="text" class="form-control" name="no_hp" id="no_hp">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>Jenis Kelamin:</label>
-                                <select class="form-control mb-1" name="jns_kelamin" id="jns_kelamin">
-                                    <option value="Laki-Laki">Laki-Laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>Tanggal Tes:</label>
-                                <input type="text" class="form-control" name="tgl_tes" id="tgl_tes" data-provide="datepicker">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label>Metode:</label>
-                                <select class="form-control mb-1" name="metode" id="metode">
-                                    <option value="Swab">Swab</option>
-                                    <option value="Rapid">Rapid</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>IgM:</label>
-                                <select class="form-control mb-1" name="igm" id="igm">
-                                    <option value="Positif">Positif</option>
-                                    <option value="Negatif">Negatif</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>IgG:</label>
-                                <select class="form-control mb-1" name="igg" id="igg">
-                                    <option value="Positif">Positif</option>
-                                    <option value="Negatif">Negatif</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label>Apakah anda memiliki keluhan Demam ?</label> <br>
-                                <input type="radio"  id="k_satu1" name="k_satu" value="1"> Ya</label> <br>
-                                <input type="radio" id="k_satu2" name="k_satu" value="0" checked> Tidak</label> <br>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
-                                <input type="radio"  id="k_dua1" name="k_dua" value="1"> Ya</label> <br>
-                                <input type="radio" id="k_dua2" name="k_dua" value="0" checked> Tidak</label> <br>
-                            </div>
-                        </td>
-                        <td rowspan="2">
-                            <div class="form-group">
-                                <label>Apakah anda Pernah :</label> <br>
-                                <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
-                                <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
-                                <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
-                                <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
-                                <input type="radio"  id="screening1" name="status" value="1"> Ya</label>
-                                <input type="radio" id="screening2" name="status" value="0" checked> Tidak</label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label>Apakah anda memiliki keluhan Batuk?</label> <br>
-                                <input type="radio"  id="k_tiga1" name="k_tiga" value="1"> Ya</label> <br>
-                                <input type="radio" id="k_tiga2" name="k_tiga" value="0" checked> Tidak</label> <br>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
-                                <input type="radio"  id="k_empat1" name="k_empat" value="1"> Ya</label> <br>
-                                <input type="radio" id="k_empat2" name="k_empat" value="0" checked> Tidak</label><br>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                    </tr>
-                    </table>
-    
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>No Lab:</label>
+                            <input type="text" class="form-control" name="no_lab" id="no_lab">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>No Rekam Medis:</label>
+                            <input type="text" class="form-control" name="no_rm" id="no_rm">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Lokasi:</label>
+                            <input type="text" class="form-control" name="lokasi" id="lokasi">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="form-group">
+                            <label>Nama:</label>
+                            <input type="text" class="form-control" name="nama" id="nama">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Nama Dokter:</label>
+                            <input type="text" class="form-control" name="nama_dok" id="nama_dok">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Umur:</label>
+                            <input type="text" class="form-control" name="umur" id="umur">
+                        </div>
+                    </td>
+                    <td colspan="2" rowspan="2">
+                        <div class="form-group">
+                            <label>Alamat:</label>
+                            <textarea class="form-control" name="alamat" id="alamat" style="margin-top: 0px; margin-bottom:0px; height:133px;" ></textarea>
+                        </div>
+                    </td>   
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Tanggal Lahir:</label>
+                            <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir" data-provide="datepicker">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>No Hp:</label>
+                            <input type="text" class="form-control" name="no_hp" id="no_hp">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Jenis Kelamin:</label>
+                            <select class="form-control mb-1" name="jns_kelamin" id="jns_kelamin">
+                                <option value="Laki-Laki">Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Tanggal Tes:</label>
+                            <input type="text" class="form-control" name="tgl_tes" id="tgl_tes" data-provide="datepicker">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Metode:</label>
+                            <select class="form-control mb-1" name="metode" id="metode">
+                                <option value="Swab">Swab</option>
+                                <option value="Rapid">Rapid</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>IgM:</label>
+                            <select class="form-control mb-1" name="igm" id="igm">
+                                <option value="Positif">Positif</option>
+                                <option value="Negatif">Negatif</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>IgG:</label>
+                            <select class="form-control mb-1" name="igg" id="igg">
+                                <option value="Positif">Positif</option>
+                                <option value="Negatif">Negatif</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Demam ?</label> <br>
+                            <input type="radio"  id="k_satu1" name="k_satu" value="1"> Ya</label> <br>
+                            <input type="radio" id="k_satu2" name="k_satu" value="0" checked> Tidak</label> <br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
+                            <input type="radio"  id="k_dua1" name="k_dua" value="1"> Ya</label> <br>
+                            <input type="radio" id="k_dua2" name="k_dua" value="0" checked> Tidak</label> <br>
+                        </div>
+                    </td>
+                    <td rowspan="2">
+                        <div class="form-group">
+                            <label>Apakah anda Pernah :</label> <br>
+                            <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
+                            <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
+                            <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
+                            <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
+                            <input type="radio"  id="screening1" name="status" value="1"> Ya</label>
+                            <input type="radio" id="screening2" name="status" value="0" checked> Tidak</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Batuk?</label> <br>
+                            <input type="radio"  id="k_tiga1" name="k_tiga" value="1"> Ya</label> <br>
+                            <input type="radio" id="k_tiga2" name="k_tiga" value="0" checked> Tidak</label> <br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
+                            <input type="radio"  id="k_empat1" name="k_empat" value="1"> Ya</label> <br>
+                            <input type="radio" id="k_empat2" name="k_empat" value="0" checked> Tidak</label><br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    
+                </tr>
+                </table>
 
                 </form>
             </div>

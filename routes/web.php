@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DataPesertaController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 
 //Route Pasien
 Route::resource('pasien', PasienController::class);
