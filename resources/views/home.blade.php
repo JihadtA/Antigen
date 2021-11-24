@@ -47,20 +47,15 @@
         </tr>
     </table> -->
     <div class="row ">
-        <div class="col-5 pl-5 pt-4">
+        <div class="col-5 pl-5 pt-5">
         <h1 class="display-4">Antigen</h1>
-        <p class="text-muted text-justify">
-            Antigen adalah molekul yang mampu menstimulasi respons imun. Molekul tersebut dapat berupa protein, 
-            polisakarida, lipid, atau asam nukleat. Tiap antigen memiliki fitur permukaan yang berbeda yang dikenali 
-            oleh sistem kekebalan.
-        </p>
         <p class="text-muted text-justify">
             SARS-CoV-2, virus yang menyebabkan COVID-19, memiliki beberapa antigen yang diketahui, 
             termasuk nukleokapsid fosfoprotein dan spike glikoprotein. Rapid test antigen dapat 
             mengungkapkan bila seseorang saat ini sedang terinfeksi patogen seperti virus SARS-CoV-2. 
         </p>
-        <button type="button" class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#CreatePasienModal">Tambah Data</button>
-        <a href="{{ route('about.index') }}" class="btn btn-outline-primary btn-lg">Tentang</a>
+        <button type="button" class="btn btn-primary btn-lg btn-radius" type="button" data-toggle="modal" data-target="#CreatePasienModal" style="border-radius: 35px;">Tambah Data <i class="fa fa-arrow-circle-right" style="font-size:16px" aria-hidden="true"></i></button>
+        <a href="{{ route('about.index') }}" class="btn btn-outline-primary btn-lg btn-radius" style="border-radius: 35px;">Tentang</a>
         </div>
         <div class="col-7">
             <div class="text-center">
