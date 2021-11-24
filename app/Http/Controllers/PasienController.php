@@ -212,22 +212,76 @@ class PasienController extends Controller
             $screening_d = "1";
         }
         
-        $html = '<div class="form-group">
+        $html = '
+        <table class="borderless">
+        <tr>
+            <td>        
+                <div class="form-group">
                     <label>No Laboratory :</label>
                     <input type="text" class="form-control" name="no_lab" id="editNo_lab" value="'.$data->no_lab.'">
                 </div>
+            </td>
+            <td>    
                 <div class="form-group">
                     <label>No Rekam Medis :</label>
                     <input type="text" class="form-control" name="no_rm" id="editNo_rm" value="'.$data->no_rm.'">
                 </div>
+            </td>
+            <td>    
+                <div class="form-group">
+                    <label>Lokasi :</label>
+                    <input type="text" class="form-control" name="lokasi" id="editLokasi" value="'.$data->lokasi.'">
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
                 <div class="form-group">
                     <label>Nama :</label>
                     <input type="text" class="form-control" name="nama" id="editNama" value="'.$data->nama.'">
                 </div>
+            </td>
+            <td>
                 <div class="form-group">
                     <label>Nama Dokter :</label>
                     <input type="text" class="form-control" name="nama_dok" id="editNama_dok" value="'.$data->nama_dok.'">
                 </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label>Umur :</label>
+                    <input type="text" class="form-control" name="umur" id="editUmur" value="'.$data->umur.'">
+                </div>
+            </td>
+            <td colspan = "2" rowspan = "2">
+                <div class="form-group">
+                    <label>Alamat :</label>
+                    <textarea class="form-control" name="alamat" id="editAlamat" style="margin-top: 0px; margin-bottom:0px; height:133px;">'.$data->alamat.'</textarea>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td> 
+                <div class="form-group">
+                    <label>Tanggal Lahir :</label>
+                    <input type="text" class="form-control" name="tgl_lahir" id="editTgl_lahir" data-provide="datepicker" value="'.$data->tgl_lahir.'">
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label>No HP :</label>
+                    <input type="text" class="form-control" name="no_hp" id="editNo_hp" value="'.$data->no_hp.'">
+                </div>
+            </td>
+            <td>
                 <div class="form-group">
                     <label>Jenis Kelamin :</label>
                     <select class="form-control mb-1" name="jns_kelamin" id="editJns_kelamin">
@@ -235,37 +289,26 @@ class PasienController extends Controller
                         <option value="'.$jns_dua.'" >'.$jns_dua.'</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Umur :</label>
-                    <input type="text" class="form-control" name="umur" id="editUmur" value="'.$data->umur.'">
-                </div>
-                <div class="form-group">
-                    <label>Tanggal Lahir :</label>
-                    <input type="text" class="form-control" name="tgl_lahir" id="editTgl_lahir" data-provide="datepicker" value="'.$data->tgl_lahir.'">
-                </div>
-                <div class="form-group">
-                    <label>Alamat :</label>
-                    <textarea class="form-control" name="alamat" id="editAlamat">'.$data->alamat.'</textarea>
-                </div>
-                <div class="form-group">
-                    <label>No HP :</label>
-                    <input type="text" class="form-control" name="no_hp" id="editNo_hp" value="'.$data->no_hp.'">
-                </div>
-                <div class="form-group">
-                    <label>Lokasi :</label>
-                    <input type="text" class="form-control" name="lokasi" id="editLokasi" value="'.$data->lokasi.'">
-                </div>
+            </td>
+            <td>
                 <div class="form-group">
                     <label>Tanggal Tes :</label>
                     <input type="text" class="form-control" name="tgl_tes" id="editTgl_tes" data-provide="datepicker" value="'.$data->tgl_tes.'">
                 </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
                 <div class="form-group">
-                <label>Metode :</label>
-                <select class="form-control mb-1" name="metode" id="editMetode">
-                    <option value="'.$metode_satu.'" >'.$metode_satu.'</option>
-                    <option value="'.$metode_dua.'" >'.$metode_dua.'</option>
-                </select>
+                    <label>Metode :</label>
+                    <select class="form-control mb-1" name="metode" id="editMetode">
+                        <option value="'.$metode_satu.'" >'.$metode_satu.'</option>
+                        <option value="'.$metode_dua.'" >'.$metode_dua.'</option>
+                    </select>
                 </div>
+            </td>
+            <td>
                 <div class="form-group">
                     <label>IgM :</label>
                     <select class="form-control mb-1" name="igm" id="editIgm">
@@ -273,6 +316,8 @@ class PasienController extends Controller
                         <option value="'.$igm_dua.'" >'.$igm_dua.'</option>
                     </select>
                 </div>
+            </td>
+            <td>
                 <div class="form-group">
                     <label>IgG :</label>
                     <select class="form-control mb-1" name="igg" id="editIgg">
@@ -280,44 +325,59 @@ class PasienController extends Controller
                         <option value="'.$igg_dua.'" >'.$igg_dua.'</option>
                     </select>
                 </div>
-                                
-        <div class="form-check">
-            <label>Apakah anda memiliki keluhan Demam ?</label> <br>
-            <input type="radio" id="k_satu1" name="editK_satu" value="'.$k_satu_c.'" '.$rcheck.'> '.$k_satu_a.'</label>
-            <input type="radio" id="k_satu2" name="editK_satu" value="'.$k_satu_d.'" > '.$k_satu_b.'</label><br>
-        </div>
+            </td>
+        </tr>
 
-        <div class="form-check">
-            <br>
-            <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
-            <input type="radio"  id="k_dua1" name="editK_dua" value="'.$k_dua_c.'" '.$rcheck.'> '.$k_dua_a.'</label>
-            <input type="radio" id="k_dua2" name="editK_dua" value="'.$k_dua_d.'" > '.$k_dua_b.'</label><br>
-        </div>
+        <tr>
+            <td>
+                <div class="form-check">
+                    <label>Apakah anda memiliki keluhan Demam ?</label> <br>
+                    <input type="radio" id="k_satu1" name="editK_satu" value="'.$k_satu_c.'" '.$rcheck.'> '.$k_satu_a.'</label><br>
+                    <input type="radio" id="k_satu2" name="editK_satu" value="'.$k_satu_d.'" > '.$k_satu_b.'</label><br>
+                </div>
+            </td>
+            <td>
+                <div class="form-check">
+                    <br>
+                    <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
+                    <input type="radio"  id="k_dua1" name="editK_dua" value="'.$k_dua_c.'" '.$rcheck.'> '.$k_dua_a.'</label><br>
+                    <input type="radio" id="k_dua2" name="editK_dua" value="'.$k_dua_d.'" > '.$k_dua_b.'</label><br>
+                </div>
+            </td>
+            <td rowspan = "2">
+                <div class="form-check">
+                    <br>
+                    <label>Apakah anda Pernah :</label> <br>
+                    <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
+                    <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
+                    <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
+                    <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
+                        <input type="radio"  id="screening" name="editScreening" value="'.$screening_c.'" '.$rcheck.'> '.$screening_a.'</label>
+                        <input type="radio" id="screening" name="editScreening" value="'.$screening_d.'" > '.$screening_b.'</label><br>
+                </div>
+            </td>
+        </tr>
 
-        <div class="form-check">
-            <br>
-            <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
-            <input type="radio"  id="k_tiga1" name="editK_tiga" value="'.$k_tiga_c.'" '.$rcheck.'> '.$k_tiga_a.'</label>
-            <input type="radio" id="k_tiga2" name="editK_tiga" value="'.$k_tiga_d.'" > '.$k_tiga_b.'</label><br>
-        </div>
+        <tr>
+            <td>
+            <div class="form-check">
+                <br>
+                    <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
+                    <input type="radio"  id="k_tiga1" name="editK_tiga" value="'.$k_tiga_c.'" '.$rcheck.'> '.$k_tiga_a.'</label><br>
+                    <input type="radio" id="k_tiga2" name="editK_tiga" value="'.$k_tiga_d.'" > '.$k_tiga_b.'</label><br>
+                </div>
+            </td>
+            <td>
+                <div class="form-check">
+                    <br>
+                    <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
+                    <input type="radio"  id="k_empat1" name="editK_empat" value="'.$k_empat_c.'" '.$rcheck.'> '.$k_empat_a.'</label> <br>
+                    <input type="radio" id="k_empat2" name="editK_empat" value="'.$k_empat_d.'" > '.$k_empat_b.'</label><br>
+                </div>
+            </td>
+        </tr>
 
-        <div class="form-check">
-            <br>
-            <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
-            <input type="radio"  id="k_empat1" name="editK_empat" value="'.$k_empat_c.'" '.$rcheck.'> '.$k_empat_a.'</label>
-            <input type="radio" id="k_empat2" name="editK_empat" value="'.$k_empat_d.'" > '.$k_empat_b.'</label><br>
-        </div>
-
-        <div class="form-check">
-        <br>
-        <label>Apakah anda Pernah :</label> <br>
-        <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
-        <li>Pernah berinteraksi dengan terduga pasien Covid-19</li>
-        <li>Pernah mengalami gajala yang berhubungan dengan Covid-19</li>
-        <li>Pernah mengikuti acara yang dihadiri banyak orang pada saat pandemi corona</li><br>
-            <input type="radio"  id="screening" name="editScreening" value="'.$screening_c.'" '.$rcheck.'> '.$screening_a.'</label>
-            <input type="radio" id="screening" name="editScreening" value="'.$screening_d.'" > '.$screening_b.'</label><br>
-        </div>';
+        </table>';
 
         return response()->json(['html'=>$html]);
     }

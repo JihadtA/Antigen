@@ -22,7 +22,7 @@
 <style>
     .borderless td, .borderless th {
         border: none;
-        width: 50%;
+        width: 33%;
         padding-left: 6px;
         padding-right: 6px;
     }
@@ -102,9 +102,15 @@
                             <input type="text" class="form-control" name="no_rm" id="no_rm">
                         </div>
                     </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Lokasi:</label>
+                            <input type="text" class="form-control" name="lokasi" id="lokasi">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         <div class="form-group">
                             <label>Nama:</label>
                             <input type="text" class="form-control" name="nama" id="nama">
@@ -120,31 +126,22 @@
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label>Jenis Kelamin:</label>
-                            <select class="form-control mb-1" name="jns_kelamin" id="jns_kelamin">
-                                <option value="Laki-Laki">Laki-Laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="form-group">
                             <label>Umur:</label>
                             <input type="text" class="form-control" name="umur" id="umur">
                         </div>
                     </td>
+                    <td colspan="2" rowspan="2">
+                        <div class="form-group">
+                            <label>Alamat:</label>
+                            <textarea class="form-control" name="alamat" id="alamat" style="margin-top: 0px; margin-bottom:0px; height:133px;" ></textarea>
+                        </div>
+                    </td>   
                 </tr>
                 <tr>
                     <td>
                         <div class="form-group">
                             <label>Tanggal Lahir:</label>
                             <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir" data-provide="datepicker">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="form-group">
-                            <label>Alamat:</label>
-                            <textarea class="form-control" name="alamat" id="alamat"></textarea>
                         </div>
                     </td>
                 </tr>
@@ -157,18 +154,21 @@
                     </td>
                     <td>
                         <div class="form-group">
-                            <label>Lokasi:</label>
-                            <input type="text" class="form-control" name="lokasi" id="lokasi">
+                            <label>Jenis Kelamin:</label>
+                            <select class="form-control mb-1" name="jns_kelamin" id="jns_kelamin">
+                                <option value="Laki-Laki">Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
                         </div>
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <div class="form-group">
                             <label>Tanggal Tes:</label>
                             <input type="text" class="form-control" name="tgl_tes" id="tgl_tes" data-provide="datepicker">
                         </div>
                     </td>
+                </tr>
+                <tr>
                     <td>
                         <div class="form-group">
                             <label>Metode:</label>
@@ -178,8 +178,6 @@
                             </select>
                         </div>
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <div class="form-group">
                             <label>IgM:</label>
@@ -203,36 +201,18 @@
                     <td>
                         <div class="form-group">
                             <label>Apakah anda memiliki keluhan Demam ?</label> <br>
-                            <input type="radio"  id="k_satu1" name="k_satu" value="1"> Ya</label>
+                            <input type="radio"  id="k_satu1" name="k_satu" value="1"> Ya</label> <br>
                             <input type="radio" id="k_satu2" name="k_satu" value="0" checked> Tidak</label> <br>
                         </div>
                     </td>
                     <td>
                         <div class="form-group">
                             <label>Apakah anda memiliki keluhan Nyeri telan ?</label> <br>
-                            <input type="radio"  id="k_dua1" name="k_dua" value="1"> Ya</label>
+                            <input type="radio"  id="k_dua1" name="k_dua" value="1"> Ya</label> <br>
                             <input type="radio" id="k_dua2" name="k_dua" value="0" checked> Tidak</label> <br>
                         </div>
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label>Apakah anda memiliki keluhan Batuk ?</label> <br>
-                            <input type="radio"  id="k_tiga1" name="k_tiga" value="1"> Ya</label>
-                            <input type="radio" id="k_tiga2" name="k_tiga" value="0" checked> Tidak</label> <br>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="form-group">
-                            <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
-                            <input type="radio"  id="k_empat1" name="k_empat" value="1"> Ya</label>
-                            <input type="radio" id="k_empat2" name="k_empat" value="0" checked> Tidak</label><br>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
+                    <td rowspan="2">
                         <div class="form-group">
                             <label>Apakah anda Pernah :</label> <br>
                             <li>Datang ke wilayah zona merah dan melakukan aktivitas disana</li>
@@ -243,6 +223,25 @@
                             <input type="radio" id="screening2" name="status" value="0" checked> Tidak</label>
                         </div>
                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Batuk?</label> <br>
+                            <input type="radio"  id="k_tiga1" name="k_tiga" value="1"> Ya</label> <br>
+                            <input type="radio" id="k_tiga2" name="k_tiga" value="0" checked> Tidak</label> <br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Apakah anda memiliki keluhan Nafas pendek / Sesak nafas / Nafas terasa berat ?</label> <br>
+                            <input type="radio"  id="k_empat1" name="k_empat" value="1"> Ya</label> <br>
+                            <input type="radio" id="k_empat2" name="k_empat" value="0" checked> Tidak</label><br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    
                 </tr>
                 </table>
 
@@ -259,7 +258,7 @@
 
 <!-- Edit Pasien Modal -->
 <div class="modal" id="EditPasienModal">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
