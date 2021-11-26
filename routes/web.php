@@ -59,7 +59,7 @@ Route::get('/datapeserta/delete/{id}', [DataPesertaController::class, 'delete'] 
 Route::get('/pasien/{id?}/cetak', [PdfController::class, 'pdf']);
 
 // Chart dan Report
-Route::get('/report', [ReportController::class, 'index']);
+Route::get('/report', [ReportController::class, 'index'])->name('report.index');
 // Route::get('/report', function () {
 //     return view('report.index');
 // });

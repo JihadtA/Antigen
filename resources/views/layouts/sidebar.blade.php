@@ -42,7 +42,7 @@
                 <a href="{{ route('pasien.index') }}"><i class="fa fa-database" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Data Pasien</span></a>
             </li>
             <li class="{{  request()->routeIs('report.*') ? 'active' : '' }}">
-                <a href="/report"><i class="fa fa-database" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Report</span></a>
+                <a href="{{ route('report.index') }}"><i class="fa fa-book" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Report</span></a>
             </li>
             <li class="{{  request()->routeIs('about.*') ? 'active' : '' }}">
                 <a href="{{ route('about.index') }}"><i class="fa fa-user" style="font-size:16px" aria-hidden="true"></i> <span class="nav-label">Tentang</span></a>

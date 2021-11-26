@@ -21,11 +21,11 @@ class CreatePasienTbl extends Migration
             $table->string('nama_dok');
             $table->string('jns_kelamin');
             $table->string('umur');
-            $table->string('tgl_lahir');
+            $table->date('tgl_lahir');
             $table->text('alamat');
             $table->string('no_hp');
             $table->string('lokasi');
-            $table->string('tgl_tes');
+            $table->date('tgl_tes');
             $table->string('igm');
             $table->string('igg');
             $table->string('metode');
