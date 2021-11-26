@@ -137,9 +137,15 @@ class PasienController extends Controller
         if ($smetode == "Swab") {
             $metode_satu = "Swab";
             $metode_dua = "Rapid";
+            $metode_tiga = "PCR";
         } elseif ($smetode == "Rapid") {
             $metode_satu = "Rapid";
             $metode_dua = "Swab";
+            $metode_tiga = "PCR";
+        } elseif ($smetode == "PCR") {   
+            $metode_satu = "PCR";
+            $metode_dua = "Swab";
+            $metode_tiga = "Rapid";
         }
 
         // Radio Gejala Satu
@@ -305,6 +311,7 @@ class PasienController extends Controller
                     <select class="form-control mb-1" name="metode" id="editMetode">
                         <option value="'.$metode_satu.'" >'.$metode_satu.'</option>
                         <option value="'.$metode_dua.'" >'.$metode_dua.'</option>
+                        <option value="'.$metode_tiga.'" >'.$metode_tiga.'</option>
                     </select>
                 </div>
             </td>

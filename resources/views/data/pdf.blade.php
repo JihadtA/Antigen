@@ -150,7 +150,7 @@
                 <tr>
                     <td><i><b>IMUNOLOGI</b></i></td>
                 <tr>
-                    <td><b>PCR SARS-Cov-2</b></td>
+                    <td><b>SARS-Cov-2</b></td>
                     <td>{{ $pasien->metode }}</td>
                     <td style="text-align:center;">{{ $pasien->igm }}</td>
                     <td style="text-align:center;">{{ $pasien->igg }}</td>
