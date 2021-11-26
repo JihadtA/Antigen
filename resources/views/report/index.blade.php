@@ -9,7 +9,7 @@
         }
     </style>
 
-    <h2>Grafik Hasil Tes</h2>
+    <h2>Grafik Pasien Antigen</h2>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{ route('home.index') }}">Home</a>
@@ -94,6 +94,7 @@
         series: [
         {
             name: 'Pasien',
+            color: '#1AB394',
             data: [{{ $jan }}, {{ $feb }}, {{ $mar }}, {{ $apr }}, {{ $mei }}, {{ $jun }}, {{ $jul }}, {{ $ags }}, {{ $sep }}, {{ $okt }}, {{ $nov }}, {{ $des }}]
         },
         ]

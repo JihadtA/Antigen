@@ -76,18 +76,6 @@
             <form id="submitData">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="modal-body">
-                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                    <strong>Success!</strong> Pasien was added successfully.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
                 <table class="borderless">
                 <tr>
                     <td>
@@ -241,12 +229,19 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    
-                </tr>
                 </table>
-
                 </form>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                    <strong>Success!</strong> Pasien was added successfully.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -268,6 +263,9 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">
+                <div id="EditPasienModalBody">
+                    
+                </div>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -278,9 +276,6 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-                <div id="EditPasienModalBody">
-                    
                 </div>
             </div>
             <!-- Modal footer -->
