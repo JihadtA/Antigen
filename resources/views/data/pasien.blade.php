@@ -175,6 +175,7 @@
                             <select class="form-control mb-1" name="metode" id="metode">
                                 <option value="Swab">Swab</option>
                                 <option value="Rapid">Rapid</option>
+                                <option value="Rapid">PCR</option>
                             </select>
                         </div>
                     </td>
