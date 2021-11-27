@@ -11,6 +11,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DataPesertaController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\DokterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +64,5 @@ Route::get('/report', [ReportController::class, 'index'])->name('report.index');
 // Route::get('/report', function () {
 //     return view('report.index');
 // });
+
+Route::resource('dokter', DokterController::class);

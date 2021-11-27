@@ -44,6 +44,10 @@ trait AuthenticatesUsers
         }
 
         if ($this->attemptLogin($request)) {
+            if ($request->hasSession()) {
+                $request->session()->put('auth.password_confirmed_at', time());
+            }
+
             return $this->sendLoginResponse($request);
         }
 
@@ -148,13 +152,9 @@ trait AuthenticatesUsers
      *
      * @return string
      */
-    // public function username()
-    // {
-    //     return 'email';
-    // }
     public function username()
     {
-        return 'name';
+        return 'email';
     }
 
     /**
